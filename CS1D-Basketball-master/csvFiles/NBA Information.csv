@@ -1,0 +1,34 @@
+﻿Conference,Division,Team Name,Location,Arena Name,Stadium Capacity,Joined League,Coach
+Eastern,Atlantic,Boston Celtics,"Boston, Massachusetts",TD Garden,"18,624",1946,Brad Stevens
+Eastern,Atlantic,Brooklyn Nets,"New York City, New York",Barclays Center,"17,732",1976,Kenny Atkinson
+Eastern,Atlantic,New York Knicks,"New York City, New York",Madison Square Garden,"19,812",1946,David Fizdale
+Eastern,Atlantic,Philadelphia 76ers,"Philadelphia, Pennsylvania",Wells Fargo Center,"21,600",1949,Brett Brown
+Eastern,Atlantic,Toronto Raptors,"Toronto, Ontario",Scotiabank Arena,"19,800",1995,Nick Nurse
+Eastern,Central,Chicago Bulls,"Chicago, Illinois",United Center,"20,917",1966,Jim Boylen
+Eastern,Central,Cleveland Cavaliers,"Cleveland, Ohio",Quicken Loans Arena,"20,562",1970,John Beilein
+Eastern,Central,Detroit Pistons,"Detroit, Michigan",Little Caesars Arena,"20,491",1948,Dwane Casey
+Eastern,Central,Indiana Pacers,"Indianapolis, Indiana",Bankers Life Fieldhouse,"17,923",1976,Nate McMillan
+Eastern,Central,Milwaukee Bucks,"Milwaukee, Wisconsin",Fiserv Forum,"18,717",1968,Mike Budenholzer
+Eastern,Southeast,Atlanta Hawks,"Atlanta, Georgia",State Farm Arena,"15,711",1949,Lloyd Pierce
+Eastern,Southeast,Charlotte Hornets,"Charlotte, North Carolina",Spectrum Center,"19,077",1988,James Borrego
+Eastern,Southeast,Miami Heat,"Miami, Florida",American Airlines Arena,"19,600",1988,Erik Spoelstra
+Eastern,Southeast,Orlando Magic,"Orlando, Florida",Amway Center,"18,846",1989,Steve Clifford
+Eastern,Southeast,Washington Wizards,"Washington, D.C.",Capital One Arena,"20,356",1961,Scott Brooks
+Western,Northwest,Denver Nuggets,"Denver, Colorado",Pepsi Center,"19,520",1976,Michael Malone
+Western,Northwest,Minnesota Timberwolves,"Minneapolis, Minnesota",Target Center,"19,356",1989,Ryan Sanders
+Western,Northwest,Oklahoma City Thunder,"Oklahoma City, Oklahoma",Chesapeake Energy Arena,"18,203",1967,Billy Donovan
+Western,Northwest,Portland Trail Blazers,"Portland, Oregon",Moda Center,"19,441",1970,Terry Stotts
+Western,Northwest,Utah Jazz,"Salt Lake City, Utah",Vivint Smart Home Arena,"19,911",1974,Quin Snyder
+Western,Pacific,Golden State Warriors,"Oakland, California",Oracle Arena,"19,596",1946,Steve Kerr
+Western,Pacific,Los Angeles Clippers,"Los Angeles, California",Staples Center,"19,060",1970,Doc Rivers
+Western,Pacific,Los Angeles Lakers,"Los Angeles, California",Staples Center,"18,997",1948,Frank Vogel
+Western,Pacific,Phoenix Suns,"Phoenix, Arizona",Talking Stick Resort Arena,"18,055",1968,Monte Williams
+Western,Pacific,Sacramento Kings,"Sacramento, California",Golden 1 Center,"17,500",1948,Luke Walton
+Western,Southwest,Dallas Mavericks,"Dallas, Texas",American Airlines Center,"19,200",1980,Rick Carlisle
+Western,Southwest,Houston Rockets,"Houston, Texas",Toyota Center,"18,055",1967,Mike D'Antoni
+Western,Southwest,Memphis Grizzlies,"Memphis, Tennessee",FedExForum,"18,119",1995,Taylor Jennings
+Western,Southwest,New Orleans Pelicans,"New Orleans, Louisiana",Smoothie King Center,"16,867",2002,Alvin Gentry
+Western,Southwest,San Antonio Spurs,"San Antonio, Texas",AT&T Center,"18,418",1976,Gregg Popovich
+,,,,,,,
+Expansion,,,,,,,
+Western,Northwest,Seattle Supersonics,"Seattle, Washington",Seattle Stadium,"18,919",2019,Koby Bryant

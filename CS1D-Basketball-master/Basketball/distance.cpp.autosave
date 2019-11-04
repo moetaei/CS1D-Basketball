@@ -1,0 +1,6 @@
+#include "distances.h"
+
+distances::distances()
+{
+
+}
