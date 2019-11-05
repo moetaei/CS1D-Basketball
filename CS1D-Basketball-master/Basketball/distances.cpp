@@ -8,7 +8,7 @@ distances::distances(QString teamA, QString teamB, QString arenaA, QString dista
     team1 = teamA;
     team2 = teamB;
     arena1 = arenaA;
-    arena2 = "";
+    arena2 = "NONE";
     distance = distanceA.toDouble();
 }
 void distances::setTeam1(QString team)

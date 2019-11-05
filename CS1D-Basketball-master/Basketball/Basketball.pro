@@ -40,7 +40,12 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-DISTFILES += \ \
+DISTFILES += \
     ../csvFiles/NBA Distances.csv \
     ../csvFiles/NBA Information.csv \
     ../csvFiles/NBA newDistance.csv
+
+RESOURCES += \
+    resource.qrc
+
+

@@ -20,6 +20,8 @@ public:
     data();
     void readDataDistance();
     void readDataInfo();
+    void databaseDistance();
+    void databaseInfo();
     bool checkExist(QString teamA, QString teamB, QVector<distances> read);
     int findCity(QString teamA, QString teamB,QVector<distances> read);
     void showDistances();

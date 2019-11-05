@@ -39,7 +39,7 @@ int data:: findCity(QString teamA, QString teamB,QVector<distances> read)
 void data:: readDataDistance()
 {
     QVector<distances> read;
-    QFile file1("../csvFiles/NBA Distances.csv");
+    QFile file1("C:\\Users\\vuand\\Desktop\\CS1D-Basketball\\CS1D-Basketball-master\\csvFiles\\NBA Distances.csv");  //CHANGE PATH LOCATION
     if (!file1.open(QIODevice::ReadOnly))
     {
         qDebug()<< "ERROR: File Open 1" << endl;
@@ -79,7 +79,7 @@ void data:: readDataDistance()
         }
     }
      file1.close();
-     QFile file2("../csvFiles/NBA newDistance.csv");
+     QFile file2("C:\\Users\\vuand\\Desktop\\CS1D-Basketball\\CS1D-Basketball-master\\csvFiles\\NBA newDistance.csv");  //CHANGE PATH LOCATION
      if (!file2.open(QIODevice::ReadOnly))
      {
          qDebug()<< "ERROR: File Open 2" << endl;
@@ -124,12 +124,13 @@ void data:: readDataDistance()
      }
       file2.close();
      read.clear();
+     databaseDistance();
 
 }
 void data:: readDataInfo()
 {
     QVector<information> read;
-    QFile file3("../csvFiles/NBA Information.csv");
+    QFile file3("C:\\Users\\vuand\\Desktop\\CS1D-Basketball\\CS1D-Basketball-master\\csvFiles\\NBA Information.csv"); //CHANGE PATH LOCATION
     if (!file3.open(QIODevice::ReadOnly))
     {
         qDebug()<< "ERROR: File Open 3" << endl;
@@ -143,7 +144,7 @@ void data:: readDataInfo()
         QString team;
         QString location;
         QString arena;
-        QString capcity;
+        QString capacity;
         QString year;
         QString coach;
         in.readLine();
@@ -159,14 +160,16 @@ void data:: readDataInfo()
             conference = listOfString[0];
             division = listOfString[1];
             team = listOfString[2];
-            location = listOfString[3];
-            arena = listOfString[4];
-            capcity = listOfString[5];
-            year = listOfString[6];
-            coach = listOfString[7];
+            location = listOfString[3] + "," + listOfString[4];
+            location = location.mid(1,location.length()-2);
+            arena = listOfString[5];
+            capacity = listOfString[6] + listOfString[7];
+            capacity= capacity.mid(1,capacity.length()-2);
+            year = listOfString[8];
+            coach = listOfString[9];
             i++;
 
-            information newInfo(conference,division,team,location,arena,capcity.toDouble(),year,coach);
+            information newInfo(conference,division,team,location,arena,capacity.toDouble(),year,coach);
             read.push_back(newInfo);
         }
         if (data2.size() < read.size())
@@ -175,6 +178,7 @@ void data:: readDataInfo()
         }
     }
      file3.close();
+     databaseInfo();
 }
 void data::showDistances()
 {
@@ -200,4 +204,82 @@ void data::showInfo()
                   << data2[i].getYearJoined().toStdString() << ", "
                   << data2[i].getCoach().toStdString() << ", " << endl;
     }
+}
+void data:: databaseDistance()
+{
+    QSqlDatabase db;
+    db = QSqlDatabase:: addDatabase("QSQLITE");
+    db.setDatabaseName(QDir::currentPath() + "/distanceDB.sqlite"); //CHANGE PATH LOCATION
+
+    if(!db.open())
+    {
+        qDebug() << "ERROR opening Database (distances)";
+    }
+    QString query = "CREATE TABLE distancesDB (Team1 VARCHAR(20), Arena1 VARCHAR(20), Team2 VARCHAR(20), Arena2 VARCHAR(20), Distance double);";
+    QSqlQuery qry;
+
+    if(!qry.exec(query))
+    {
+        qDebug() << "Table already exisits (distances)";
+        return;
+    }
+
+    for(int i = 0; i < data1.size(); i++)
+    {
+        qry.prepare("INSERT INTO distancesDB (Team1, Arena1, Team2, Arena2, Distance) VALUES (?,?,?,?,?);");
+
+        qry.addBindValue(data1[i].getTeam1());
+        qry.addBindValue(data1[i].getArena1());
+        qry.addBindValue(data1[i].getTeam2());
+        qry.addBindValue(data1[i].getArena2());
+        qry.addBindValue(data1[i].getDistance());
+
+        if(!qry.exec())
+        {
+            qDebug() << "THIS SHOULD NOT HAPPEN (distances)";
+        }
+    }
+
+    db.close();
+}
+void data:: databaseInfo()
+{
+    QSqlDatabase db;
+    db = QSqlDatabase:: addDatabase("QSQLITE");
+    db.setDatabaseName(QDir::currentPath() + "/infoDB.sqlite");  //CHANGE PATH LOCATION
+
+    if(!db.open())
+    {
+        qDebug() << "ERROR opening Database (information)";
+    }
+    QString query = "CREATE TABLE infoDB (Conference VARCHAR(20), Division VARCHAR(20), Team VARCHAR(20), Location VARCHAR(20), Arena VARCHAR(20), Capcity double, Joined VARCHAR(20), Coach VARCHAR(20));";
+    QSqlQuery qry;
+
+    if(!qry.exec(query))
+    {
+        qDebug() << "Table already exisits (information)";
+        return;
+    }
+
+    for(int i = 0; i < data2.size(); i++)
+    {
+        qry.prepare("INSERT INTO infoDB (Conference, Division, Team, Location, Arena, Capcity, Joined, Coach) VALUES (?,?,?,?,?,?,?,?);");
+
+        qry.addBindValue(data2[i].getConference());
+        qry.addBindValue(data2[i].getDivision());
+        qry.addBindValue(data2[i].getTeam());
+        qry.addBindValue(data2[i].getLocation());
+        qry.addBindValue(data2[i].getArena());
+        qry.addBindValue(data2[i].getStadiumCap());
+        qry.addBindValue(data2[i].getYearJoined());
+        qry.addBindValue(data2[i].getCoach());
+
+
+        if(!qry.exec())
+        {
+            qDebug() << "THIS SHOULD NOT HAPPEN (information)";
+        }
+    }
+
+    db.close();
 }

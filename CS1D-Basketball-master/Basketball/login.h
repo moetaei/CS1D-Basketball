@@ -2,6 +2,7 @@
 #define LOGIN_H
 
 #include <QDialog>
+#include <QtSql>
 namespace Ui {
 class login;
 }
@@ -11,6 +12,7 @@ class login : public QDialog
     Q_OBJECT
 
 public:
+    void UserDB();
     explicit login(QWidget *parent = nullptr);
     ~login();
 
@@ -20,6 +22,7 @@ private slots:
 
 private:
     Ui::login *ui;
+    QSqlDatabase userDB;
 };
 
 #endif // LOGIN_H
