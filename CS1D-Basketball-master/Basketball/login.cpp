@@ -60,6 +60,38 @@ void login :: UserDB()
 
 
 }
+
+/****************************************************************************
+ * METHOD - connectToDB
+ * --------------------------------------------------------------------------
+ * This method creates and opens a database connection and displays a
+ * qDebug message that the database access is open.  This method is used
+ * with a valid login (traveler or admin).  If database is already
+ * connected and open, then only the qDebug message is displayed.
+ * NOTE: Use with valid login username/password only (traveler or admin)
+ * --------------------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      No parameters are required.
+ *
+ * POST-CONDITIONS
+ *      ==> Returns nothing.
+ *      ==> Creates and connects to SQLite database if not open
+ ***************************************************************************/
+void login::connectToDB()
+{
+    bool isOpen = false; // CALC - Set database open status to false
+
+    // Create and open a database connection
+    // Return if database opened successfully or not
+    isOpen = myDB.openDB();
+
+    // Display message if database connection was successful
+    if(isOpen)
+    {
+        qDebug() << "Success: Able to access open database";
+    }
+}
+
 void login::on_pushButton_login_clicked()
 {
     QString username = ui->lineEdit_username->text();
@@ -97,9 +129,8 @@ void login::on_pushButton_login_clicked()
                 {
                     QMessageBox::information(this,QObject::tr("System Message"),tr("Login successful!"),QMessageBox::Ok);
                     qDebug() << "SUCCESS";
-                    MainWindow *w = new MainWindow(this);
-                    this->close();
-                    w->show();
+                    userWindow = new user();
+                    userWindow->show();
                 }
                 else // not in the database;
                 {

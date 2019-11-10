@@ -2,7 +2,13 @@
 #define LOGIN_H
 
 #include <QDialog>
+#include <QStackedLayout>
+#include <QDebug>
+#include <QMessageBox>
 #include <QtSql>
+
+#include "user.h"
+#include "databasemanager.h"
 namespace Ui {
 class login;
 }
@@ -16,13 +22,18 @@ public:
     explicit login(QWidget *parent = nullptr);
     ~login();
 
+    void connectToDB();
+
 private slots:
 
     void on_pushButton_login_clicked();
 
 private:
     Ui::login *ui;
+    user *userWindow;
     QSqlDatabase userDB;
+
+    databaseManager myDB;
 };
 
 #endif // LOGIN_H
