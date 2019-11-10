@@ -17,23 +17,34 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    admin.cpp \
     data.cpp \
+    databasemanager.cpp \
     distances.cpp \
     information.cpp \
     login.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    uTeams.cpp \
+    user.cpp
 
 HEADERS += \
+    admin.h \
     data.h \
+    databasemanager.h \
     distances.h \
     information.h \
     login.h \
-    mainwindow.h
+    mainwindow.h \
+    uTeams.h \
+    user.h
 
 FORMS += \
+    admin.ui \
     login.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    uTeams.ui \
+    user.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
