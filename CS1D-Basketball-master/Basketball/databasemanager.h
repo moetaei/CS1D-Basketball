@@ -5,7 +5,6 @@
 #include <QSqlDatabase>
 #include <QSqlError>
 
-
 /****************************************************************************
  * SQLite FILENAME: CS1D_NBA_DB.db
  * --------------------------------------------------------------------------
@@ -14,16 +13,16 @@
  *          Start:      starting city
  *          End:        ending city
  *          Kilometers: distance between starting and ending cities
- *      Food
+ *      Info
  *          City:       the city of the food item
  *          foodName:   the name of the food item
  *          Price:      the cost for the food item
  ***************************************************************************/
-class databaseManager
+class databaseManager : public QObject
 {
 public:
     explicit databaseManager();
-    ~databaseManager();
+     ~databaseManager();
 
     bool openDB();
     //!< Creates and opens a database connection if not open

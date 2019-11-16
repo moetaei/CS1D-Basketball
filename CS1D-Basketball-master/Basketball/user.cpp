@@ -1,5 +1,11 @@
 #include "user.h"
 #include "ui_user.h"
+#include "login.h"
+
+#include "user.h"
+#include <QSqlDatabase>
+#include <QSql>
+#include <QSqlQuery>
 
 user::user(QWidget *parent) :
     QWidget(parent),
@@ -9,6 +15,8 @@ user::user(QWidget *parent) :
 
     // Creates a stacked widget index for different pages
     ui->stackedWidget->insertWidget(1, &teamWindow);
+
+    myDB = QSqlDatabase::database();
 }
 
 user::~user()
