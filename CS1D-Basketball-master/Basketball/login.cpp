@@ -129,6 +129,11 @@ void login::on_pushButton_login_clicked()
                 {
                     QMessageBox::information(this,QObject::tr("System Message"),tr("Login successful!"),QMessageBox::Ok);
                     qDebug() << "SUCCESS";
+
+                    userDB.close();
+                    userDB.removeDatabase(QSqlDatabase::defaultConnection);
+
+                    myDB.openDB();
                     userWindow = new user();
                     userWindow->show();
                 }
