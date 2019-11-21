@@ -18,24 +18,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     admin.cpp \
-    data.cpp \
     databasemanager.cpp \
-    distances.cpp \
-    information.cpp \
     login.cpp \
     main.cpp \
-    mainwindow.cpp \
     uTeams.cpp \
     user.cpp
 
 HEADERS += \
     admin.h \
-    data.h \
     databasemanager.h \
-    distances.h \
-    information.h \
     login.h \
-    mainwindow.h \
     uTeams.h \
     user.h
 

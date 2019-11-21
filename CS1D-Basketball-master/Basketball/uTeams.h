@@ -5,6 +5,8 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlQueryModel>
+#include <QSqlError>
+#include <QDebug>
 
 namespace Ui {
 class uTeams;
@@ -22,6 +24,7 @@ public:
     //! Destructor
 
     void defaultReset();
+    //!< initializes the QTableWidget and loads with data from a database query
 
 private:
     Ui::uTeams *ui;         /*!< class object */
