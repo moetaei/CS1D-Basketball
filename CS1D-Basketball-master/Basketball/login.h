@@ -9,6 +9,7 @@
 
 #include "user.h"
 #include "databasemanager.h"
+
 namespace Ui {
 class login;
 }

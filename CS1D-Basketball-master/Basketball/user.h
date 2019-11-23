@@ -4,9 +4,11 @@
 #include <QWidget>
 
 #include "uTeams.h"
-//#include "
-//#include "
-//#include "
+#include "info.h"
+#include "arenas.h"
+#include "coaches.h"
+#include "divisions.h"
+#include "conference.h"
 
 namespace Ui {
 class user;
@@ -33,14 +35,21 @@ private slots:
     void on_logoutButton_clicked();
     //!< User window closes
 
+    void on_infoButton_clicked();
+
+    void on_coachButton_clicked();
+
 private:
     Ui::user *ui;
 
     QSqlDatabase myDB;
 
     uTeams teamWindow;
-
-
+    info infoWindow;
+    arenas arenaWindow;
+    coaches coachWindow;
+    divisions divisionWindow;
+    conference conferenceWindow;
 };
 
 #endif // USER_H

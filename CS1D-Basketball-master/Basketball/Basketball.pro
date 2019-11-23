@@ -18,7 +18,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     admin.cpp \
+    arenas.cpp \
+    coaches.cpp \
+    conference.cpp \
     databasemanager.cpp \
+    divisions.cpp \
+    info.cpp \
     login.cpp \
     main.cpp \
     uTeams.cpp \
@@ -26,7 +31,12 @@ SOURCES += \
 
 HEADERS += \
     admin.h \
+    arenas.h \
+    coaches.h \
+    conference.h \
     databasemanager.h \
+    divisions.h \
+    info.h \
     login.h \
     uTeams.h \
     user.h

@@ -142,7 +142,7 @@ color:black;</string>
       <height>24</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0,0,0,0">
+    <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0,0,0,0,0,0">
      <property name="spacing">
       <number>3</number>
      </property>
@@ -163,7 +163,7 @@ border-width: 2px;
 border-radius: 5px;</string>
        </property>
        <property name="text">
-        <string>TRAVEL PACKAGES</string>
+        <string>Travel Options</string>
        </property>
       </widget>
      </item>
@@ -190,12 +190,93 @@ border-width: 2px;
 border-radius: 5px;</string>
        </property>
        <property name="text">
-        <string>Teams</string>
+        <string>The Teams</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="arenaButton_2">
+      <widget class="QPushButton" name="infoButton">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:#ccccff;
+border-style: solid;
+border-color: black;
+border-width: 2px;
+border-radius: 5px;</string>
+       </property>
+       <property name="text">
+        <string>Team Info</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="coachButton">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:#ccccff;
+border-style: solid;
+border-color: black;
+border-width: 2px;
+border-radius: 5px;</string>
+       </property>
+       <property name="text">
+        <string>Coaches</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="confrenceBuutton">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:#ccccff;
+border-style: solid;
+border-color: black;
+border-width: 2px;
+border-radius: 5px;</string>
+       </property>
+       <property name="text">
+        <string>Confrences</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="divisionButton">
        <property name="maximumSize">
         <size>
          <width>16777215</width>
@@ -222,7 +303,7 @@ border-radius: 5px;</string>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="arenaButton_3">
+      <widget class="QPushButton" name="arenaButton_4">
        <property name="maximumSize">
         <size>
          <width>16777215</width>
@@ -244,34 +325,7 @@ border-width: 2px;
 border-radius: 5px;</string>
        </property>
        <property name="text">
-        <string>Confrences</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="arenaButton">
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>9</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color:#ccccff;
-border-style: solid;
-border-color: black;
-border-width: 2px;
-border-radius: 5px;</string>
-       </property>
-       <property name="text">
-        <string>Confrences</string>
+        <string>Arenas</string>
        </property>
       </widget>
      </item>
