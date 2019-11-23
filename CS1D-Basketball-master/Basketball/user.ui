@@ -142,7 +142,10 @@ color:black;</string>
       <height>24</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
+    <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0,0,0,0">
+     <property name="spacing">
+      <number>3</number>
+     </property>
      <item>
       <widget class="QPushButton" name="travelPackButton">
        <property name="font">
@@ -192,6 +195,60 @@ border-radius: 5px;</string>
       </widget>
      </item>
      <item>
+      <widget class="QPushButton" name="arenaButton_2">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:#ccccff;
+border-style: solid;
+border-color: black;
+border-width: 2px;
+border-radius: 5px;</string>
+       </property>
+       <property name="text">
+        <string>Divisions</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="arenaButton_3">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:#ccccff;
+border-style: solid;
+border-color: black;
+border-width: 2px;
+border-radius: 5px;</string>
+       </property>
+       <property name="text">
+        <string>Confrences</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="arenaButton">
        <property name="maximumSize">
         <size>
@@ -214,7 +271,7 @@ border-width: 2px;
 border-radius: 5px;</string>
        </property>
        <property name="text">
-        <string>Arenas</string>
+        <string>Confrences</string>
        </property>
       </widget>
      </item>
