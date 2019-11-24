@@ -26,9 +26,11 @@ public:
     void defaultReset();
     //!< initializes the QTableWidget and loads with data from a database query
 
+private slots:
+    void on_sortBox_currentIndexChanged(int index);
+
 private:
     Ui::uTeams *ui;         /*!< class object */
-
     QSqlDatabase myDB;      /*!< database connection */
 };
 

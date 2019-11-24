@@ -32,12 +32,20 @@ private slots:
     void on_arenaButton_clicked();
     //!< Arena page is displayed in stackedWidget
 
-    void on_logoutButton_clicked();
-    //!< User window closes
-
     void on_infoButton_clicked();
+    //!< team info page is displayed in stackedWidget
 
     void on_coachButton_clicked();
+    //!< coaches page is displayed in stackedWidget
+
+    void on_confrenceButton_clicked();
+    //!< confrences page is displayed in stackedWidget
+
+    void on_divisionButton_clicked();
+    //!< divisions page is displayed in stackedWidget
+
+    void on_logoutButton_clicked();
+    //!< User window closes
 
 private:
     Ui::user *ui;

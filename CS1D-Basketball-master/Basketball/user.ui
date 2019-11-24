@@ -249,7 +249,7 @@ border-radius: 5px;</string>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="confrenceBuutton">
+      <widget class="QPushButton" name="confrenceButton">
        <property name="maximumSize">
         <size>
          <width>16777215</width>
@@ -303,7 +303,7 @@ border-radius: 5px;</string>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="arenaButton_4">
+      <widget class="QPushButton" name="arenaButton">
        <property name="maximumSize">
         <size>
          <width>16777215</width>

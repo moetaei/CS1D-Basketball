@@ -3,15 +3,20 @@
 
 #include <QWidget>
 
+namespace Ui {
+class conference;
+}
+
 class conference : public QWidget
 {
     Q_OBJECT
+
 public:
     explicit conference(QWidget *parent = nullptr);
+    ~conference();
 
-signals:
-
-public slots:
+private:
+    Ui::conference *ui;
 };
 
 #endif // CONFERENCE_H

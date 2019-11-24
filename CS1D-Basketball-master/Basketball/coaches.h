@@ -3,15 +3,20 @@
 
 #include <QWidget>
 
+namespace Ui {
+class coaches;
+}
+
 class coaches : public QWidget
 {
     Q_OBJECT
+
 public:
     explicit coaches(QWidget *parent = nullptr);
+    ~coaches();
 
-signals:
-
-public slots:
+private:
+    Ui::coaches *ui;
 };
 
 #endif // COACHES_H

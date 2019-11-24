@@ -3,15 +3,20 @@
 
 #include <QWidget>
 
+namespace Ui {
+class divisions;
+}
+
 class divisions : public QWidget
 {
     Q_OBJECT
+
 public:
     explicit divisions(QWidget *parent = nullptr);
+    ~divisions();
 
-signals:
-
-public slots:
+private:
+    Ui::divisions *ui;
 };
 
 #endif // DIVISIONS_H

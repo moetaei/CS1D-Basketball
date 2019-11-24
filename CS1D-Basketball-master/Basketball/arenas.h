@@ -3,15 +3,20 @@
 
 #include <QWidget>
 
+namespace Ui {
+class arenas;
+}
+
 class arenas : public QWidget
 {
     Q_OBJECT
+
 public:
     explicit arenas(QWidget *parent = nullptr);
+    ~arenas();
 
-signals:
-
-public slots:
+private:
+    Ui::arenas *ui;
 };
 
 #endif // ARENAS_H

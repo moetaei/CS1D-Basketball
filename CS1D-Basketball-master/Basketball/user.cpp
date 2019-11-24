@@ -38,15 +38,6 @@ void user::on_teamButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(1);
 }
-void user::on_arenaButton_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(6);
-}
-
-void user::on_logoutButton_clicked()
-{
-    this->close();
-}
 
 void user::on_infoButton_clicked()
 {
@@ -57,3 +48,26 @@ void user::on_coachButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(3);
 }
+
+void user::on_confrenceButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(4);
+}
+
+void user::on_divisionButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(5);
+}
+
+void user::on_arenaButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(6);
+}
+
+void user::on_logoutButton_clicked()
+{
+    this->close();
+}
+
+
+

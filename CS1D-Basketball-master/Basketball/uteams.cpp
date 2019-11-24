@@ -22,6 +22,8 @@ uTeams::uTeams(QWidget *parent) :
     ui->setupUi(this);
 
     myDB = QSqlDatabase::database();
+    ui->sortBox->addItem("A-Z");
+    ui->sortBox->addItem("year");
 
     defaultReset();
 }
@@ -57,7 +59,7 @@ uTeams::~uTeams()
 void uTeams::uTeams::defaultReset()
 {
     QSqlQueryModel * model = new QSqlQueryModel;
-    model->setQuery("SELECT * FROM info ");
+    model->setQuery("SELECT TeamName,ArenaName,JoinedLeague FROM info ORDER BY TeamName ");
 
     QSqlQuery qry;
     qry.prepare("SELECT * "
@@ -67,12 +69,17 @@ void uTeams::uTeams::defaultReset()
     QString t = qry.value(1).toString();
     qDebug() << t;
 
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("Team Name"));
+    model->setHeaderData(4, Qt::Horizontal, QObject::tr("Arena Name"));
+    model->setHeaderData(5, Qt::Horizontal, QObject::tr("Stadium Capavity"));
+    model->setHeaderData(6, Qt::Horizontal, QObject::tr("Date Joined"));
+
     ui->uTeamsTable->verticalHeader()->setVisible(false);
     ui->uTeamsTable->setModel(model);
 
     QAbstractItemModel* tableModel= ui->uTeamsTable->model();
 
-    int w = ui->uTeamsTable->verticalHeader()->width()+23;//change +4 if its too big or small
+    int w = ui->uTeamsTable->verticalHeader()->width();//change +4 if its too big or small
     for (int i = 0; i < tableModel->columnCount(); i++)
        w += ui->uTeamsTable->columnWidth(i); // seems to include gridline
 
@@ -85,4 +92,18 @@ void uTeams::uTeams::defaultReset()
 
 //    ui->uTeamsTable->setMinimumHeight(h);
 //    ui->uTeamsTable->setMaximumHeight(h);
+}
+
+void uTeams::on_sortBox_currentIndexChanged(int index)
+{
+    QSqlQueryModel * model = new QSqlQueryModel;
+
+    switch (index)
+    {
+    case 0: model->setQuery("SELECT TeamName,ArenaName,JoinedLeague FROM info ORDER BY TeamName ");
+        break;
+    case 1: model->setQuery("SELECT TeamName,ArenaName,JoinedLeague FROM info ORDER BY JoinedLeague ASC ");
+        break;
+    }
+    ui->uTeamsTable->setModel(model);
 }

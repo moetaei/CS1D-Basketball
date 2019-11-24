@@ -43,6 +43,11 @@ HEADERS += \
 
 FORMS += \
     admin.ui \
+    arenas.ui \
+    coaches.ui \
+    conference.ui \
+    divisions.ui \
+    info.ui \
     login.ui \
     mainwindow.ui \
     uTeams.ui \
