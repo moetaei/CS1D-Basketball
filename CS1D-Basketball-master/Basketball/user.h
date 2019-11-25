@@ -9,6 +9,10 @@
 #include "coaches.h"
 #include "divisions.h"
 #include "conference.h"
+#include "confirmdenver.h"
+#include "confirmdetroit.h"
+#include "confirmcustom1.h"
+#include "confirmcustom2.h"
 
 namespace Ui {
 class user;
@@ -47,6 +51,8 @@ private slots:
     void on_logoutButton_clicked();
     //!< User window closes
 
+    void on_pushButton_clicked();
+
 private:
     Ui::user *ui;
 
@@ -58,6 +64,8 @@ private:
     coaches coachWindow;
     divisions divisionWindow;
     conference conferenceWindow;
+
+    confirmDenver* denverWindow;
 };
 
 #endif // USER_H

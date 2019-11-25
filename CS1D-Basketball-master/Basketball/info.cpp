@@ -44,7 +44,7 @@ void info::info::defaultReset()
     model->setHeaderData(6, Qt::Horizontal, QObject::tr("Date Joined"));
 
     ui->teamTable->verticalHeader()->setVisible(false);
-    ui->teamTable->setModel(model);
+//    ui->teamTable->setModel(model);
 
     QSqlQueryModel * list = new QSqlQueryModel();
 

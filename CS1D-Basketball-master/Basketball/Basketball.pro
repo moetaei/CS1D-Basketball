@@ -21,6 +21,10 @@ SOURCES += \
     arenas.cpp \
     coaches.cpp \
     conference.cpp \
+    confirmcustom1.cpp \
+    confirmcustom2.cpp \
+    confirmdenver.cpp \
+    confirmdetroit.cpp \
     databasemanager.cpp \
     divisions.cpp \
     info.cpp \
@@ -34,6 +38,10 @@ HEADERS += \
     arenas.h \
     coaches.h \
     conference.h \
+    confirmcustom1.h \
+    confirmcustom2.h \
+    confirmdenver.h \
+    confirmdetroit.h \
     databasemanager.h \
     divisions.h \
     info.h \
@@ -46,6 +54,10 @@ FORMS += \
     arenas.ui \
     coaches.ui \
     conference.ui \
+    confirmcustom1.ui \
+    confirmcustom2.ui \
+    confirmdenver.ui \
+    confirmdetroit.ui \
     divisions.ui \
     info.ui \
     login.ui \

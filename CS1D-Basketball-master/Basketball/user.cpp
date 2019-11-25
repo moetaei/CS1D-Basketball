@@ -71,3 +71,9 @@ void user::on_logoutButton_clicked()
 
 
 
+
+void user::on_pushButton_clicked()
+{
+    denverWindow = new confirmDenver();
+    denverWindow->show();
+}
