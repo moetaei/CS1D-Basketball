@@ -53,6 +53,12 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_4_clicked();
+
 private:
     Ui::user *ui;
 
@@ -66,6 +72,9 @@ private:
     conference conferenceWindow;
 
     confirmDenver* denverWindow;
+    ConfirmDetroit* detroitWindow;
+    confirmCustom1* custom1Window;
+    confirmCustom2* custom2Window;
 };
 
 #endif // USER_H

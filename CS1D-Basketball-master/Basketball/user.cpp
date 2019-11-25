@@ -64,16 +64,31 @@ void user::on_arenaButton_clicked()
     ui->stackedWidget->setCurrentIndex(6);
 }
 
-void user::on_logoutButton_clicked()
-{
-    this->close();
-}
-
-
-
-
 void user::on_pushButton_clicked()
 {
     denverWindow = new confirmDenver();
     denverWindow->show();
+}
+
+void user::on_pushButton_2_clicked()
+{
+    custom1Window = new confirmCustom1();
+    custom1Window->show();
+}
+
+void user::on_pushButton_3_clicked()
+{
+    detroitWindow = new ConfirmDetroit();
+    detroitWindow->show();
+}
+
+void user::on_pushButton_4_clicked()
+{
+    custom2Window = new confirmCustom2();
+    custom2Window->show();
+}
+
+void user::on_logoutButton_clicked()
+{
+    this->close();
 }

@@ -60,6 +60,6 @@ void confirmDenver::defaultListView()
     }
     else
     {
-        qDebug() << ("tConfirmCustom Error: qry failed.");
+        qDebug() << ("confirmDenver Error: qry failed.");
     }
 }
