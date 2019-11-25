@@ -15,6 +15,11 @@ user::user(QWidget *parent) :
 
     // Creates a stacked widget index for different pages
     ui->stackedWidget->insertWidget(1, &teamWindow);
+    ui->stackedWidget->insertWidget(2, &infoWindow);
+    ui->stackedWidget->insertWidget(3, &coachWindow);
+    ui->stackedWidget->insertWidget(4, &conferenceWindow);
+    ui->stackedWidget->insertWidget(5, &divisionWindow);
+    ui->stackedWidget->insertWidget(6, &arenaWindow);
 
     myDB = QSqlDatabase::database();
 }
@@ -34,12 +39,41 @@ void user::on_teamButton_clicked()
     ui->stackedWidget->setCurrentIndex(1);
 }
 
+void user::on_infoButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
+}
+
+void user::on_coachButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
+}
+
+void user::on_confrenceButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(4);
+}
+
+void user::on_divisionButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(5);
+}
+
 void user::on_arenaButton_clicked()
 {
-//    ui->stackedWidget->setCurrentIndex(2);
+    ui->stackedWidget->setCurrentIndex(6);
 }
 
 void user::on_logoutButton_clicked()
 {
     this->close();
+}
+
+
+
+
+void user::on_pushButton_clicked()
+{
+    denverWindow = new confirmDenver();
+    denverWindow->show();
 }

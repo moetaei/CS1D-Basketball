@@ -127,7 +127,7 @@ void login::on_pushButton_login_clicked()
                 }
                 if(count >= 1) //it is in the database
                 {
-                    QMessageBox::information(this,QObject::tr("System Message"),tr("Login successful!"),QMessageBox::Ok);
+//                    QMessageBox::information(this,QObject::tr("System Message"),tr("Login successful!"),QMessageBox::Ok);
                     qDebug() << "SUCCESS";
 
                     userDB.close();

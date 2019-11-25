@@ -18,7 +18,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     admin.cpp \
+    arenas.cpp \
+    coaches.cpp \
+    conference.cpp \
+    confirmcustom1.cpp \
+    confirmcustom2.cpp \
+    confirmdenver.cpp \
+    confirmdetroit.cpp \
     databasemanager.cpp \
+    divisions.cpp \
+    info.cpp \
     login.cpp \
     main.cpp \
     uTeams.cpp \
@@ -26,13 +35,31 @@ SOURCES += \
 
 HEADERS += \
     admin.h \
+    arenas.h \
+    coaches.h \
+    conference.h \
+    confirmcustom1.h \
+    confirmcustom2.h \
+    confirmdenver.h \
+    confirmdetroit.h \
     databasemanager.h \
+    divisions.h \
+    info.h \
     login.h \
     uTeams.h \
     user.h
 
 FORMS += \
     admin.ui \
+    arenas.ui \
+    coaches.ui \
+    conference.ui \
+    confirmcustom1.ui \
+    confirmcustom2.ui \
+    confirmdenver.ui \
+    confirmdetroit.ui \
+    divisions.ui \
+    info.ui \
     login.ui \
     mainwindow.ui \
     uTeams.ui \
