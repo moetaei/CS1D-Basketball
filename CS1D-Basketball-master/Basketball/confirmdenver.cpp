@@ -46,7 +46,7 @@ void confirmDenver::defaultListView()
     QSqlQuery * qry = new QSqlQuery(myDB);
 
     qry->prepare("SELECT TeamName "
-                    "FROM info "
+                    "FROM info WHERE TeamName NOT IN ('Denver Nuggets') "
                     "ORDER BY TeamName ASC ");
 
     if(qry->exec())

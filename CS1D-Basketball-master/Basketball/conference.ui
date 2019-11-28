@@ -16,10 +16,20 @@
   <widget class="QTableView" name="conferenceTable">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>180</y>
+     <x>60</x>
+     <y>100</y>
      <width>256</width>
      <height>192</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>100</y>
+     <width>121</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>

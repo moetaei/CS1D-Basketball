@@ -2,6 +2,11 @@
 #define ARENAS_H
 
 #include <QWidget>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QSqlQueryModel>
+#include <QSqlError>
+#include <QDebug>
 
 namespace Ui {
 class arenas;
@@ -15,8 +20,11 @@ public:
     explicit arenas(QWidget *parent = nullptr);
     ~arenas();
 
+    void defaultReset();
+
 private:
     Ui::arenas *ui;
+    QSqlDatabase myDB;      /*!< database connection */
 };
 
 #endif // ARENAS_H

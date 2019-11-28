@@ -30,7 +30,7 @@ public:
 private:
     Ui::confirmDenver *ui;  /*!< class object */
 
-    QString startCity = "Denver";          /*!< the starting city */
+    QString startCity = "Nuggets";          /*!< the starting city */
     QSqlDatabase myDB;          /*!< database connection */
 };
 

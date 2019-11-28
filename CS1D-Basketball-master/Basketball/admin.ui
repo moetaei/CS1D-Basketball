@@ -43,7 +43,7 @@ color:black;</string>
       <number>3</number>
      </property>
      <item>
-      <widget class="QPushButton" name="confrenceButton">
+      <widget class="QPushButton" name="teamButton">
        <property name="maximumSize">
         <size>
          <width>16777215</width>
@@ -70,7 +70,7 @@ border-radius: 5px;</string>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="divisionButton">
+      <widget class="QPushButton" name="distanceButton">
        <property name="maximumSize">
         <size>
          <width>16777215</width>
@@ -97,7 +97,7 @@ border-radius: 5px;</string>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="arenaButton">
+      <widget class="QPushButton" name="souvenirButton">
        <property name="maximumSize">
         <size>
          <width>16777215</width>
@@ -145,6 +145,21 @@ border-radius: 5px;</string>
       </widget>
      </item>
     </layout>
+   </widget>
+  </widget>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>60</y>
+     <width>1200</width>
+     <height>640</height>
+    </rect>
+   </property>
+   <widget class="QWidget" name="mainPage">
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
    </widget>
   </widget>
  </widget>

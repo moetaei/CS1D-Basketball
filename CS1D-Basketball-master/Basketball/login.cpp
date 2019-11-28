@@ -114,7 +114,13 @@ void login::on_pushButton_login_clicked()
         {
             QMessageBox::information(this,QObject::tr("System Message"),tr("Login successful!"),QMessageBox::Ok);
             qDebug() << "SUCCESS";
-            close();
+
+            userDB.close();
+            userDB.removeDatabase(QSqlDatabase::defaultConnection);
+
+            myDB.openDB();
+            adminWindow = new admin();
+            adminWindow->show();
         }
         else //checking for customer
         {

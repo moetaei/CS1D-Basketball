@@ -8,6 +8,7 @@
 #include <QtSql>
 
 #include "user.h"
+#include "admin.h"
 #include "databasemanager.h"
 
 namespace Ui {
@@ -32,6 +33,7 @@ private slots:
 private:
     Ui::login *ui;
     user *userWindow;
+    admin* adminWindow;
     QSqlDatabase userDB;
 
     databaseManager myDB;
