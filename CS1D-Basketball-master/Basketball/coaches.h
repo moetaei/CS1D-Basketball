@@ -2,6 +2,11 @@
 #define COACHES_H
 
 #include <QWidget>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QSqlQueryModel>
+#include <QSqlError>
+#include <QDebug>
 
 namespace Ui {
 class coaches;
@@ -15,8 +20,11 @@ public:
     explicit coaches(QWidget *parent = nullptr);
     ~coaches();
 
+    void defaultReset();
+
 private:
     Ui::coaches *ui;
+    QSqlDatabase myDB;      /*!< database connection */
 };
 
 #endif // COACHES_H

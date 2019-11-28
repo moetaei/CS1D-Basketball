@@ -59,7 +59,8 @@ uTeams::~uTeams()
 void uTeams::uTeams::defaultReset()
 {
     QSqlQueryModel * model = new QSqlQueryModel;
-    model->setQuery("SELECT TeamName,ArenaName,JoinedLeague FROM info ORDER BY TeamName ");
+    model->setQuery("SELECT TeamName,ArenaName,JoinedLeague "
+                    "FROM info ORDER BY TeamName ");
 
     QSqlQuery qry;
     qry.prepare("SELECT * "
