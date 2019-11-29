@@ -11,8 +11,9 @@
 #include "conference.h"
 #include "confirmdenver.h"
 #include "confirmdetroit.h"
-#include "confirmcustom1.h"
+#include "startingCity.h"
 #include "confirmcustom2.h"
+#include "option2.h"
 
 namespace Ui {
 class user;
@@ -73,7 +74,7 @@ private:
 
     confirmDenver* denverWindow;
     ConfirmDetroit* detroitWindow;
-    confirmCustom1* custom1Window;
+    Option2 *option2;
     confirmCustom2* custom2Window;
 };
 

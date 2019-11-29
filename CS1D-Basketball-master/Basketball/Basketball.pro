@@ -19,49 +19,66 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     admin.cpp \
     arenas.cpp \
+    city.cpp \
+    citytocity.cpp \
     coaches.cpp \
     conference.cpp \
-    confirmcustom1.cpp \
     confirmcustom2.cpp \
     confirmdenver.cpp \
     confirmdetroit.cpp \
+    data.cpp \
     databasemanager.cpp \
+    denverto.cpp \
     divisions.cpp \
+    graph.cpp \
     info.cpp \
     login.cpp \
     main.cpp \
+    next.cpp \
+    node.cpp \
+    option2.cpp \
     uTeams.cpp \
     user.cpp
 
 HEADERS += \
     admin.h \
     arenas.h \
+    city.h \
+    citytocity.h \
     coaches.h \
     conference.h \
-    confirmcustom1.h \
     confirmcustom2.h \
     confirmdenver.h \
     confirmdetroit.h \
+    data.h \
     databasemanager.h \
+    denverto.h \
     divisions.h \
+    graph.h \
     info.h \
     login.h \
+    next.h \
+    node.h \
+    option2.h \
     uTeams.h \
     user.h
 
 FORMS += \
     admin.ui \
     arenas.ui \
+    citytocity.ui \
     coaches.ui \
     conference.ui \
-    confirmcustom1.ui \
     confirmcustom2.ui \
     confirmdenver.ui \
     confirmdetroit.ui \
+    denverto.ui \
     divisions.ui \
     info.ui \
     login.ui \
     mainwindow.ui \
+    next.ui \
+    option2.ui \
     uTeams.ui \
     user.ui
 

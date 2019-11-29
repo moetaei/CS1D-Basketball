@@ -72,8 +72,8 @@ void user::on_pushButton_clicked()
 
 void user::on_pushButton_2_clicked()
 {
-    custom1Window = new confirmCustom1();
-    custom1Window->show();
+    option2 = new Option2();
+    option2->show();
 }
 
 void user::on_pushButton_3_clicked()

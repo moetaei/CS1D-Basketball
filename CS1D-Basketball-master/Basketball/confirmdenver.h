@@ -8,6 +8,7 @@
 #include <QSqlError>
 #include <QDebug>
 #include <QListWidget>
+#include "denverto.h"
 
 namespace Ui {
 class confirmDenver;
@@ -27,9 +28,13 @@ public:
     void defaultListView();
     //!< Sets the default view the window by enabling and disabling items.
 
+private slots:
+
+    void on_denverList_itemClicked(QListWidgetItem *item);
+
 private:
     Ui::confirmDenver *ui;  /*!< class object */
-
+    denverTo *denverto; /*!< class object */
     QString startCity = "Nuggets";          /*!< the starting city */
     QSqlDatabase myDB;          /*!< database connection */
 };

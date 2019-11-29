@@ -63,3 +63,11 @@ void confirmDenver::defaultListView()
         qDebug() << ("confirmDenver Error: qry failed.");
     }
 }
+
+void confirmDenver::on_denverList_itemClicked(QListWidgetItem *item)
+{
+    denverto = new denverTo();
+    denverto->setCityName(item->text());
+    denverto->show();
+
+}

@@ -27,6 +27,9 @@ public:
     void defaultListView();
     //!< Sets the default view of the window by enabling and disabling items.
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::ConfirmDetroit *ui;
 

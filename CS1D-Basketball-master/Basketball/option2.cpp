@@ -1,29 +1,27 @@
-#include "confirmdetroit.h"
-#include "ui_confirmdetroit.h"
+#include "option2.h"
+#include "ui_option2.h"
 
-ConfirmDetroit::ConfirmDetroit(QWidget *parent) :
+Option2::Option2(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::ConfirmDetroit)
+    ui(new Ui::Option2)
 {
     ui->setupUi(this);
-
     myDB = QSqlDatabase::database();
     defaultListView();
-    ui->detroitList->setEnabled(true);
+    ui->newList->setEnabled(true);
 }
 
-ConfirmDetroit::~ConfirmDetroit()
+Option2::~Option2()
 {
     delete ui;
 }
-
-void ConfirmDetroit::defaultListView()
+void Option2::defaultListView()
 {
     QString cityName;
     QSqlQuery * qry = new QSqlQuery(myDB);
 
     qry->prepare("SELECT TeamName "
-                    "FROM info "
+                    "FROM info  "
                     "ORDER BY TeamName ASC ");
 
     if(qry->exec())
@@ -32,16 +30,18 @@ void ConfirmDetroit::defaultListView()
         while(qry->next())
         {
             cityName = qry->value(0).toString();
-            ui->detroitList->addItem(cityName);
+            ui->newList->addItem(cityName);
         }
     }
     else
     {
-        qDebug() << ("confirmDetroit Error: qry failed.");
+        qDebug() << ("option2 Error: qry failed.");
     }
 }
-
-void ConfirmDetroit::on_pushButton_clicked()
+void Option2::on_newList_itemClicked(QListWidgetItem *item)
 {
-    qDebug() << "hello world";
+    next1 = new class next();
+    next1->setCity(item->text());
+    next1->show();
+
 }
