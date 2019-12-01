@@ -29,6 +29,7 @@ SOURCES += \
     data.cpp \
     databasemanager.cpp \
     denverto.cpp \
+    dfs.cpp \
     divisions.cpp \
     graph.cpp \
     info.cpp \
@@ -53,6 +54,7 @@ HEADERS += \
     data.h \
     databasemanager.h \
     denverto.h \
+    dfs.h \
     divisions.h \
     graph.h \
     info.h \
@@ -73,6 +75,7 @@ FORMS += \
     confirmdenver.ui \
     confirmdetroit.ui \
     denverto.ui \
+    dfs.ui \
     divisions.ui \
     info.ui \
     login.ui \

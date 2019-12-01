@@ -214,11 +214,25 @@ color:black;</string>
       <string/>
      </property>
     </widget>
+    <widget class="QPushButton" name="dfs">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>40</y>
+       <width>261</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>DFS Starting with Orlando Magic</string>
+     </property>
+    </widget>
     <zorder>BackgroundImageVolcano</zorder>
     <zorder>package1</zorder>
     <zorder>package2</zorder>
     <zorder>package3</zorder>
     <zorder>package4</zorder>
+    <zorder>dfs</zorder>
    </widget>
   </widget>
   <widget class="QGroupBox" name="pushButtonGroup">

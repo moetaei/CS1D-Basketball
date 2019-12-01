@@ -92,3 +92,10 @@ void user::on_logoutButton_clicked()
 {
     this->close();
 }
+
+void user::on_dfs_clicked()
+{
+    DFS = new dfs();
+    DFS->setText();
+    DFS->show();
+}

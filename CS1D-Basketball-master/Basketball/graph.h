@@ -18,11 +18,21 @@ public:
     void addEdge(int u, int v, double w);
     double shortestPath(int s,int dest);
     void printPath(QString city, int &check);
+
+    void setDFSEdges();
+    void addEdgeDFS(int src, int dest);
+    bool checkVisits(int cities);
+    bool visit(QString city,int vertex);
+    void DFS(int vertex, QString &output, double &distance, double &total);
+    void reset();
+
 private:
     int V;
     QList< pair<int, int> > *adj;
+    QList<int> *dfs;
     QVector<node> adjLists;
     class data datah;
+    bool *visited;
 };
 
 #endif // GRAPH_H
