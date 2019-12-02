@@ -2,6 +2,7 @@
 #include "ui_uTeams.h"
 #include <QSqlQuery>
 #include <QSql>
+#include <QPixmap>
 
 
 /****************************************************************************
@@ -20,6 +21,10 @@ uTeams::uTeams(QWidget *parent) :
     ui(new Ui::uTeams)
 {
     ui->setupUi(this);
+    QString path = qApp->applicationDirPath();
+    QPixmap pix(path + "/graph_picture.png");
+    ui->label_pic->setPixmap(pix.scaled(561,491,Qt::KeepAspectRatio));
+
 
     myDB = QSqlDatabase::database();
     ui->sortBox->addItem("A-Z");
