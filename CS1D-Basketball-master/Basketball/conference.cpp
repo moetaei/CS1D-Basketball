@@ -22,7 +22,8 @@ void conference::conference::defaultReset()
 {
     QSqlQueryModel * model = new QSqlQueryModel;
     model->setQuery("SELECT TeamName "
-                    "FROM info WHERE NOT Conference = 'Western' ORDER BY TeamName ");
+                    "FROM info WHERE NOT Conference = 'Western' "
+                    "ORDER BY TeamName ");
 
     model->setHeaderData(2, Qt::Horizontal, QObject::tr("Team Name"));
     model->setHeaderData(7, Qt::Horizontal, QObject::tr(""));

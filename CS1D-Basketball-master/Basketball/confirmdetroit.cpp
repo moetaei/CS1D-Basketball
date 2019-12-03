@@ -24,8 +24,8 @@ void ConfirmDetroit::defaultListView()
     QSqlQuery * qry = new QSqlQuery(myDB);
 
     qry->prepare("SELECT TeamName "
-                    "FROM info "
-                    "ORDER BY TeamName ASC ");
+                 "FROM info WHERE NOT CityName = 'Detroit' "
+                 "ORDER BY TeamName ");
 
     if(qry->exec())
     {
