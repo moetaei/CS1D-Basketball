@@ -8,8 +8,9 @@ Graph::Graph()
     dfs = new QList<int>[V];
     visited = new bool[V];
     mst = new QVector<QVector<double>>[V];
-
-
+    setMST();
+    setDFSEdges();
+    setDijEdges();
 }
 void Graph::addEdge(int u, int v, double w)
 {
@@ -58,17 +59,10 @@ void Graph::DFS(int vertex, QString &output, double &distance, double &total)
     {
         QString d = QString::number(distance);
         output += " --(" + d +")--> \n";
-        //qDebug() << output;
-        //qDebug() << "End1";
     }
-   // qDebug() << "End";
     if(!visited[vertex])
     {
         output += datah.findCityName(vertex);
-        //qDebug() << "Start";
-        //qDebug() << output;
-        //qDebug() << "Start1";
-
     }
     visited[vertex] = true;
     QString target = datah.findCityName(vertex);
@@ -145,7 +139,7 @@ void  Graph::reset()
         visited[i]= false;
     }
 }
-double Graph::shortestPath(int src, int dest)
+void Graph::shortestPath(int src, int dest, QString &output)
 {
     priority_queue< iPair, vector <iPair> , greater<iPair> > pq;
 
@@ -182,94 +176,104 @@ double Graph::shortestPath(int src, int dest)
             }
         }
     }
-    if(dest > datah.getSizeC())
+    if(dest <= datah.getSizeC())
     {
-        return -1;
-    }
-    return dist[dest];
-
-}
-void  Graph :: printPath(QString city, int &check)
-{
-    for(int i = 0; i < adjLists.size(); i++)
-    {
-        if(check < 12)
+        QVector<int> path;
+        path.push_front(dest);
+        getPath(src,dest,path);
+        for(int i = 0; i < path.size(); i++)
         {
-            if(city == adjLists[i].getCity1())
+            if(i + 1 < path.size())
             {
-                qDebug() <<" - "<< adjLists[i].getCity1() << "--("<< adjLists[i].getDistance() <<")-->" << adjLists[i].getCity2();
-                check++;
-                cout << endl;
-                printPath(adjLists[i].getCity2(), check);
-
+                 output += datah.findCityName(path[i]) + "--(" + QString::number(datah.findDistance(path[i], path[i+1])) +
+                         ")-->" +datah.findCityName(path[i+1])+ '\n';
             }
         }
+        output += '\n';
+        output += "Total Distance: " + QString::number(dist[dest]);
     }
-}
-void Graph::printMST()
-{
-    for(int i = 0; i < mst->size(); i++)
-    {
-        qDebug() << mst->size();
-        for(int j = 0; j < mst[i].size();j++)
-        {
-            qDebug() << mst[i].size();
-           for(int k = 0; k < mst[i][j].size();k++)
-           {
-               qDebug() << mst[i][j].size();
-               double number =mst[i][j][k];
-               qDebug() << "Start4";
-               qDebug()<< number <<", ";
-           }
 
+}
+void Graph :: getPath(int s, int city, QVector<int> &path)
+{
+    if(s != city)
+    {
+        int i = 0;
+        while(adjLists[i].getCity2() != datah.findCityName(city) && i < datah.getSizeC())
+        {
+            i++;
         }
-        qDebug() << "End";
+        city = datah.findCityIndex(adjLists[i].getCity1());
+        path.push_front(city);
+        getPath(s,city,path);
     }
+
 }
 void Graph::setMST()
 {
+    QVector<double> temp;
     for(int i = 0; i < datah.getSizeC(); i++)
     {
-        QVector<double> *temp = new QVector<double>[datah.getSizeC()];
         for(int j = 0; j < datah.getSizeC(); j++)
         {
             if(i == j)
             {
-                temp->push_back(0.0);
+                temp.push_back(0.0);
             }
             else
             {
-                if( datah.findDistance(i,j)> 0)
+                if(datah.findDistance(i,j)> 0)
                 {
-
-                    temp->push_back(datah.findDistance(i,j));
+                    temp.push_back(datah.findDistance(i,j));
                 }
                 else
                 {
-
-                    temp->push_back(0.0);
+                    temp.push_back(0.0);
                 }
             }      
         }
-        mst[i].push_back(*temp);
+        mst->push_back(temp);
+        temp.clear();
     }
 
 }
-/*
-void Graph :: calcMst()
+
+double Graph :: minKey(double key[], bool mstSet[])
+{
+    // A utility function to find the vertex with
+    // minimum key value, from the set of vertices
+    // not yet included in MST
+    // Initialize min value
+    double min = INT_MAX, min_index;
+
+    for (int v = 0; v < V; v++)
+    {
+        if (mstSet[v] == false && key[v] < min)
+        {
+            min = key[v];
+            min_index = v;
+        }
+    }
+
+    return min_index;
+}
+void Graph :: calcMst(QString &output)
 {
     // Array to store constructed MST
     int parent[V];
 
     // Key values used to pick minimum weight edge in cut
-    int key[V];
+    double key[V];
 
     // To represent set of vertices not yet included in MST
     bool mstSet[V];
 
     // Initialize all keys as INFINITE
     for (int i = 0; i < V; i++)
-        key[i] = INT_MAX, mstSet[i] = false;
+    {
+         key[i] = INT_MAX;
+         mstSet[i] = false;
+    }
 
     // Always include first 1st vertex in MST.
     // Make key 0 so that this vertex is picked as first vertex.
@@ -281,31 +285,47 @@ void Graph :: calcMst()
     {
         // Pick the minimum key vertex from the
         // set of vertices not yet included in MST
-        int min = INT_MAX, min_index;
+        double min = INT_MAX, min_index;
 
         for (int v = 0; v < V; v++)
+        {
             if (mstSet[v] == false && key[v] < min)
-                min = key[v], min_index = v;
-
-        int u = min_index;
+            {
+                min = key[v];
+                min_index = v;
+            }
+       }
+        int u = minKey(key, mstSet);
 
         // Add the picked vertex to the MST Set
         mstSet[u] = true;
-
         // Update key value and parent index of
         // the adjacent vertices of the picked vertex.
         // Consider only those vertices which are not
         // yet included in MST
         for (int v = 0; v < V; v++)
-
+        {
+            if (mst[0][u][v] && mstSet[v] == false && mst[0][u][v] < key[v])
+            {
+                parent[v] = u;
+                key[v] = mst[0][u][v];
+            }
+        }
             // graph[u][v] is non zero only for adjacent vertices of m
             // mstSet[v] is false for vertices not yet included in MST
             // Update the key only if graph[u][v] is smaller than key[v]
-            if (graph[u][v] && mstSet[v] == false && graph[u][v] < key[v])
-                parent[v] = u, key[v] = graph[u][v];
     }
+    printMST(parent, output);
 
+}
+void Graph::printMST(int parent[],QString &output)
+{
+    output += "Edge \t\t\t Weight\n";
+    for (int i = 1; i < V; i++)
+    {
+        output+= datah.findCityName(parent[i]) + " - " + datah.findCityName(i) + "\n" + "     \t\t\t" + QString:: number(mst[0][i][parent[i]]) +" \n";
+    }
 
 }
 
-*/
+

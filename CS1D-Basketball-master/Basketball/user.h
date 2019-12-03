@@ -15,6 +15,7 @@
 #include "confirmcustom2.h"
 #include "option2.h"
 #include "dfs.h"
+#include "mst.h"
 
 namespace Ui {
 class user;
@@ -63,6 +64,8 @@ private slots:
 
     void on_dfs_clicked();
 
+    void on_mst_clicked();
+
 private:
     Ui::user *ui;
 
@@ -80,6 +83,7 @@ private:
     Option2 *option2;
     confirmCustom2* custom2Window;
     dfs *DFS;
+    mst *MST;
 };
 
 #endif // USER_H

@@ -14,10 +14,9 @@ denverTo::~denverTo()
 }
 void denverTo:: setCityName(QString city)
 {
-    graf.setDijEdges();
-    double distance = graf.shortestPath(datah.findCityIndex("Denver Nuggets"),datah.findCityIndex(city));
-    QString text = QString :: number (distance/1.0, 'f', 2);
-    ui->displayDistance->setText(text);
+    QString output = "";
+    graf.shortestPath(datah.findCityIndex("Denver Nuggets"),datah.findCityIndex(city), output);
+    ui->displayDistance->setText(output);
 }
 void denverTo::on_exit_clicked()
 {
