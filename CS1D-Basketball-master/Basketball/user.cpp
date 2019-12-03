@@ -99,3 +99,10 @@ void user::on_dfs_clicked()
     DFS->setText();
     DFS->show();
 }
+
+void user::on_mst_clicked()
+{
+    MST= new mst();
+    MST->setLabel();
+    MST->show();
+}

@@ -35,6 +35,7 @@ SOURCES += \
     info.cpp \
     login.cpp \
     main.cpp \
+    mst.cpp \
     next.cpp \
     node.cpp \
     option2.cpp \
@@ -59,6 +60,7 @@ HEADERS += \
     graph.h \
     info.h \
     login.h \
+    mst.h \
     next.h \
     node.h \
     option2.h \
@@ -80,6 +82,7 @@ FORMS += \
     info.ui \
     login.ui \
     mainwindow.ui \
+    mst.ui \
     next.ui \
     option2.ui \
     uTeams.ui \

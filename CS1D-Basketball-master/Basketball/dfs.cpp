@@ -14,12 +14,9 @@ dfs::~dfs()
 }
 void dfs::setText()
 {
-    //graf.setMST();
-   // graf.printMST();
     QString output = "";
     double distance = 0;
     double total = 0;
-    graf.setDFSEdges();
     graf.reset();
     graf.DFS(datah.findCityIndex("Orlando Magic"), output, distance, total);
     ui->path->setText(output + '\n' + '\n' + "TOTAL DISTANCE: " + QString::number(total));

@@ -27,9 +27,10 @@ public:
     void reset();
 
     // for Mst
-    void calcMst();
+    void calcMst(QString &output);
     void setMST();
-    void printMST();
+    double minKey(double key[], bool mstSet[]);
+    void printMST(int parent[], QString &output);
 
 
 
