@@ -9,6 +9,12 @@
 #include <QSqlQueryModel>
 #include <QSqlError>
 #include <QDebug>
+struct enter
+{
+    QString type;
+    QString username;
+    QString password;
+};
 class data
 {
 public:

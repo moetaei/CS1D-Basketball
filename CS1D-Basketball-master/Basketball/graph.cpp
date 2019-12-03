@@ -58,17 +58,10 @@ void Graph::DFS(int vertex, QString &output, double &distance, double &total)
     {
         QString d = QString::number(distance);
         output += " --(" + d +")--> \n";
-        //qDebug() << output;
-        //qDebug() << "End1";
     }
-   // qDebug() << "End";
     if(!visited[vertex])
     {
         output += datah.findCityName(vertex);
-        //qDebug() << "Start";
-        //qDebug() << output;
-        //qDebug() << "Start1";
-
     }
     visited[vertex] = true;
     QString target = datah.findCityName(vertex);
@@ -145,7 +138,7 @@ void  Graph::reset()
         visited[i]= false;
     }
 }
-double Graph::shortestPath(int src, int dest)
+void Graph::shortestPath(int src, int dest, QString &output)
 {
     priority_queue< iPair, vector <iPair> , greater<iPair> > pq;
 
@@ -182,30 +175,40 @@ double Graph::shortestPath(int src, int dest)
             }
         }
     }
-    if(dest > datah.getSizeC())
+    if(dest <= datah.getSizeC())
     {
-        return -1;
-    }
-    return dist[dest];
-
-}
-void  Graph :: printPath(QString city, int &check)
-{
-    for(int i = 0; i < adjLists.size(); i++)
-    {
-        if(check < 12)
+        QVector<int> path;
+        path.push_front(dest);
+        getPath(src,dest,path);
+        for(int i = 0; i < path.size(); i++)
         {
-            if(city == adjLists[i].getCity1())
+            if(i + 1 < path.size())
             {
-                qDebug() <<" - "<< adjLists[i].getCity1() << "--("<< adjLists[i].getDistance() <<")-->" << adjLists[i].getCity2();
-                check++;
-                cout << endl;
-                printPath(adjLists[i].getCity2(), check);
-
+                 output += datah.findCityName(path[i]) + "--(" + QString::number(datah.findDistance(path[i], path[i+1])) +
+                         ")-->" +datah.findCityName(path[i+1])+ '\n';
             }
         }
+        output += '\n';
+        output += "Total Distance: " + QString::number(dist[dest]);
     }
+
 }
+void Graph :: getPath(int s, int city, QVector<int> &path)
+{
+    if(s != city)
+    {
+        int i = 0;
+        while(adjLists[i].getCity2() != datah.findCityName(city) && i < datah.getSizeC())
+        {
+            i++;
+        }
+        city = datah.findCityIndex(adjLists[i].getCity1());
+        path.push_front(city);
+        getPath(s,city,path);
+    }
+
+}
+
 void Graph::printMST()
 {
     for(int i = 0; i < mst->size(); i++)

@@ -5,8 +5,11 @@
 #include <QStackedLayout>
 #include <QDebug>
 #include <QMessageBox>
-#include <QtSql>
-
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QSqlQueryModel>
+#include <QSqlError>
+#include <QDebug>
 #include "user.h"
 #include "admin.h"
 #include "databasemanager.h"
@@ -20,11 +23,8 @@ class login : public QDialog
     Q_OBJECT
 
 public:
-    void UserDB();
     explicit login(QWidget *parent = nullptr);
     ~login();
-
-    void connectToDB();
 
 private slots:
 
@@ -35,7 +35,6 @@ private:
     user *userWindow;
     admin* adminWindow;
     QSqlDatabase userDB;
-
     databaseManager myDB;
 };
 

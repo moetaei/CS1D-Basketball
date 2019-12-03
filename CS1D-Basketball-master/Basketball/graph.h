@@ -16,8 +16,8 @@ public:
     Graph();
     void setDijEdges();
     void addEdge(int u, int v, double w);
-    double shortestPath(int s,int dest);
-    void printPath(QString city, int &check);
+    void shortestPath(int s,int dest, QString &output);
+    void getPath(int s,int city, QVector<int> &path);
 
     void setDFSEdges();
     void addEdgeDFS(int src, int dest);
