@@ -23,8 +23,8 @@ public:
     double findDistance(int c1, int c2);
     QString showMe(node team);
 private:
-    QVector<node> team;
-    QVector<city> names;
+    QVector<node> team; //distances, doubles
+    QVector<city> names; // names, strings
     QSqlDatabase myDB;
 };
 

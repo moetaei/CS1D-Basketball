@@ -198,22 +198,6 @@ color:black;</string>
       </property>
      </widget>
     </widget>
-    <widget class="QLabel" name="BackgroundImageVolcano">
-     <property name="geometry">
-      <rect>
-       <x>-6</x>
-       <y>-48</y>
-       <width>1279</width>
-       <height>769</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
     <widget class="QPushButton" name="dfs">
      <property name="geometry">
       <rect>
@@ -227,12 +211,19 @@ color:black;</string>
       <string>DFS Starting with Orlando Magic</string>
      </property>
     </widget>
-    <zorder>BackgroundImageVolcano</zorder>
-    <zorder>package1</zorder>
-    <zorder>package2</zorder>
-    <zorder>package3</zorder>
-    <zorder>package4</zorder>
-    <zorder>dfs</zorder>
+    <widget class="QPushButton" name="mst">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>261</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>MST</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QGroupBox" name="pushButtonGroup">

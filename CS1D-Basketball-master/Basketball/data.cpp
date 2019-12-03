@@ -98,11 +98,11 @@ QString data::showMe(node city)
 {
     return(city.getCity1() + " / " + city.getCity2() + " / " + QString::number(city.getDistance()));
 }
-int data::getSizeN()
+int data::getSizeN() // size of
 {
     return team.size();
 }
-int data::getSizeC()
+int data::getSizeC() // size of cities (vertices)
 {
     return names.size();
 }

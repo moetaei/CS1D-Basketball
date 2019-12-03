@@ -7,12 +7,12 @@
 #include <QSql>
 #include <QSqlQuery>
 
+
 user::user(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::user)
 {
     ui->setupUi(this);
-
     // Creates a stacked widget index for different pages
     ui->stackedWidget->insertWidget(1, &teamWindow);
     ui->stackedWidget->insertWidget(2, &infoWindow);
