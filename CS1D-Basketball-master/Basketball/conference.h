@@ -18,9 +18,16 @@ class conference : public QWidget
 
 public:
     explicit conference(QWidget *parent = nullptr);
+    //! Constructor
+
     ~conference();
+    //! Destructor
 
     void defaultReset();
+    //!< initializes the QTableWidget and loads with data from a database query
+
+private slots:
+    void on_comboBox_currentIndexChanged(int index);
 
 private:
     Ui::conference *ui;
