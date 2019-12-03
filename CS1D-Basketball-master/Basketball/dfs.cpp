@@ -14,6 +14,8 @@ dfs::~dfs()
 }
 void dfs::setText()
 {
+    //graf.setMST();
+   // graf.printMST();
     QString output = "";
     double distance = 0;
     double total = 0;

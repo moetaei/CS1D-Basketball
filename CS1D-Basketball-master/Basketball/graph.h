@@ -26,11 +26,22 @@ public:
     void DFS(int vertex, QString &output, double &distance, double &total);
     void reset();
 
+    // for Mst
+    void calcMst();
+    void setMST();
+    void printMST();
+
+
+
+
 private:
     int V;
     QList< pair<int, int> > *adj;
     QList<int> *dfs;
     QVector<node> adjLists;
+
+    QVector<QVector<double>> *mst;
+
     class data datah;
     bool *visited;
 };

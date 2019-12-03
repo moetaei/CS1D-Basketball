@@ -5,12 +5,14 @@
 #include "qdebug.h"
 #include "mainwindow.h"
 #include "data.h"
+#include "graph.h"
 login::login(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::login)
 {
     ui->setupUi(this);
     UserDB();
+
 }
 
 login::~login()
