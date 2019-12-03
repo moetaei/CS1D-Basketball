@@ -10,6 +10,7 @@ ConfirmDetroit::ConfirmDetroit(QWidget *parent) :
     myDB = QSqlDatabase::database();
     defaultListView();
     ui->detroitList->setEnabled(true);
+    ui->confirm->setEnabled(false);
 }
 
 ConfirmDetroit::~ConfirmDetroit()
@@ -41,7 +42,60 @@ void ConfirmDetroit::defaultListView()
     }
 }
 
-void ConfirmDetroit::on_pushButton_clicked()
+void ConfirmDetroit::sortCities()
 {
-    qDebug() << "hello world";
+
+}
+
+/****************************************************************************
+ * METHOD - on_cancel_clicked
+ * --------------------------------------------------------------------------
+ * This method clears the cities selected when this button is clicked.
+ * --------------------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      None.
+ *
+ * POST-CONDITIONS
+ *      ==> Returns nothing.
+ ***************************************************************************/
+void ConfirmDetroit::on_cancel_clicked()
+{
+    ui->select->setEnabled(true);
+    ui->confirm->setEnabled(false);
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+/****************************************************************************
+ * METHOD - on_select_clicked
+ * --------------------------------------------------------------------------
+ * This method changes to a different widget view so the traveler can see
+ * their travel plan when this button is clicked.
+ * --------------------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      None.
+ *
+ * POST-CONDITIONS
+ *      ==> Returns nothing.
+ ***************************************************************************/
+void ConfirmDetroit::on_select_clicked()
+{
+    ui->confirm->setEnabled(true);
+    ui->select->setEnabled(false);
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+/****************************************************************************
+ * METHOD - on_confirm_clicked
+ * --------------------------------------------------------------------------
+ * This method clears the cities selected when this button is clicked.
+ * --------------------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      None.
+ *
+ * POST-CONDITIONS
+ *      ==> Returns nothing.
+ ***************************************************************************/
+void ConfirmDetroit::on_confirm_clicked()
+{
+
 }
