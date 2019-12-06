@@ -227,12 +227,26 @@ color:black;</string>
       <string>DFS Starting with Orlando Magic</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="bfs">
+     <property name="geometry">
+      <rect>
+       <x>620</x>
+       <y>40</y>
+       <width>261</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>BFS Starting with Los Angeles Lakers</string>
+     </property>
+    </widget>
     <zorder>BackgroundImageVolcano</zorder>
     <zorder>package1</zorder>
     <zorder>package2</zorder>
     <zorder>package3</zorder>
     <zorder>package4</zorder>
     <zorder>dfs</zorder>
+    <zorder>bfs</zorder>
    </widget>
   </widget>
   <widget class="QGroupBox" name="pushButtonGroup">

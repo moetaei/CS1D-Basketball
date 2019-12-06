@@ -99,3 +99,10 @@ void user::on_dfs_clicked()
     DFS->setText();
     DFS->show();
 }
+
+void user::on_bfs_clicked()
+{
+    BFS = new bfs();
+    BFS->setText();
+    BFS->show();
+}
