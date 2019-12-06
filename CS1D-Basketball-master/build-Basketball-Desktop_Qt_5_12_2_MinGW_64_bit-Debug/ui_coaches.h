@@ -45,7 +45,7 @@ public:
         label->setTextFormat(Qt::PlainText);
         graph_pic2 = new QLabel(coaches);
         graph_pic2->setObjectName(QString::fromUtf8("graph_pic2"));
-        graph_pic2->setGeometry(QRect(580, 60, 531, 501));
+        graph_pic2->setGeometry(QRect(580, 60, 561, 491));
 
         retranslateUi(coaches);
 
