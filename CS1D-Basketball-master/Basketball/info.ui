@@ -26,7 +26,7 @@
   <widget class="QComboBox" name="teamOptions">
    <property name="geometry">
     <rect>
-     <x>670</x>
+     <x>640</x>
      <y>150</y>
      <width>201</width>
      <height>31</height>

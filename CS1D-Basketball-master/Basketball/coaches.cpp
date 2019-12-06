@@ -1,5 +1,6 @@
 #include "coaches.h"
 #include "ui_coaches.h"
+#include <QPixmap>
 
 /****************************************************************************
  * METHOD - coaches
@@ -18,7 +19,8 @@ coaches::coaches(QWidget *parent) :
 {
     ui->setupUi(this);
     myDB = QSqlDatabase::database();
-
+    QPixmap pix(":/rec/graph.png");
+    ui->graph_pic2->setPixmap(pix.scaled(561,491,Qt::KeepAspectRatio));
     defaultReset();
 }
 
@@ -67,3 +69,5 @@ void coaches::coaches::defaultReset()
 //    ui->uTeamsTable->setMinimumHeight(h);
 //    ui->uTeamsTable->setMaximumHeight(h);
 }
+
+

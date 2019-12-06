@@ -22,6 +22,10 @@ public:
 
     void defaultReset();
 
+
+private slots:
+    void on_graph_label_linkActivated(const QString &link);
+
 private:
     Ui::coaches *ui;
     QSqlDatabase myDB;      /*!< database connection */

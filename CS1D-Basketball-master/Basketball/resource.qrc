@@ -1,1 +1,5 @@
-<RCC/>
+<RCC>
+    <qresource prefix="/rec">
+        <file>graph.png</file>
+    </qresource>
+</RCC>
