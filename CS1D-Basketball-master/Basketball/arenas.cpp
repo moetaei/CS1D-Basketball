@@ -1,12 +1,14 @@
 #include "arenas.h"
 #include "ui_arenas.h"
+#include <QPixmap>
 
 arenas::arenas(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::arenas)
 {
     ui->setupUi(this);
-
+    QPixmap pix(":/rec/graph.png");
+    ui->graphPic->setPixmap(pix.scaled(561,491,Qt::KeepAspectRatio));
     myDB = QSqlDatabase::database();
     defaultReset();
 }

@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QTableView>
 #include <QtWidgets/QWidget>
 
@@ -21,6 +22,7 @@ class Ui_arenas
 {
 public:
     QTableView *arenaTable;
+    QLabel *graphPic;
 
     void setupUi(QWidget *arenas)
     {
@@ -30,6 +32,9 @@ public:
         arenaTable = new QTableView(arenas);
         arenaTable->setObjectName(QString::fromUtf8("arenaTable"));
         arenaTable->setGeometry(QRect(50, 70, 256, 192));
+        graphPic = new QLabel(arenas);
+        graphPic->setObjectName(QString::fromUtf8("graphPic"));
+        graphPic->setGeometry(QRect(580, 60, 561, 491));
 
         retranslateUi(arenas);
 
@@ -39,6 +44,7 @@ public:
     void retranslateUi(QWidget *arenas)
     {
         arenas->setWindowTitle(QApplication::translate("arenas", "Form", nullptr));
+        graphPic->setText(QString());
     } // retranslateUi
 
 };
