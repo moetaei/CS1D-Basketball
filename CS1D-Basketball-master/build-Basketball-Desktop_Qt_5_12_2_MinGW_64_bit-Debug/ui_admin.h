@@ -25,6 +25,7 @@ public:
     QGroupBox *pushButtonGroup;
     QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
+    QPushButton *adminButton;
     QPushButton *teamButton;
     QPushButton *distanceButton;
     QPushButton *souvenirButton;
@@ -49,13 +50,25 @@ public:
         horizontalLayout->setSpacing(3);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        teamButton = new QPushButton(layoutWidget);
-        teamButton->setObjectName(QString::fromUtf8("teamButton"));
-        teamButton->setMaximumSize(QSize(16777215, 16777215));
+        adminButton = new QPushButton(layoutWidget);
+        adminButton->setObjectName(QString::fromUtf8("adminButton"));
+        adminButton->setMaximumSize(QSize(16777215, 16777215));
         QFont font;
         font.setPointSize(9);
         font.setBold(true);
         font.setWeight(75);
+        adminButton->setFont(font);
+        adminButton->setStyleSheet(QString::fromUtf8("background-color:#ccccff;\n"
+"border-style: solid;\n"
+"border-color: black;\n"
+"border-width: 2px;\n"
+"border-radius: 5px;"));
+
+        horizontalLayout->addWidget(adminButton);
+
+        teamButton = new QPushButton(layoutWidget);
+        teamButton->setObjectName(QString::fromUtf8("teamButton"));
+        teamButton->setMaximumSize(QSize(16777215, 16777215));
         teamButton->setFont(font);
         teamButton->setStyleSheet(QString::fromUtf8("background-color:#ccccff;\n"
 "border-style: solid;\n"
@@ -117,6 +130,7 @@ public:
     {
         admin->setWindowTitle(QApplication::translate("admin", "Form", nullptr));
         pushButtonGroup->setTitle(QString());
+        adminButton->setText(QApplication::translate("admin", "Admin Options", nullptr));
         teamButton->setText(QApplication::translate("admin", "Teams", nullptr));
         distanceButton->setText(QApplication::translate("admin", "Distances", nullptr));
         souvenirButton->setText(QApplication::translate("admin", "Souvenirs", nullptr));
