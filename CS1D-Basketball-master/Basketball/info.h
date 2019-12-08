@@ -26,6 +26,9 @@ public:
     void defaultReset();
     //!< initializes the QTableWidget and loads with data from a database query
 
+private slots:
+
+
 private:
     Ui::info *ui;           /*!< class object */
     QSqlDatabase myDB;      /*!< database connection */

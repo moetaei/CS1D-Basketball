@@ -33,7 +33,9 @@ private slots:
 
     void on_denverList_itemClicked(QListWidgetItem *item);
 
-    void on_pushButton_clicked();
+
+    void on_exitButton_clicked();
+
 
 private:
     Ui::confirmDenver *ui;  /*!< class object */

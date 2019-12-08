@@ -32,6 +32,7 @@ SOURCES += \
     denverto.cpp \
     dfs.cpp \
     divisions.cpp \
+    editteam.cpp \
     graph.cpp \
     info.cpp \
     login.cpp \
@@ -59,6 +60,7 @@ HEADERS += \
     denverto.h \
     dfs.h \
     divisions.h \
+    editteam.h \
     graph.h \
     info.h \
     login.h \
@@ -79,10 +81,14 @@ FORMS += \
     confirmcustom2.ui \
     confirmdenver.ui \
     confirmdetroit.ui \
+    denverto.ui \
+    dfs.ui \
     divisions.ui \
+    editteam.ui \
     info.ui \
     login.ui \
     mainwindow.ui \
+    mst.ui \
     next.ui \
     option2.ui \
     uTeams.ui \
@@ -94,6 +100,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
+    ../../graph_picture.PNG \
     ../csvFiles/NBA Distances.csv \
     ../csvFiles/NBA Information.csv \
     ../csvFiles/NBA newDistance.csv

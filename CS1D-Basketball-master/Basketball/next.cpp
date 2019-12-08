@@ -47,3 +47,8 @@ void next::on_newList_itemClicked(QListWidgetItem *item)
     direct->setCityName(starting, item->text());
     direct->show();
 }
+
+void next::on_exitButton_clicked()
+{
+    close();
+}

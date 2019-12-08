@@ -40,9 +40,13 @@ void Option2::defaultListView()
 }
 void Option2::on_newList_itemClicked(QListWidgetItem *item)
 {
-    qDebug() << "hi";
     next1 = new class next();
     next1->setCity(item->text());
     next1->show();
 
+}
+
+void Option2::on_exitButton_clicked()
+{
+    close();
 }

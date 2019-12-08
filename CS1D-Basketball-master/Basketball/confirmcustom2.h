@@ -4,8 +4,10 @@
 #include <QWidget>
 #include <QSqlDatabase>
 #include <QSqlQuery>
-#include <QListWidgetItem>
+#include <QSqlQueryModel>
+#include <QSqlError>
 #include <QDebug>
+#include <QListWidget>
 
 namespace Ui {
 class confirmCustom2;

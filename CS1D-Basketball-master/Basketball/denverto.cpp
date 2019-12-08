@@ -23,4 +23,3 @@ void denverTo::on_exit_clicked()
 {
     close();
 }
-//admin stuff, the info tabs, and making the travel package pages can work with the souviner/checkout page

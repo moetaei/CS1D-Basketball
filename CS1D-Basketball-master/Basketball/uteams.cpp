@@ -2,6 +2,7 @@
 #include "ui_uTeams.h"
 #include <QSqlQuery>
 #include <QSql>
+#include <QPixmap>
 
 
 /****************************************************************************
@@ -20,6 +21,11 @@ uTeams::uTeams(QWidget *parent) :
     ui(new Ui::uTeams)
 {
     ui->setupUi(this);
+//    QString path = qApp->applicationDirPath();
+//    QPixmap pix(path + "/graph.png");
+    QPixmap pix(":/rec/graph.png");
+    ui->label_pic->setPixmap(pix.scaled(561,491,Qt::KeepAspectRatio));
+
 
     myDB = QSqlDatabase::database();
     ui->sortBox->addItem("A-Z");
@@ -59,7 +65,8 @@ uTeams::~uTeams()
 void uTeams::uTeams::defaultReset()
 {
     QSqlQueryModel * model = new QSqlQueryModel;
-    model->setQuery("SELECT TeamName,ArenaName,JoinedLeague FROM info ORDER BY TeamName ");
+    model->setQuery("SELECT TeamName,ArenaName,JoinedLeague "
+                    "FROM info ORDER BY TeamName ");
 
     QSqlQuery qry;
     qry.prepare("SELECT * "

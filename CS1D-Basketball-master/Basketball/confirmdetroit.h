@@ -22,6 +22,8 @@ class ConfirmDetroit : public QWidget
 
 public:
     explicit ConfirmDetroit(QWidget *parent = nullptr);
+    //!< Constructor
+
     ~ConfirmDetroit();
     //!< Destructor
 
@@ -34,7 +36,11 @@ public:
 private slots:
     void on_cancel_clicked();
 
+    void on_select_clicked();
+
     void on_confirm_clicked();
+
+    void on_exitButton_clicked();
 
 private:
     Ui::ConfirmDetroit *ui;

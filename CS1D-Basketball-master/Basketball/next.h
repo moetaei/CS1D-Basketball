@@ -28,6 +28,8 @@ private slots:
     void defaultListView();
     //!< Sets the default view the window by enabling and disabling items.
 
+    void on_exitButton_clicked();
+
 private:
     Ui::next *ui;
     QString starting;

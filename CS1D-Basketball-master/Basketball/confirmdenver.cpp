@@ -88,3 +88,8 @@ void confirmDenver::on_pushButton_clicked()
     checkoutWindow->show();
     this->close();
 }
+
+void confirmDenver::on_exitButton_clicked()
+{
+    close();
+}

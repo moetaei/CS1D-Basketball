@@ -2,6 +2,11 @@
 #define CONFERENCE_H
 
 #include <QWidget>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QSqlQueryModel>
+#include <QSqlError>
+#include <QDebug>
 
 namespace Ui {
 class conference;
@@ -13,10 +18,20 @@ class conference : public QWidget
 
 public:
     explicit conference(QWidget *parent = nullptr);
+    //! Constructor
+
     ~conference();
+    //! Destructor
+
+    void defaultReset();
+    //!< initializes the QTableWidget and loads with data from a database query
+
+private slots:
+    void on_comboBox_currentIndexChanged(int index);
 
 private:
     Ui::conference *ui;
+    QSqlDatabase myDB;      /*!< database connection */
 };
 
 #endif // CONFERENCE_H

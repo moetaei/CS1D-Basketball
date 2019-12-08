@@ -9,6 +9,8 @@ ConfirmDetroit::ConfirmDetroit(QWidget *parent) :
 
     myDB = QSqlDatabase::database();
     defaultListView();
+    ui->detroitList->setEnabled(true);
+    ui->confirm->setEnabled(false);
 }
 
 ConfirmDetroit::~ConfirmDetroit()
@@ -203,7 +205,28 @@ void ConfirmDetroit::sortCities()
  ***************************************************************************/
 void ConfirmDetroit::on_cancel_clicked()
 {
-    this->close();
+    ui->select->setEnabled(true);
+    ui->confirm->setEnabled(false);
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+/****************************************************************************
+ * METHOD - on_select_clicked
+ * --------------------------------------------------------------------------
+ * This method changes to a different widget view so the traveler can see
+ * their travel plan when this button is clicked.
+ * --------------------------------------------------------------------------
+ * PRE-CONDITIONS
+ *      None.
+ *
+ * POST-CONDITIONS
+ *      ==> Returns nothing.
+ ***************************************************************************/
+void ConfirmDetroit::on_select_clicked()
+{
+    ui->confirm->setEnabled(true);
+    ui->select->setEnabled(false);
+    ui->stackedWidget->setCurrentIndex(1);
 }
 
 /****************************************************************************
@@ -220,4 +243,9 @@ void ConfirmDetroit::on_cancel_clicked()
 void ConfirmDetroit::on_confirm_clicked()
 {
 
+}
+
+void ConfirmDetroit::on_exitButton_clicked()
+{
+    close();
 }

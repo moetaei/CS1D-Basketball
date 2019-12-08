@@ -38,12 +38,12 @@ color:black;</string>
       <height>24</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0,0">
+    <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0,0,0">
      <property name="spacing">
       <number>3</number>
      </property>
      <item>
-      <widget class="QPushButton" name="confrenceButton">
+      <widget class="QPushButton" name="adminButton">
        <property name="maximumSize">
         <size>
          <width>16777215</width>
@@ -65,12 +65,12 @@ border-width: 2px;
 border-radius: 5px;</string>
        </property>
        <property name="text">
-        <string>Teams</string>
+        <string>Admin Options</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="divisionButton">
+      <widget class="QPushButton" name="teamButton">
        <property name="maximumSize">
         <size>
          <width>16777215</width>
@@ -92,12 +92,39 @@ border-width: 2px;
 border-radius: 5px;</string>
        </property>
        <property name="text">
-        <string>Distances</string>
+        <string>Edit/Add Teams</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="arenaButton">
+      <widget class="QPushButton" name="distanceButton">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:#ccccff;
+border-style: solid;
+border-color: black;
+border-width: 2px;
+border-radius: 5px;</string>
+       </property>
+       <property name="text">
+        <string>Edit Distances</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="souvenirButton">
        <property name="maximumSize">
         <size>
          <width>16777215</width>
@@ -145,6 +172,21 @@ border-radius: 5px;</string>
       </widget>
      </item>
     </layout>
+   </widget>
+  </widget>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>60</y>
+     <width>1200</width>
+     <height>640</height>
+    </rect>
+   </property>
+   <widget class="QWidget" name="mainPage">
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
    </widget>
   </widget>
  </widget>
