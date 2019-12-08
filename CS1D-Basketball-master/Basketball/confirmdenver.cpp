@@ -65,8 +65,6 @@ void confirmDenver::defaultListView()
         qDebug() << ("tConfirmCustom Error: qry failed.");
     }
 }
-<<<<<<< Updated upstream
-=======
 
 void confirmDenver::on_denverList_itemClicked(QListWidgetItem *item)
 {
@@ -90,4 +88,3 @@ void confirmDenver::on_pushButton_clicked()
     checkoutWindow->show();
     this->close();
 }
->>>>>>> Stashed changes

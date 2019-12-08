@@ -2,8 +2,6 @@
 #define CONFIRMDETROIT_H
 
 #include <QWidget>
-<<<<<<< Updated upstream
-=======
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlQueryModel>
@@ -11,7 +9,6 @@
 #include <QDebug>
 #include <QListWidget>
 #include "graph.h"
->>>>>>> Stashed changes
 
 namespace Ui {
 class ConfirmDetroit;
@@ -24,11 +21,6 @@ class ConfirmDetroit : public QWidget
 public:
     explicit ConfirmDetroit(QWidget *parent = nullptr);
     ~ConfirmDetroit();
-<<<<<<< Updated upstream
-
-private:
-    Ui::ConfirmDetroit *ui;
-=======
     //!< Destructor
 
     void defaultListView();
@@ -54,7 +46,6 @@ private:
     QString closestCity;
     QString startCity = "Detroit Pistons";          /*!< the starting city */
     QSqlDatabase myDB;                      /*!< database connection */
->>>>>>> Stashed changes
 };
 
 #endif // CONFIRMDETROIT_H

@@ -13,12 +13,6 @@ class confirmCustom2 : public QWidget
 
 public:
     explicit confirmCustom2(QWidget *parent = nullptr);
-<<<<<<< Updated upstream
-    ~confirmCustom2();
-
-private:
-    Ui::confirmCustom2 *ui;
-=======
 
     ~confirmCustom2();
 
@@ -50,7 +44,6 @@ private:
     QString closestCity;
     QString startCity = "";          /*!< the starting city */
     QSqlDatabase myDB;               /*!< database connection */
->>>>>>> Stashed changes
 };
 
 #endif // CONFIRMCUSTOM2_H

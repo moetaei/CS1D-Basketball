@@ -19,12 +19,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     admin.cpp \
     arenas.cpp \
-<<<<<<< Updated upstream
-=======
     checkout.cpp \
     city.cpp \
     citytocity.cpp \
->>>>>>> Stashed changes
     coaches.cpp \
     conference.cpp \
     confirmcustom1.cpp \
@@ -42,12 +39,9 @@ SOURCES += \
 HEADERS += \
     admin.h \
     arenas.h \
-<<<<<<< Updated upstream
-=======
     checkout.h \
     city.h \
     citytocity.h \
->>>>>>> Stashed changes
     coaches.h \
     conference.h \
     confirmcustom1.h \
@@ -64,11 +58,8 @@ HEADERS += \
 FORMS += \
     admin.ui \
     arenas.ui \
-<<<<<<< Updated upstream
-=======
     checkout.ui \
     citytocity.ui \
->>>>>>> Stashed changes
     coaches.ui \
     conference.ui \
     confirmcustom1.ui \

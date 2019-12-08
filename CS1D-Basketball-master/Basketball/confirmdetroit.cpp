@@ -6,20 +6,15 @@ ConfirmDetroit::ConfirmDetroit(QWidget *parent) :
     ui(new Ui::ConfirmDetroit)
 {
     ui->setupUi(this);
-<<<<<<< Updated upstream
-=======
 
     myDB = QSqlDatabase::database();
     defaultListView();
->>>>>>> Stashed changes
 }
 
 ConfirmDetroit::~ConfirmDetroit()
 {
     delete ui;
 }
-<<<<<<< Updated upstream
-=======
 
 void ConfirmDetroit::defaultListView()
 {
@@ -226,4 +221,3 @@ void ConfirmDetroit::on_confirm_clicked()
 {
 
 }
->>>>>>> Stashed changes

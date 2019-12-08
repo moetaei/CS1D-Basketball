@@ -6,8 +6,6 @@ confirmCustom2::confirmCustom2(QWidget *parent) :
     ui(new Ui::confirmCustom2)
 {
     ui->setupUi(this);
-<<<<<<< Updated upstream
-=======
 
     myDB = QSqlDatabase::database();
 
@@ -20,15 +18,12 @@ confirmCustom2::confirmCustom2(QWidget *parent) :
     ui->confirm->setEnabled(false);
 
     defaultListView();
->>>>>>> Stashed changes
 }
 
 confirmCustom2::~confirmCustom2()
 {
     delete ui;
 }
-<<<<<<< Updated upstream
-=======
 
 void confirmCustom2::defaultListView()
 {
@@ -253,4 +248,3 @@ void confirmCustom2::on_startCityComboBox_currentIndexChanged(int index)
         ui->confirm->setEnabled(false);
     }
 }
->>>>>>> Stashed changes

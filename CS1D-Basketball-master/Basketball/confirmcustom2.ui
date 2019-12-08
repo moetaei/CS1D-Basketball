@@ -8,20 +8,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
-<<<<<<< Updated upstream
-    <width>400</width>
-    <height>300</height>
-=======
     <width>299</width>
     <height>552</height>
->>>>>>> Stashed changes
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-<<<<<<< Updated upstream
-=======
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
@@ -217,7 +210,6 @@
     <string>Select</string>
    </property>
   </widget>
->>>>>>> Stashed changes
  </widget>
  <pixmapfunction/>
  <connections/>
