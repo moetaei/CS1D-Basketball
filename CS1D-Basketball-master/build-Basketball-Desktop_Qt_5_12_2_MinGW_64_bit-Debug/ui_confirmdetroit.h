@@ -36,6 +36,7 @@ public:
     QPushButton *confirm;
     QPushButton *cancel;
     QPushButton *select;
+    QPushButton *exitButton;
 
     void setupUi(QWidget *ConfirmDetroit)
     {
@@ -92,8 +93,12 @@ public:
         select = new QPushButton(ConfirmDetroit);
         select->setObjectName(QString::fromUtf8("select"));
         select->setGeometry(QRect(210, 450, 75, 31));
+        exitButton = new QPushButton(ConfirmDetroit);
+        exitButton->setObjectName(QString::fromUtf8("exitButton"));
+        exitButton->setGeometry(QRect(32, 454, 71, 28));
 
         retranslateUi(ConfirmDetroit);
+        QObject::connect(exitButton, SIGNAL(clicked()), exitButton, SLOT(close()));
 
         stackedWidget->setCurrentIndex(0);
 
@@ -111,6 +116,7 @@ public:
         confirm->setText(QApplication::translate("ConfirmDetroit", "Confirm", nullptr));
         cancel->setText(QApplication::translate("ConfirmDetroit", "Cancel", nullptr));
         select->setText(QApplication::translate("ConfirmDetroit", "Select", nullptr));
+        exitButton->setText(QApplication::translate("ConfirmDetroit", "Exit", nullptr));
     } // retranslateUi
 
 };

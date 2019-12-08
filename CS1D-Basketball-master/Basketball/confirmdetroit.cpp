@@ -99,3 +99,8 @@ void ConfirmDetroit::on_confirm_clicked()
 {
 
 }
+
+void ConfirmDetroit::on_exitButton_clicked()
+{
+    close();
+}

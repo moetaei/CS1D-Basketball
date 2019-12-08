@@ -92,7 +92,7 @@ border-width: 2px;
 border-radius: 5px;</string>
        </property>
        <property name="text">
-        <string>Teams</string>
+        <string>Edit/Add Teams</string>
        </property>
       </widget>
      </item>
@@ -119,7 +119,7 @@ border-width: 2px;
 border-radius: 5px;</string>
        </property>
        <property name="text">
-        <string>Distances</string>
+        <string>Edit Distances</string>
        </property>
       </widget>
      </item>

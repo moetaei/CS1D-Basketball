@@ -12,12 +12,13 @@ admin::admin(QWidget *parent) :
     ui->setupUi(this);
 
     // Creates a stacked widget index for different pages
-   ui->stackedWidget->insertWidget(1, &teamWindow);
+      ui->stackedWidget->insertWidget(1, &editWindow);
 //    ui->stackedWidget->insertWidget(2, &infoWindow);
 //    ui->stackedWidget->insertWidget(3, &coachWindow);
 //    ui->stackedWidget->insertWidget(4, &conferenceWindow);
 
     myDB = QSqlDatabase::database();
+
 }
 
 admin::~admin()

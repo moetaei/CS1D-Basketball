@@ -174,7 +174,37 @@
     <string>Select</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="exitButton">
+   <property name="geometry">
+    <rect>
+     <x>32</x>
+     <y>454</y>
+     <width>71</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>exitButton</sender>
+   <signal>clicked()</signal>
+   <receiver>exitButton</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>54</x>
+     <y>464</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>80</x>
+     <y>463</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

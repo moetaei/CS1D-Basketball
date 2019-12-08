@@ -12,6 +12,7 @@ debug/databasemanager.o
 debug/denverto.o
 debug/dfs.o
 debug/divisions.o
+debug/editteam.o
 debug/graph.o
 debug/info.o
 debug/login.o
@@ -34,6 +35,7 @@ debug/moc_confirmdetroit.o
 debug/moc_denverto.o
 debug/moc_dfs.o
 debug/moc_divisions.o
+debug/moc_editteam.o
 debug/moc_info.o
 debug/moc_login.o
 debug/moc_mst.o

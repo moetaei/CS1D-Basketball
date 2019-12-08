@@ -24,6 +24,7 @@ public:
     QListWidget *customList;
     QPushButton *pushButton;
     QLabel *label;
+    QPushButton *exitButton;
 
     void setupUi(QWidget *confirmCustom2)
     {
@@ -47,8 +48,12 @@ public:
         font.setKerning(true);
         label->setFont(font);
         label->setTextFormat(Qt::PlainText);
+        exitButton = new QPushButton(confirmCustom2);
+        exitButton->setObjectName(QString::fromUtf8("exitButton"));
+        exitButton->setGeometry(QRect(480, 450, 93, 28));
 
         retranslateUi(confirmCustom2);
+        QObject::connect(exitButton, SIGNAL(clicked()), exitButton, SLOT(close()));
 
         QMetaObject::connectSlotsByName(confirmCustom2);
     } // setupUi
@@ -57,7 +62,8 @@ public:
     {
         confirmCustom2->setWindowTitle(QApplication::translate("confirmCustom2", "Form", nullptr));
         pushButton->setText(QApplication::translate("confirmCustom2", "Confirm", nullptr));
-        label->setText(QApplication::translate("confirmCustom2", "Option 4", nullptr));
+        label->setText(QApplication::translate("confirmCustom2", "Custom Trip", nullptr));
+        exitButton->setText(QApplication::translate("confirmCustom2", "Exit", nullptr));
     } // retranslateUi
 
 };

@@ -28,6 +28,8 @@ public:
 private slots:
     void on_newList_itemClicked(QListWidgetItem *item);
 
+    void on_exitButton_clicked();
+
 private:
     Ui::Option2 *ui;
     class next *next1;

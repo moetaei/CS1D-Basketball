@@ -37,6 +37,8 @@ private slots:
 
     void on_confirm_clicked();
 
+    void on_exitButton_clicked();
+
 private:
     Ui::ConfirmDetroit *ui;
 

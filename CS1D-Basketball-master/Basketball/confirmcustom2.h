@@ -25,6 +25,9 @@ public:
 
     void defaultListView();
     //!< Sets the default view the window by enabling and disabling items.
+private slots:
+    void on_exitButton_clicked();
+
 private:
     Ui::confirmCustom2 *ui;
 

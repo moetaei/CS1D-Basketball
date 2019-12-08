@@ -3,6 +3,7 @@
 #define ADMIN_H
 
 #include "uTeams.h"
+#include "editteam.h"
 // need to include distances and souvenirs
 
 #include <QWidget>
@@ -34,8 +35,7 @@ private slots:
 
 private:
     Ui::admin *ui;
-    uTeams teamWindow;
-
+    editTeam editWindow;
     QSqlDatabase myDB;
 };
 

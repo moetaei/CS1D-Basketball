@@ -45,3 +45,8 @@ void Option2::on_newList_itemClicked(QListWidgetItem *item)
     next1->show();
 
 }
+
+void Option2::on_exitButton_clicked()
+{
+    close();
+}

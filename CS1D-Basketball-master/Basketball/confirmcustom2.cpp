@@ -40,3 +40,8 @@ void confirmCustom2::defaultListView()
         qDebug() << ("confirmDenver Error: qry failed.");
     }
 }
+
+void confirmCustom2::on_exitButton_clicked()
+{
+    close();
+}

@@ -57,13 +57,43 @@
     </font>
    </property>
    <property name="text">
-    <string>Option 4</string>
+    <string>Custom Trip</string>
    </property>
    <property name="textFormat">
     <enum>Qt::PlainText</enum>
    </property>
   </widget>
+  <widget class="QPushButton" name="exitButton">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>450</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>exitButton</sender>
+   <signal>clicked()</signal>
+   <receiver>exitButton</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>506</x>
+     <y>464</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>543</x>
+     <y>461</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

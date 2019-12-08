@@ -24,6 +24,7 @@ public:
     QListWidget *denverList;
     QPushButton *pushButton;
     QLabel *label;
+    QPushButton *exitButton;
 
     void setupUi(QWidget *confirmDenver)
     {
@@ -47,8 +48,12 @@ public:
         font.setKerning(true);
         label->setFont(font);
         label->setTextFormat(Qt::PlainText);
+        exitButton = new QPushButton(confirmDenver);
+        exitButton->setObjectName(QString::fromUtf8("exitButton"));
+        exitButton->setGeometry(QRect(630, 460, 93, 28));
 
         retranslateUi(confirmDenver);
+        QObject::connect(exitButton, SIGNAL(clicked()), exitButton, SLOT(close()));
 
         QMetaObject::connectSlotsByName(confirmDenver);
     } // setupUi
@@ -58,6 +63,7 @@ public:
         confirmDenver->setWindowTitle(QApplication::translate("confirmDenver", "Form", nullptr));
         pushButton->setText(QApplication::translate("confirmDenver", "Confirm", nullptr));
         label->setText(QApplication::translate("confirmDenver", "Denver ", nullptr));
+        exitButton->setText(QApplication::translate("confirmDenver", "Exit", nullptr));
     } // retranslateUi
 
 };

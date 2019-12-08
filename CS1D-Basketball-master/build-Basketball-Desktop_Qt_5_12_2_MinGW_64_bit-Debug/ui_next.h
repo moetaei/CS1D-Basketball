@@ -24,6 +24,7 @@ public:
     QPushButton *confirm;
     QLabel *label;
     QListWidget *newList;
+    QPushButton *exitButton;
 
     void setupUi(QWidget *next)
     {
@@ -47,8 +48,12 @@ public:
         newList->setObjectName(QString::fromUtf8("newList"));
         newList->setGeometry(QRect(90, 80, 256, 421));
         newList->setSelectionMode(QAbstractItemView::MultiSelection);
+        exitButton = new QPushButton(next);
+        exitButton->setObjectName(QString::fromUtf8("exitButton"));
+        exitButton->setGeometry(QRect(370, 280, 93, 28));
 
         retranslateUi(next);
+        QObject::connect(exitButton, SIGNAL(clicked()), exitButton, SLOT(close()));
 
         QMetaObject::connectSlotsByName(next);
     } // setupUi
@@ -58,6 +63,7 @@ public:
         next->setWindowTitle(QApplication::translate("next", "Form", nullptr));
         confirm->setText(QApplication::translate("next", "Confirm", nullptr));
         label->setText(QApplication::translate("next", "Select Destination City", nullptr));
+        exitButton->setText(QApplication::translate("next", "Exit", nullptr));
     } // retranslateUi
 
 };

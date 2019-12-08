@@ -71,3 +71,8 @@ void confirmDenver::on_denverList_itemClicked(QListWidgetItem *item)
     denverto->show();
 
 }
+
+void confirmDenver::on_exitButton_clicked()
+{
+    close();
+}

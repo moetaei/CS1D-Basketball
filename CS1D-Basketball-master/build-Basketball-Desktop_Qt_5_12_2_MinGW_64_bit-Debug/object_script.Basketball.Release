@@ -12,6 +12,7 @@ release/databasemanager.o
 release/denverto.o
 release/dfs.o
 release/divisions.o
+release/editteam.o
 release/graph.o
 release/info.o
 release/login.o
@@ -34,6 +35,7 @@ release/moc_confirmdetroit.o
 release/moc_denverto.o
 release/moc_dfs.o
 release/moc_divisions.o
+release/moc_editteam.o
 release/moc_info.o
 release/moc_login.o
 release/moc_mst.o

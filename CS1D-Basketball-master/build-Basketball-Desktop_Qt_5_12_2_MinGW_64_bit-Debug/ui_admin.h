@@ -131,8 +131,8 @@ public:
         admin->setWindowTitle(QApplication::translate("admin", "Form", nullptr));
         pushButtonGroup->setTitle(QString());
         adminButton->setText(QApplication::translate("admin", "Admin Options", nullptr));
-        teamButton->setText(QApplication::translate("admin", "Teams", nullptr));
-        distanceButton->setText(QApplication::translate("admin", "Distances", nullptr));
+        teamButton->setText(QApplication::translate("admin", "Edit/Add Teams", nullptr));
+        distanceButton->setText(QApplication::translate("admin", "Edit Distances", nullptr));
         souvenirButton->setText(QApplication::translate("admin", "Souvenirs", nullptr));
         logoutButton->setText(QApplication::translate("admin", "LOGOUT", nullptr));
     } // retranslateUi
