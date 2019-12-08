@@ -23,7 +23,7 @@ void ConfirmDetroit::defaultListView()
 
     qry->prepare("SELECT DISTINCT Team1 "
                  "FROM distances "
-                 /*"WHERE NOT Team1 = 'Detroit Pistons' "*/);
+                 "WHERE NOT Team1 = 'Detroit Pistons' ");
 
     if(qry->exec())
     {

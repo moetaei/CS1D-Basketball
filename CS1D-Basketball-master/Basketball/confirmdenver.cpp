@@ -47,9 +47,9 @@ void confirmDenver::defaultListView()
     QString cityName;
     QSqlQuery * qry = new QSqlQuery(myDB);
 
-    qry->prepare("SELECT TeamName "
-                    "FROM info "
-                    "ORDER BY TeamName ASC ");
+    qry->prepare("SELECT DISTINCT Team1 "
+                 "FROM distances "
+                 "WHERE NOT Team1 = 'Denver Nuggets' ");
 
     if(qry->exec())
     {

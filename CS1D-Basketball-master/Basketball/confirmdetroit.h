@@ -9,6 +9,8 @@
 #include <QDebug>
 #include <QListWidget>
 #include "graph.h"
+#include "data.h"
+#include "checkout.h"
 
 namespace Ui {
 class ConfirmDetroit;
@@ -39,7 +41,9 @@ private:
 
     QList<QString> customList;
 
-    class Graph asd;
+    class Graph graf;
+    class data datah;
+
     QString* sortedDest = nullptr;
     float* sortedDist = nullptr;
     int cityNum = 0;
