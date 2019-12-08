@@ -105,7 +105,7 @@ void user::on_mst_clicked()
     MST= new mst();
     MST->setLabel();
     MST->show();
-
+}
 void user::on_bfs_clicked()
 {
     BFS = new bfs();
