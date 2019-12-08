@@ -1,4 +1,5 @@
 #include "graph.h"
+#include <QDebug>
 
 // Allocates memory for adjacency list
 Graph::Graph()
@@ -144,6 +145,7 @@ void Graph::shortestPath(int src, int dest, QString &output)
     priority_queue< iPair, vector <iPair> , greater<iPair> > pq;
 
     QVector<double> dist(V, INF);
+    double total = 0;
 
     pq.push(make_pair(0, src));
     dist[src] = 0;
@@ -156,7 +158,6 @@ void Graph::shortestPath(int src, int dest, QString &output)
         QList< pair<int, int> >::iterator i;
         for (i = adj[u].begin(); i != adj[u].end(); ++i)
         {
-
             int v = (*i).first;
             double weight = (*i).second;
 
@@ -187,12 +188,12 @@ void Graph::shortestPath(int src, int dest, QString &output)
             {
                  output += datah.findCityName(path[i]) + "--(" + QString::number(datah.findDistance(path[i], path[i+1])) +
                          ")-->" +datah.findCityName(path[i+1])+ '\n';
+                 total += datah.findDistance(path[i], path[i+1]);
             }
         }
         output += '\n';
-        output += "Total Distance: " + QString::number(dist[dest]);
+        output += "Total Distance: " + QString::number(total /*dist[dest]*/);
     }
-
 }
 void Graph :: getPath(int s, int city, QVector<int> &path)
 {
@@ -235,7 +236,6 @@ void Graph::setMST()
         mst->push_back(temp);
         temp.clear();
     }
-
 }
 
 double Graph :: minKey(double key[], bool mstSet[])
@@ -254,7 +254,6 @@ double Graph :: minKey(double key[], bool mstSet[])
             min_index = v;
         }
     }
-
     return min_index;
 }
 void Graph :: calcMst(QString &output)
@@ -283,6 +282,7 @@ void Graph :: calcMst(QString &output)
     // The MST will have V vertices
     for (int count = 0; count < V - 1; count++)
     {
+        qDebug() << count;
         // Pick the minimum key vertex from the
         // set of vertices not yet included in MST
         double min = INT_MAX, min_index;
@@ -316,7 +316,6 @@ void Graph :: calcMst(QString &output)
             // Update the key only if graph[u][v] is smaller than key[v]
     }
     printMST(parent, output);
-
 }
 void Graph::printMST(int parent[],QString &output)
 {

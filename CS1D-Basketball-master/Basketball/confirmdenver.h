@@ -9,6 +9,7 @@
 #include <QDebug>
 #include <QListWidget>
 #include "denverto.h"
+#include "checkout.h"
 
 namespace Ui {
 class confirmDenver;
@@ -32,11 +33,17 @@ private slots:
 
     void on_denverList_itemClicked(QListWidgetItem *item);
 
+    void on_pushButton_clicked();
+
 private:
     Ui::confirmDenver *ui;  /*!< class object */
+    checkout* checkoutWindow;
     denverTo *denverto; /*!< class object */
-    QString startCity = "Nuggets";          /*!< the starting city */
+    QString startCity = "Denver Nuggets";          /*!< the starting city */
+    double dist;
     QSqlDatabase myDB;          /*!< database connection */
+    QString* destinations = nullptr;
+    double* distances = nullptr;
 };
 
 #endif // CONFIRMDENVER_H

@@ -3,10 +3,6 @@
 
 #include <QDialog>
 #include <QWidget>
-#include <QSqlDatabase>
-#include <QSqlQuery>
-#include <QSqlQueryModel>
-#include <QSqlError>
 #include <QDebug>
 #include <QListWidget>
 #include <QVector>
@@ -22,7 +18,7 @@ class denverTo : public QDialog
     Q_OBJECT
 
 public:
-    void setCityName(QString team);
+    QString setCityName(QString team);
     explicit denverTo(QWidget *parent = nullptr);
     ~denverTo();
 
