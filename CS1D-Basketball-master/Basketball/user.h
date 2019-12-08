@@ -16,7 +16,6 @@
 #include "option2.h"
 #include "dfs.h"
 #include "mst.h"
-#include "bfs.h"
 
 namespace Ui {
 class user;
@@ -67,8 +66,6 @@ private slots:
 
     void on_mst_clicked();
 
-    void on_bfs_clicked();
-
 private:
     Ui::user *ui;
 
@@ -87,7 +84,6 @@ private:
     confirmCustom2* custom2Window;
     dfs *DFS;
     mst *MST;
-    bfs *BFS;
 };
 
 #endif // USER_H
