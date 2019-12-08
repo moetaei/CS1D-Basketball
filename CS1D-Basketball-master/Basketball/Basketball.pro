@@ -83,6 +83,8 @@ FORMS += \
     info.ui \
     login.ui \
     mainwindow.ui \
+    next.ui \
+    option2.ui \
     uTeams.ui \
     user.ui
 

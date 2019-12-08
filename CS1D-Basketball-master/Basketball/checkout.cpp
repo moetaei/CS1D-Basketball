@@ -287,7 +287,7 @@ void checkout::on_nextDestButton_clicked()
     {
         totalDistance += distances[0];
         qDebug() << "hi" << totalDistance;
-        ui->totalCostLine->setText(QString::number(totalCost));
+        ui->totalDistLine->setText(QString::number(totalDistance));
     }
 }
 
