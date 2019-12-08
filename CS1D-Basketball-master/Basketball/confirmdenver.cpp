@@ -21,6 +21,8 @@ confirmDenver::confirmDenver(QWidget *parent) :
     myDB = QSqlDatabase::database();
     defaultListView();
     ui->denverList->setEnabled(true);
+    destinations = new QString[1];
+    distances = new double[1];
 }
 
 /****************************************************************************
@@ -46,7 +48,7 @@ void confirmDenver::defaultListView()
     QSqlQuery * qry = new QSqlQuery(myDB);
 
     qry->prepare("SELECT TeamName "
-                    "FROM info WHERE TeamName NOT IN ('Denver Nuggets') "
+                    "FROM info "
                     "ORDER BY TeamName ASC ");
 
     if(qry->exec())
@@ -60,16 +62,31 @@ void confirmDenver::defaultListView()
     }
     else
     {
-        qDebug() << ("confirmDenver Error: qry failed.");
+        qDebug() << ("tConfirmCustom Error: qry failed.");
     }
 }
 
 void confirmDenver::on_denverList_itemClicked(QListWidgetItem *item)
 {
+    QString temp;
     denverto = new denverTo();
-    denverto->setCityName(item->text());
+    temp = denverto->setCityName(item->text());
     denverto->show();
+//    dist.remove(startCity,Qt::CaseInsensitive);//25
+//    dist.remove(0,3);
+//    dist.remove(25,47);
+    temp = temp.right(6);
+    dist = temp.toDouble();
+    qDebug() << dist;
+    distances[0] = dist;
+    destinations[0] = item->text();
+}
 
+void confirmDenver::on_pushButton_clicked()
+{
+    checkoutWindow = new checkout(destinations,distances,1);
+    checkoutWindow->show();
+    this->close();
 }
 
 void confirmDenver::on_exitButton_clicked()

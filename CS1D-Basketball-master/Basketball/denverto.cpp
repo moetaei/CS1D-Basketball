@@ -12,11 +12,12 @@ denverTo::~denverTo()
 {
     delete ui;
 }
-void denverTo:: setCityName(QString city)
+QString denverTo::setCityName(QString city)
 {
     QString output = "";
     graf.shortestPath(datah.findCityIndex("Denver Nuggets"),datah.findCityIndex(city), output);
     ui->displayDistance->setText(output);
+    return output;
 }
 void denverTo::on_exit_clicked()
 {

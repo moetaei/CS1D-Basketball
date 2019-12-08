@@ -3,8 +3,10 @@
 
 #include <QList>
 #include <QVector>
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 #include "data.h"
+#include "node.h"
+
 using namespace std;
 # define INF 0x3f3f3f3f
 typedef pair<int, int> iPair;
