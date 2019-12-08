@@ -346,8 +346,7 @@ void Graph::printMST(int parent[],QString &output)
     for (int i = 1; i < V; i++)
     {
         output+= datah.findCityName(parent[i]) + " - " + datah.findCityName(i) + "\n" + "     \t\t\t" + QString:: number(mst[0][i][parent[i]]) +" \n";
-    }
-}
+
 
 void Graph::addEdgeBFS(int start, int e, double distance)
 {
