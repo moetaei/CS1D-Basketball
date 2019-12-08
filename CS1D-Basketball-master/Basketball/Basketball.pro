@@ -24,15 +24,22 @@ SOURCES += \
     citytocity.cpp \
     coaches.cpp \
     conference.cpp \
-    confirmcustom1.cpp \
     confirmcustom2.cpp \
     confirmdenver.cpp \
     confirmdetroit.cpp \
+    data.cpp \
     databasemanager.cpp \
+    denverto.cpp \
+    dfs.cpp \
     divisions.cpp \
+    graph.cpp \
     info.cpp \
     login.cpp \
     main.cpp \
+    mst.cpp \
+    next.cpp \
+    node.cpp \
+    option2.cpp \
     uTeams.cpp \
     user.cpp
 
@@ -44,14 +51,21 @@ HEADERS += \
     citytocity.h \
     coaches.h \
     conference.h \
-    confirmcustom1.h \
     confirmcustom2.h \
     confirmdenver.h \
     confirmdetroit.h \
+    data.h \
     databasemanager.h \
+    denverto.h \
+    dfs.h \
     divisions.h \
+    graph.h \
     info.h \
     login.h \
+    mst.h \
+    next.h \
+    node.h \
+    option2.h \
     uTeams.h \
     user.h
 
@@ -62,7 +76,6 @@ FORMS += \
     citytocity.ui \
     coaches.ui \
     conference.ui \
-    confirmcustom1.ui \
     confirmcustom2.ui \
     confirmdenver.ui \
     confirmdetroit.ui \

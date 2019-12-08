@@ -1,7 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <author/>
- <comment/>
- <exportmacro/>
  <class>ConfirmDetroit</class>
  <widget class="QWidget" name="ConfirmDetroit">
   <property name="geometry">
@@ -9,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>300</height>
+    <height>457</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -118,6 +116,6 @@
    </property>
   </widget>
  </widget>
- <pixmapfunction/>
+ <resources/>
  <connections/>
 </ui>

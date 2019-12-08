@@ -8,11 +8,8 @@
 #include <QSqlError>
 #include <QDebug>
 #include <QListWidget>
-<<<<<<< Updated upstream
-=======
 #include "denverto.h"
 #include "checkout.h"
->>>>>>> Stashed changes
 
 namespace Ui {
 class confirmDenver;
@@ -32,12 +29,6 @@ public:
     void defaultListView();
     //!< Sets the default view the window by enabling and disabling items.
 
-<<<<<<< Updated upstream
-private:
-    Ui::confirmDenver *ui;  /*!< class object */
-
-    QString startCity = "Denver";          /*!< the starting city */
-=======
 private slots:
 
     void on_denverList_itemClicked(QListWidgetItem *item);
@@ -50,7 +41,6 @@ private:
     denverTo *denverto; /*!< class object */
     QString startCity = "Denver Nuggets";          /*!< the starting city */
     double dist;
->>>>>>> Stashed changes
     QSqlDatabase myDB;          /*!< database connection */
     QString* destinations = nullptr;
     double* distances = nullptr;

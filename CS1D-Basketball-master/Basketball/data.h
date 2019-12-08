@@ -1,31 +1,37 @@
 #ifndef DATA_H
 #define DATA_H
 
-#include <iostream>
-#include <fstream>
-#include <QString>
 #include <QVector>
-#include <QtSql>
-#include "distances.h"
-#include "information.h"
-
-using namespace std;
-
+#include "node.h"
+#include "city.h"
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QSqlQueryModel>
+#include <QSqlError>
+#include <QDebug>
+struct enter
+{
+    QString type;
+    QString username;
+    QString password;
+};
 class data
 {
-private:
-    QVector<distances> data1;
-    QVector<information> data2;
 public:
     data();
-    void readDataDistance();
-    void readDataInfo();
-    void databaseDistance();
-    void databaseInfo();
-    bool checkExist(QString teamA, QString teamB, QVector<distances> read);
-    int findCity(QString teamA, QString teamB,QVector<distances> read);
-    void showDistances();
-    void showInfo();
+    void setVector();
+    void setNames();
+    QVector<node> getTeams();
+    int findCityIndex(QString name);
+    int getSizeN();
+    int getSizeC();
+    QString findCityName(int i);
+    double findDistance(int c1, int c2);
+    QString showMe(node team);
+private:
+    QVector<node> team; //distances, doubles
+    QVector<city> names; // names, strings
+    QSqlDatabase myDB;
 };
 
 #endif // DATA_H

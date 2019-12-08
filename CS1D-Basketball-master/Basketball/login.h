@@ -6,6 +6,7 @@
 #include <QDebug>
 #include <QMessageBox>
 #include <QtSql>
+#include "admin.h"
 
 #include "user.h"
 #include "databasemanager.h"
@@ -32,6 +33,7 @@ private slots:
 private:
     Ui::login *ui;
     user *userWindow;
+    admin* adminWindow;
     QSqlDatabase userDB;
 
     databaseManager myDB;

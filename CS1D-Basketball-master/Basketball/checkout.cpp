@@ -88,7 +88,7 @@ void checkout::loadTables()
 {
     for(int i = 0; i < total; i++)
     {
-//      qDebug() << sortedDestinations[i] << ' ' << sortedDistance[i];
+        qDebug() << destinations[i] << ' ' << distances[i];
         qDebug() << "Total: " << total;
         ui->destinationWidget->addItem(destinations[i]);
     }
@@ -127,9 +127,8 @@ void checkout::updateTable()
      *                 the table (foodTableWidget).
      ***********************************************************************/
     QSqlQuery qryRows;
-    qryRows.prepare("SELECT foodName "
-                    "FROM Food "
-                    "WHERE City = '"+currCity+"'");
+    qryRows.prepare("SELECT item "
+                    "FROM souvenirs ");
 
     // Count each row from the query
     qryRows.exec();
@@ -155,9 +154,8 @@ void checkout::updateTable()
      *             table (foodTableWidget) for the current city (currCity).
      ***********************************************************************/
     QSqlQuery qry;
-    qry.prepare("SELECT foodName, Price "
-                "FROM Food "
-                "WHERE City = '"+currCity+"'");
+    qry.prepare("SELECT * "
+                "FROM souvenirs ");
 
     if(qry.exec())
     {
@@ -253,7 +251,10 @@ void checkout::on_nextDestButton_clicked()
         updateTable();
 
         // Updates distance lines
+        index--;
         totalDistance = totalDistance + distances[index];
+        qDebug() << "hi: " << distances[index];
+        index++;
         ui->totalDistLine->setText(QString::number(totalDistance));
 
         // Updates cost lines
@@ -280,6 +281,13 @@ void checkout::on_nextDestButton_clicked()
 
         ui->endVacationButton->setEnabled(true);
         ui->exitSimulationButton->setEnabled(false);
+    }
+
+    if(total == 1)
+    {
+        totalDistance += distances[0];
+        qDebug() << "hi" << totalDistance;
+        ui->totalCostLine->setText(QString::number(totalCost));
     }
 }
 

@@ -2,6 +2,10 @@
 #define CONFIRMCUSTOM2_H
 
 #include <QWidget>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QListWidgetItem>
+#include <QDebug>
 
 namespace Ui {
 class confirmCustom2;

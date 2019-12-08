@@ -11,8 +11,11 @@
 #include "conference.h"
 #include "confirmdenver.h"
 #include "confirmdetroit.h"
-#include "confirmcustom1.h"
+#include "startingCity.h"
 #include "confirmcustom2.h"
+#include "option2.h"
+#include "dfs.h"
+#include "mst.h"
 
 namespace Ui {
 class user;
@@ -53,6 +56,16 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_4_clicked();
+
+    void on_dfs_clicked();
+
+    void on_mst_clicked();
+
 private:
     Ui::user *ui;
 
@@ -66,6 +79,11 @@ private:
     conference conferenceWindow;
 
     confirmDenver* denverWindow;
+    ConfirmDetroit* detroitWindow;
+    Option2 *option2;
+    confirmCustom2* custom2Window;
+    dfs *DFS;
+    mst *MST;
 };
 
 #endif // USER_H
