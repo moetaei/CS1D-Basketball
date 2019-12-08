@@ -21,6 +21,8 @@ confirmDenver::confirmDenver(QWidget *parent) :
     myDB = QSqlDatabase::database();
     defaultListView();
     ui->denverList->setEnabled(true);
+    destinations = new QString[1];
+    distances = new double[1];
 }
 
 /****************************************************************************
@@ -63,3 +65,29 @@ void confirmDenver::defaultListView()
         qDebug() << ("tConfirmCustom Error: qry failed.");
     }
 }
+<<<<<<< Updated upstream
+=======
+
+void confirmDenver::on_denverList_itemClicked(QListWidgetItem *item)
+{
+    QString temp;
+    denverto = new denverTo();
+    temp = denverto->setCityName(item->text());
+    denverto->show();
+//    dist.remove(startCity,Qt::CaseInsensitive);//25
+//    dist.remove(0,3);
+//    dist.remove(25,47);
+    temp = temp.right(6);
+    dist = temp.toDouble();
+    qDebug() << dist;
+    distances[0] = dist;
+    destinations[0] = item->text();
+}
+
+void confirmDenver::on_pushButton_clicked()
+{
+    checkoutWindow = new checkout(destinations,distances,1);
+    checkoutWindow->show();
+    this->close();
+}
+>>>>>>> Stashed changes

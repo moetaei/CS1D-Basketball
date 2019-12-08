@@ -13,10 +13,44 @@ class confirmCustom2 : public QWidget
 
 public:
     explicit confirmCustom2(QWidget *parent = nullptr);
+<<<<<<< Updated upstream
     ~confirmCustom2();
 
 private:
     Ui::confirmCustom2 *ui;
+=======
+
+    ~confirmCustom2();
+
+    void defaultListView();
+    //!< Sets the default view the window by enabling and disabling items.
+
+    void sortCities();
+    //!< Creates a sorted list of destinations and distances from selected.
+
+private slots:
+    void on_reset_clicked();
+
+    void on_cancel_clicked();
+
+    void on_select_clicked();
+
+    void on_confirm_clicked();
+
+    void on_startCityComboBox_currentIndexChanged(int index);
+
+private:
+    Ui::confirmCustom2 *ui;
+
+    QList<QListWidgetItem *> cityList;  /*!< list of destinations selected */
+
+    QString* sortedDest = nullptr;
+    float* sortedDist = nullptr;
+    int cityNum = 0;
+    QString closestCity;
+    QString startCity = "";          /*!< the starting city */
+    QSqlDatabase myDB;               /*!< database connection */
+>>>>>>> Stashed changes
 };
 
 #endif // CONFIRMCUSTOM2_H

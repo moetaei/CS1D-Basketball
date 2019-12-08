@@ -110,7 +110,11 @@ void login::on_pushButton_login_clicked()
         {
             count++;
         }
+<<<<<<< Updated upstream
         if(count >= 1) //it is in the database
+=======
+        else if(""== username && "" == password)
+>>>>>>> Stashed changes
         {
             QMessageBox::information(this,QObject::tr("System Message"),tr("Login successful!"),QMessageBox::Ok);
             qDebug() << "SUCCESS";
@@ -130,6 +134,7 @@ void login::on_pushButton_login_clicked()
 //                    QMessageBox::information(this,QObject::tr("System Message"),tr("Login successful!"),QMessageBox::Ok);
                     qDebug() << "SUCCESS";
 
+<<<<<<< Updated upstream
                     userDB.close();
                     userDB.removeDatabase(QSqlDatabase::defaultConnection);
 
@@ -144,4 +149,6 @@ void login::on_pushButton_login_clicked()
             }
         }
     }
+=======
+>>>>>>> Stashed changes
 }
