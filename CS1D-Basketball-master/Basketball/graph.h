@@ -24,10 +24,6 @@ public:
     bool checkVisits(int cities);
     bool visit(QString city,int vertex);
     void DFS(int vertex, QString &output, double &distance, double &total);
-
-    void addEdgeBFS(int start, int e, double distance);
-    void BFS(int start);
-    void printBFS();
     void reset();
 
     // for Mst
@@ -49,15 +45,6 @@ private:
 
     class data datah;
     bool *visited;
-
-    // Number of edges
-    int e;
-
-    // Adjacency matrix
-    int** adjBFS;
-    double** adjDistance;
-
-    int totalDistance;
 };
 
 #endif // GRAPH_H
