@@ -15,6 +15,7 @@ namespace Ui {
 class confirmDenver;
 }
 
+/*! class ConfirmDenver is used so a basketball fan can plan a trip starting from denver */
 class confirmDenver : public QWidget
 {
     Q_OBJECT

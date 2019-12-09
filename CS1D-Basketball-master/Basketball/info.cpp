@@ -4,7 +4,8 @@
 #include <QSql>
 
 
-/****************************************************************************
+/*!
+ ****************************************************************************
  * METHOD - info
  * --------------------------------------------------------------------------
  * This method is the constructor.
@@ -30,6 +31,7 @@ info::~info()
     delete ui;
 }
 
+/*! resets everything ot its default values */
 void info::info::defaultReset()
 {
     QString start = ui->teamOptions->currentText();

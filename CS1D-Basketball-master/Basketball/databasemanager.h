@@ -5,23 +5,26 @@
 #include <QSqlDatabase>
 #include <QSqlError>
 
-/****************************************************************************
+/*!
+ ****************************************************************************
  * SQLite FILENAME: CS1D_NBA_DB.db
  * --------------------------------------------------------------------------
  * TABLES:
  *      Distances
- *          Start:      starting city
- *          End:        ending city
- *          Kilometers: distance between starting and ending cities
+ *          Start:      starting team
+ *          End:        ending team
+ *          Kilometers: distance between starting and ending teams
  *      Info
- *          City:       the city of the food item
- *          foodName:   the name of the food item
- *          Price:      the cost for the food item
+ *          Team:           the team of the souvenir item
+ *          souvenirName:   the name of the souvenir item
+ *          Price:          the cost for the souvenir item
  ***************************************************************************/
 class databaseManager : public QObject
 {
 public:
     explicit databaseManager();
+
+    //! destructor
      ~databaseManager();
 
     bool openDB();
