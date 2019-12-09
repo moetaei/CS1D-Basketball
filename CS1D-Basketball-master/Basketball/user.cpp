@@ -88,11 +88,13 @@ void user::on_pushButton_4_clicked()
     custom2Window->show();
 }
 
+/*! closes window */
 void user::on_logoutButton_clicked()
 {
     this->close();
 }
 
+/*! opens dfs  window */
 void user::on_dfs_clicked()
 {
     DFS = new dfs();
@@ -100,6 +102,7 @@ void user::on_dfs_clicked()
     DFS->show();
 }
 
+/*! opens mst  window */
 void user::on_mst_clicked()
 {
     MST= new mst();
@@ -107,6 +110,7 @@ void user::on_mst_clicked()
     MST->show();
 }
 
+/*! opens bfs  window */
 void user::on_bfs_clicked()
 {
     BFS= new bfs();

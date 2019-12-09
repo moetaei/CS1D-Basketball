@@ -3,8 +3,8 @@
 #include <QSqlQuery>
 #include <QSql>
 
-
-/****************************************************************************
+ /*!
+ ****************************************************************************
  * METHOD - info
  * --------------------------------------------------------------------------
  * This method is the constructor.
@@ -25,11 +25,13 @@ info::info(QWidget *parent) :
     defaultReset();
 }
 
+/*! destructor */
 info::~info()
 {
     delete ui;
 }
 
+/*! */
 void info::info::defaultReset()
 {
     QString start = ui->teamOptions->currentText();
