@@ -15,11 +15,15 @@ Graph::Graph()
 
     setBFS();
 }
+
+/*! adds an edge to the adjacency list for dfs*/
 void Graph::addEdge(int u, int v, double w)
 {
     adj[u].push_back(make_pair(v, w));
     adj[v].push_back(make_pair(u, w));
 }
+
+/*! adds edge to the dfs list taking in both vertexes*/
 void Graph::addEdgeDFS(int src, int dest)
 {
     dfs[src].push_back(dest);
@@ -212,6 +216,8 @@ void Graph :: getPath(int s, int city, QVector<int> &path)
     }
 
 }
+
+/*! Declares and initilizes the MST by creating a QVector of type double */
 void Graph::setMST()
 {
     QVector<double> temp;
@@ -240,11 +246,9 @@ void Graph::setMST()
     }
 }
 
+/*! Function that finds the vertex with minimum key value, from the set of vertices not yet included in MST */
 double Graph :: minKey(double key[], bool mstSet[])
 {
-    // A utility function to find the vertex with
-    // minimum key value, from the set of vertices
-    // not yet included in MST
     // Initialize min value
     double min = INT_MAX, min_index;
 
@@ -258,6 +262,7 @@ double Graph :: minKey(double key[], bool mstSet[])
     }
     return min_index;
 }
+/*! Function calculates the MST and calls the print function to print it out */
 void Graph :: calcMst(QString &output)
 {
     // Array to store constructed MST
@@ -319,6 +324,9 @@ void Graph :: calcMst(QString &output)
     }
     printMST(parent, output);
 }
+
+/*! Function prints the MST by accessing each index.
+ * Displays team name at vertex of each edge and the distance */
 void Graph::printMST(int parent[],QString &output)
 {
     output += "Edge \t\t\t Weight\n";
@@ -329,10 +337,13 @@ void Graph::printMST(int parent[],QString &output)
 
 }
 
+/*! returns the totalDistance for the BFS */
 double Graph::getTotalDistance()
 {
     return totalDistance;
 }
+
+/*! Declares and initializes the adjacency matrix and distance matrix for the BFS*/
 void Graph::setBFS()
 {
     this->e = e;
@@ -352,6 +363,8 @@ void Graph::setBFS()
        totalDistance = 0;
 }
 
+/*! Takes the vertexs of each edge and adds it to the adjacency matrix
+ * and takes the distance and adds it to the distance matrix */
 void Graph::addEdgeBFS(int start, int e, double distance)
 {
     // Considering a bidirectional edge
@@ -361,6 +374,9 @@ void Graph::addEdgeBFS(int start, int e, double distance)
     adjDistance[start][e] = distance;
     adjDistance[e][start] = distance;
 }
+
+/*! Finds the index of the teams and distance and calls the addEdgeBFS()
+ * function to add edges to the adjacency matrix */
 void Graph::setBFSEdges()
 {
     int index1, index2;
@@ -371,6 +387,8 @@ void Graph::setBFSEdges()
         addEdgeBFS(index1, index2, datah.findDistance(index1, index2));
     }
 }
+
+/*! Function that performs the BFS and takes in the index of the starting node*/
 void Graph::BFS(int start)
 {
     // Visited vector to so that
@@ -410,6 +428,8 @@ void Graph::BFS(int start)
 
 }
 
+/*! Function prints the bfs by accessing each index of the adjacency matrix.
+ * Displays team name at vertex of each edge and the distance */
 void Graph::printBFS(QString &output)
 {
     for (int i = 0; i < 12; i++)

@@ -13,6 +13,7 @@ bfs::~bfs()
     delete ui;
 }
 
+/*! Displays the results from the BFS search to ui */
 void bfs::setText()
 {
     QString output = "";
@@ -23,6 +24,7 @@ void bfs::setText()
     ui->path->setText(output + '\n' + '\n' + "TOTAL DISTANCE: " + QString::number(graf.getTotalDistance()));
 }
 
+/*! Closes the bfs window and goes back to user menu */
 void bfs::on_exit_clicked()
 {
     close();

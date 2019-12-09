@@ -4,7 +4,8 @@
 #include <QSpinBox>
 #include <QDebug>
 
-/****************************************************************************
+/*!
+ ****************************************************************************
  * METHOD - checkout
  * --------------------------------------------------------------------------
  * This method is a default constructor
@@ -22,7 +23,8 @@ checkout::checkout(QWidget *parent) :
     ui->setupUi(this);
 }
 
-/****************************************************************************
+/*!
+ *****************************************************************************
  * METHOD - checkout
  * --------------------------------------------------------------------------
  * This method is a contructor that uses passed parameters.
@@ -56,7 +58,8 @@ checkout::checkout(QString* cList, double* dList, int t,
     ui->endVacationButton->setEnabled(false);
 }
 
-/****************************************************************************
+ /*!
+ ****************************************************************************
  * METHOD - tTravelSimulation
  * --------------------------------------------------------------------------
  * This method is the destructor
@@ -72,7 +75,8 @@ checkout::~checkout()
     delete ui;
 }
 
-/****************************************************************************
+ /*!
+ ****************************************************************************
  * METHOD - loadTables
  * --------------------------------------------------------------------------
  * This method loads the destinations into the list view and sets default
@@ -102,7 +106,8 @@ void checkout::loadTables()
     updateTable();
 }
 
-/****************************************************************************
+ /*!
+ ****************************************************************************
  * METHOD - updateTable
  * --------------------------------------------------------------------------
  * This method updates the item table view using values from the database
@@ -187,7 +192,8 @@ void checkout::updateTable()
     ui->nextDestButton->setEnabled(false);
 }
 
-/****************************************************************************
+/*!
+ ****************************************************************************
  * METHOD - on_confirmFoodButton_clicked
  * --------------------------------------------------------------------------
  * This method generates the subtotal for the selected items for the
@@ -218,7 +224,8 @@ void checkout::on_confirmFoodButton_clicked()
     ui->nextDestButton->setEnabled(true);
 }
 
-/****************************************************************************
+/*!
+ ****************************************************************************
  * METHOD - on_nextDestButton_clicked
  * --------------------------------------------------------------------------
  * This method updates view for the next destination in the list.
@@ -291,7 +298,8 @@ void checkout::on_nextDestButton_clicked()
     }
 }
 
-/****************************************************************************
+ /*!
+ ****************************************************************************
  * METHOD - on_exitVacationButton_clicked
  * --------------------------------------------------------------------------
  * This method allows te traveler to exit the checkout in the middle of the
@@ -308,7 +316,8 @@ void checkout::on_exitSimulationButton_clicked()
     this->close();
 }
 
-/****************************************************************************
+ /*!
+ ****************************************************************************
  * METHOD - on_endVacationButton_clicked
  * --------------------------------------------------------------------------
  * This method ends the checkout upon completion of the process.

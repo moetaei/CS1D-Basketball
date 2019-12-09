@@ -8,16 +8,21 @@ mst::mst(QWidget *parent) :
     ui->setupUi(this);
 }
 
+//! destructor
 mst::~mst()
 {
     delete ui;
 }
+
+/*! Displays the results from the MST to ui label */
 void mst::setLabel()
 {
     QString output = "";
     graf.calcMst(output);
     ui->path->setText(output);
 }
+
+/*! Closes the MST window and goes back to user menu */
 void mst::on_exit_clicked()
 {
     close();

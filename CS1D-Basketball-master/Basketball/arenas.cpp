@@ -13,11 +13,13 @@ arenas::arenas(QWidget *parent) :
     defaultReset();
 }
 
+/*! destructor */
 arenas::~arenas()
 {
     delete ui;
 }
 
+/*! Sets all the info for the arena to default data like the team name and arena name*/
 void arenas::arenas::defaultReset()
 {
     QSqlQueryModel * model = new QSqlQueryModel;
