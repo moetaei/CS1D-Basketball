@@ -17,6 +17,7 @@ admin::admin(QWidget *parent) :
 //    ui->stackedWidget->insertWidget(3, &coachWindow);
 //    ui->stackedWidget->insertWidget(4, &conferenceWindow);
 
+
     myDB = QSqlDatabase::database();
 
 }

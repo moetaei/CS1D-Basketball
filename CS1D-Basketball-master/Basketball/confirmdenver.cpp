@@ -82,14 +82,11 @@ void confirmDenver::on_denverList_itemClicked(QListWidgetItem *item)
     destinations[0] = item->text();
 }
 
-void confirmDenver::on_pushButton_clicked()
+
+
+void confirmDenver::on_exitButton_clicked()
 {
     checkoutWindow = new checkout(destinations,distances,1);
     checkoutWindow->show();
     this->close();
-}
-
-void confirmDenver::on_exitButton_clicked()
-{
-    close();
 }
