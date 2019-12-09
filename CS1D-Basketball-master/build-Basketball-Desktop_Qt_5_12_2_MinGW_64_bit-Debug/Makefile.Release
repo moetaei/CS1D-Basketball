@@ -49,7 +49,6 @@ OBJECTS_DIR   = release
 
 SOURCES       = ..\Basketball\admin.cpp \
 		..\Basketball\arenas.cpp \
-		..\Basketball\checkout.cpp \
 		..\Basketball\city.cpp \
 		..\Basketball\citytocity.cpp \
 		..\Basketball\coaches.cpp \
@@ -75,7 +74,6 @@ SOURCES       = ..\Basketball\admin.cpp \
 		..\Basketball\user.cpp release\qrc_resource.cpp \
 		release\moc_admin.cpp \
 		release\moc_arenas.cpp \
-		release\moc_checkout.cpp \
 		release\moc_citytocity.cpp \
 		release\moc_coaches.cpp \
 		release\moc_conference.cpp \
@@ -95,7 +93,6 @@ SOURCES       = ..\Basketball\admin.cpp \
 		release\moc_user.cpp
 OBJECTS       = release/admin.o \
 		release/arenas.o \
-		release/checkout.o \
 		release/city.o \
 		release/citytocity.o \
 		release/coaches.o \
@@ -122,7 +119,6 @@ OBJECTS       = release/admin.o \
 		release/qrc_resource.o \
 		release/moc_admin.o \
 		release/moc_arenas.o \
-		release/moc_checkout.o \
 		release/moc_citytocity.o \
 		release/moc_coaches.o \
 		release/moc_conference.o \
@@ -149,7 +145,6 @@ DIST          = ../../graph_picture.PNG \
 		../csvFiles/NBA \
 		newDistance.csv ..\Basketball\admin.h \
 		..\Basketball\arenas.h \
-		..\Basketball\checkout.h \
 		..\Basketball\city.h \
 		..\Basketball\citytocity.h \
 		..\Basketball\coaches.h \
@@ -173,7 +168,6 @@ DIST          = ../../graph_picture.PNG \
 		..\Basketball\uTeams.h \
 		..\Basketball\user.h ..\Basketball\admin.cpp \
 		..\Basketball\arenas.cpp \
-		..\Basketball\checkout.cpp \
 		..\Basketball\city.cpp \
 		..\Basketball\citytocity.cpp \
 		..\Basketball\coaches.cpp \
@@ -207,7 +201,7 @@ DESTDIR_TARGET = release\Basketball.exe
 first: all
 all: Makefile.Release  release/Basketball.exe
 
-release/Basketball.exe: ui_admin.h ui_arenas.h ui_checkout.h ui_citytocity.h ui_coaches.h ui_conference.h ui_confirmcustom2.h ui_confirmdenver.h ui_confirmdetroit.h ui_denverto.h ui_dfs.h ui_divisions.h ui_editteam.h ui_info.h ui_login.h ui_mainwindow.h ui_mst.h ui_next.h ui_option2.h ui_uTeams.h ui_user.h $(OBJECTS) 
+release/Basketball.exe: ui_admin.h ui_arenas.h ui_citytocity.h ui_coaches.h ui_conference.h ui_confirmcustom2.h ui_confirmdenver.h ui_confirmdetroit.h ui_denverto.h ui_dfs.h ui_divisions.h ui_editteam.h ui_info.h ui_login.h ui_mainwindow.h ui_mst.h ui_next.h ui_option2.h ui_uTeams.h ui_user.h $(OBJECTS) 
 	$(LINKER) $(LFLAGS) -o $(DESTDIR_TARGET) @object_script.Basketball.Release  $(LIBS)
 
 qmake: FORCE
@@ -216,10 +210,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) Basketball.zip $(SOURCES) $(DIST) ..\Basketball\Basketball.pro C:\Qt\5.12.2\mingw73_64\mkspecs\features\spec_pre.prf C:\Qt\5.12.2\mingw73_64\mkspecs\qdevice.pri C:\Qt\5.12.2\mingw73_64\mkspecs\features\device_config.prf C:\Qt\5.12.2\mingw73_64\mkspecs\common\sanitize.conf C:\Qt\5.12.2\mingw73_64\mkspecs\common\gcc-base.conf C:\Qt\5.12.2\mingw73_64\mkspecs\common\g++-base.conf C:\Qt\5.12.2\mingw73_64\mkspecs\common\angle.conf C:\Qt\5.12.2\mingw73_64\mkspecs\common\windows-vulkan.conf C:\Qt\5.12.2\mingw73_64\mkspecs\common\g++-win32.conf C:\Qt\5.12.2\mingw73_64\mkspecs\qconfig.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3danimation.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3danimation_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dcore.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dcore_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dextras.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dextras_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dinput.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dinput_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dlogic.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dlogic_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dquick.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dquick_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dquickanimation.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dquickextras.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dquickextras_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dquickinput.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dquickinput_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dquickrender.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dquickrender_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dquickscene2d.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3drender.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3drender_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_accessibility_support_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_axbase.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_axserver.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_core.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_designer.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_edid_support_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_egl_support_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_gamepad.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_gamepad_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_gui.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_help.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_location.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_location_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_network.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_nfc.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_positioning.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_positioningquick.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_positioningquick_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_qml.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_quick.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_remoteobjects.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_remoteobjects_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_repparser.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_repparser_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_scxml.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_scxml_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_sensors.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_serialbus.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_serialbus_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_serialport.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_sql.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_svg.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_texttospeech.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_texttospeech_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_theme_support_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_vulkan_support_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_webchannel.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_websockets.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_winextras.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_xml.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\features\qt_functions.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\qt_config.prf C:\Qt\5.12.2\mingw73_64\mkspecs\win32-g++\qmake.conf C:\Qt\5.12.2\mingw73_64\mkspecs\features\spec_post.prf .qmake.stash C:\Qt\5.12.2\mingw73_64\mkspecs\features\exclusive_builds.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\toolchain.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\default_pre.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\win32\default_pre.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\resolve_config.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\exclusive_builds_post.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\default_post.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\build_pass.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\qml_debug.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\precompile_header.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\warn_on.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\qt.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\resources.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\moc.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\win32\opengl.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\uic.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\qmake_use.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\file_copies.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\win32\windows.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\testcase_targets.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\exceptions.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\yacc.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\lex.prf ..\Basketball\Basketball.pro ..\Basketball\resource.qrc C:\Qt\5.12.2\mingw73_64\lib\Qt5Widgets.prl C:\Qt\5.12.2\mingw73_64\lib\Qt5Gui.prl C:\Qt\5.12.2\mingw73_64\lib\Qt5Sql.prl C:\Qt\5.12.2\mingw73_64\lib\Qt5Core.prl C:\Qt\5.12.2\mingw73_64\lib\qtmain.prl   ..\Basketball\resource.qrc C:\Qt\5.12.2\mingw73_64\mkspecs\features\data\dummy.cpp ..\Basketball\admin.h ..\Basketball\arenas.h ..\Basketball\checkout.h ..\Basketball\city.h ..\Basketball\citytocity.h ..\Basketball\coaches.h ..\Basketball\conference.h ..\Basketball\confirmcustom2.h ..\Basketball\confirmdenver.h ..\Basketball\confirmdetroit.h ..\Basketball\data.h ..\Basketball\databasemanager.h ..\Basketball\denverto.h ..\Basketball\dfs.h ..\Basketball\divisions.h ..\Basketball\editteam.h ..\Basketball\graph.h ..\Basketball\info.h ..\Basketball\login.h ..\Basketball\mst.h ..\Basketball\next.h ..\Basketball\node.h ..\Basketball\option2.h ..\Basketball\uTeams.h ..\Basketball\user.h  ..\Basketball\admin.cpp ..\Basketball\arenas.cpp ..\Basketball\checkout.cpp ..\Basketball\city.cpp ..\Basketball\citytocity.cpp ..\Basketball\coaches.cpp ..\Basketball\conference.cpp ..\Basketball\confirmcustom2.cpp ..\Basketball\confirmdenver.cpp ..\Basketball\confirmdetroit.cpp ..\Basketball\data.cpp ..\Basketball\databasemanager.cpp ..\Basketball\denverto.cpp ..\Basketball\dfs.cpp ..\Basketball\divisions.cpp ..\Basketball\editteam.cpp ..\Basketball\graph.cpp ..\Basketball\info.cpp ..\Basketball\login.cpp ..\Basketball\main.cpp ..\Basketball\mst.cpp ..\Basketball\next.cpp ..\Basketball\node.cpp ..\Basketball\option2.cpp ..\Basketball\uTeams.cpp ..\Basketball\user.cpp ..\Basketball\admin.ui ..\Basketball\arenas.ui ..\Basketball\checkout.ui ..\Basketball\citytocity.ui ..\Basketball\coaches.ui ..\Basketball\conference.ui ..\Basketball\confirmcustom2.ui ..\Basketball\confirmdenver.ui ..\Basketball\confirmdetroit.ui ..\Basketball\denverto.ui ..\Basketball\dfs.ui ..\Basketball\divisions.ui ..\Basketball\editteam.ui ..\Basketball\info.ui ..\Basketball\login.ui ..\Basketball\mainwindow.ui ..\Basketball\mst.ui ..\Basketball\next.ui ..\Basketball\option2.ui ..\Basketball\uTeams.ui ..\Basketball\user.ui    
+	$(ZIP) Basketball.zip $(SOURCES) $(DIST) ..\Basketball\Basketball.pro C:\Qt\5.12.2\mingw73_64\mkspecs\features\spec_pre.prf C:\Qt\5.12.2\mingw73_64\mkspecs\qdevice.pri C:\Qt\5.12.2\mingw73_64\mkspecs\features\device_config.prf C:\Qt\5.12.2\mingw73_64\mkspecs\common\sanitize.conf C:\Qt\5.12.2\mingw73_64\mkspecs\common\gcc-base.conf C:\Qt\5.12.2\mingw73_64\mkspecs\common\g++-base.conf C:\Qt\5.12.2\mingw73_64\mkspecs\common\angle.conf C:\Qt\5.12.2\mingw73_64\mkspecs\common\windows-vulkan.conf C:\Qt\5.12.2\mingw73_64\mkspecs\common\g++-win32.conf C:\Qt\5.12.2\mingw73_64\mkspecs\qconfig.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3danimation.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3danimation_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dcore.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dcore_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dextras.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dextras_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dinput.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dinput_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dlogic.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dlogic_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dquick.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dquick_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dquickanimation.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dquickextras.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dquickextras_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dquickinput.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dquickinput_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dquickrender.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dquickrender_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dquickscene2d.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3drender.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_3drender_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_accessibility_support_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_axbase.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_axserver.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_core.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_designer.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_edid_support_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_egl_support_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_gamepad.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_gamepad_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_gui.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_help.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_location.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_location_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_network.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_nfc.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_positioning.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_positioningquick.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_positioningquick_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_qml.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_quick.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_remoteobjects.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_remoteobjects_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_repparser.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_repparser_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_scxml.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_scxml_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_sensors.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_serialbus.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_serialbus_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_serialport.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_sql.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_svg.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_texttospeech.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_texttospeech_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_theme_support_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_vulkan_support_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_webchannel.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_websockets.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_winextras.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_xml.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt\5.12.2\mingw73_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt\5.12.2\mingw73_64\mkspecs\features\qt_functions.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\qt_config.prf C:\Qt\5.12.2\mingw73_64\mkspecs\win32-g++\qmake.conf C:\Qt\5.12.2\mingw73_64\mkspecs\features\spec_post.prf .qmake.stash C:\Qt\5.12.2\mingw73_64\mkspecs\features\exclusive_builds.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\toolchain.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\default_pre.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\win32\default_pre.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\resolve_config.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\exclusive_builds_post.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\default_post.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\build_pass.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\qml_debug.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\precompile_header.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\warn_on.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\qt.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\resources.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\moc.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\win32\opengl.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\uic.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\qmake_use.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\file_copies.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\win32\windows.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\testcase_targets.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\exceptions.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\yacc.prf C:\Qt\5.12.2\mingw73_64\mkspecs\features\lex.prf ..\Basketball\Basketball.pro ..\Basketball\resource.qrc C:\Qt\5.12.2\mingw73_64\lib\Qt5Widgets.prl C:\Qt\5.12.2\mingw73_64\lib\Qt5Gui.prl C:\Qt\5.12.2\mingw73_64\lib\Qt5Sql.prl C:\Qt\5.12.2\mingw73_64\lib\Qt5Core.prl C:\Qt\5.12.2\mingw73_64\lib\qtmain.prl   ..\Basketball\resource.qrc C:\Qt\5.12.2\mingw73_64\mkspecs\features\data\dummy.cpp ..\Basketball\admin.h ..\Basketball\arenas.h ..\Basketball\city.h ..\Basketball\citytocity.h ..\Basketball\coaches.h ..\Basketball\conference.h ..\Basketball\confirmcustom2.h ..\Basketball\confirmdenver.h ..\Basketball\confirmdetroit.h ..\Basketball\data.h ..\Basketball\databasemanager.h ..\Basketball\denverto.h ..\Basketball\dfs.h ..\Basketball\divisions.h ..\Basketball\editteam.h ..\Basketball\graph.h ..\Basketball\info.h ..\Basketball\login.h ..\Basketball\mst.h ..\Basketball\next.h ..\Basketball\node.h ..\Basketball\option2.h ..\Basketball\uTeams.h ..\Basketball\user.h  ..\Basketball\admin.cpp ..\Basketball\arenas.cpp ..\Basketball\city.cpp ..\Basketball\citytocity.cpp ..\Basketball\coaches.cpp ..\Basketball\conference.cpp ..\Basketball\confirmcustom2.cpp ..\Basketball\confirmdenver.cpp ..\Basketball\confirmdetroit.cpp ..\Basketball\data.cpp ..\Basketball\databasemanager.cpp ..\Basketball\denverto.cpp ..\Basketball\dfs.cpp ..\Basketball\divisions.cpp ..\Basketball\editteam.cpp ..\Basketball\graph.cpp ..\Basketball\info.cpp ..\Basketball\login.cpp ..\Basketball\main.cpp ..\Basketball\mst.cpp ..\Basketball\next.cpp ..\Basketball\node.cpp ..\Basketball\option2.cpp ..\Basketball\uTeams.cpp ..\Basketball\user.cpp ..\Basketball\admin.ui ..\Basketball\arenas.ui ..\Basketball\citytocity.ui ..\Basketball\coaches.ui ..\Basketball\conference.ui ..\Basketball\confirmcustom2.ui ..\Basketball\confirmdenver.ui ..\Basketball\confirmdetroit.ui ..\Basketball\denverto.ui ..\Basketball\dfs.ui ..\Basketball\divisions.ui ..\Basketball\editteam.ui ..\Basketball\info.ui ..\Basketball\login.ui ..\Basketball\mainwindow.ui ..\Basketball\mst.ui ..\Basketball\next.ui ..\Basketball\option2.ui ..\Basketball\uTeams.ui ..\Basketball\user.ui    
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\admin.o release\arenas.o release\checkout.o release\city.o release\citytocity.o release\coaches.o release\conference.o release\confirmcustom2.o release\confirmdenver.o release\confirmdetroit.o release\data.o release\databasemanager.o release\denverto.o release\dfs.o release\divisions.o release\editteam.o release\graph.o release\info.o release\login.o release\main.o release\mst.o release\next.o release\node.o release\option2.o release\uTeams.o release\user.o release\qrc_resource.o release\moc_admin.o release\moc_arenas.o release\moc_checkout.o release\moc_citytocity.o release\moc_coaches.o release\moc_conference.o release\moc_confirmcustom2.o release\moc_confirmdenver.o release\moc_confirmdetroit.o release\moc_denverto.o release\moc_dfs.o release\moc_divisions.o release\moc_editteam.o release\moc_info.o release\moc_login.o release\moc_mst.o release\moc_next.o release\moc_option2.o release\moc_uTeams.o release\moc_user.o
+	-$(DEL_FILE) release\admin.o release\arenas.o release\city.o release\citytocity.o release\coaches.o release\conference.o release\confirmcustom2.o release\confirmdenver.o release\confirmdetroit.o release\data.o release\databasemanager.o release\denverto.o release\dfs.o release\divisions.o release\editteam.o release\graph.o release\info.o release\login.o release\main.o release\mst.o release\next.o release\node.o release\option2.o release\uTeams.o release\user.o release\qrc_resource.o release\moc_admin.o release\moc_arenas.o release\moc_citytocity.o release\moc_coaches.o release\moc_conference.o release\moc_confirmcustom2.o release\moc_confirmdenver.o release\moc_confirmdetroit.o release\moc_denverto.o release\moc_dfs.o release\moc_divisions.o release\moc_editteam.o release\moc_info.o release\moc_login.o release\moc_mst.o release\moc_next.o release\moc_option2.o release\moc_uTeams.o release\moc_user.o
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -250,9 +244,9 @@ compiler_moc_predefs_clean:
 release/moc_predefs.h: C:/Qt/5.12.2/mingw73_64/mkspecs/features/data/dummy.cpp
 	g++ -fno-keep-inline-dllexport -O2 -std=gnu++11 -Wall -W -Wextra -dM -E -o release\moc_predefs.h C:\Qt\5.12.2\mingw73_64\mkspecs\features\data\dummy.cpp
 
-compiler_moc_header_make_all: release/moc_admin.cpp release/moc_arenas.cpp release/moc_checkout.cpp release/moc_citytocity.cpp release/moc_coaches.cpp release/moc_conference.cpp release/moc_confirmcustom2.cpp release/moc_confirmdenver.cpp release/moc_confirmdetroit.cpp release/moc_denverto.cpp release/moc_dfs.cpp release/moc_divisions.cpp release/moc_editteam.cpp release/moc_info.cpp release/moc_login.cpp release/moc_mst.cpp release/moc_next.cpp release/moc_option2.cpp release/moc_uTeams.cpp release/moc_user.cpp
+compiler_moc_header_make_all: release/moc_admin.cpp release/moc_arenas.cpp release/moc_citytocity.cpp release/moc_coaches.cpp release/moc_conference.cpp release/moc_confirmcustom2.cpp release/moc_confirmdenver.cpp release/moc_confirmdetroit.cpp release/moc_denverto.cpp release/moc_dfs.cpp release/moc_divisions.cpp release/moc_editteam.cpp release/moc_info.cpp release/moc_login.cpp release/moc_mst.cpp release/moc_next.cpp release/moc_option2.cpp release/moc_uTeams.cpp release/moc_user.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) release\moc_admin.cpp release\moc_arenas.cpp release\moc_checkout.cpp release\moc_citytocity.cpp release\moc_coaches.cpp release\moc_conference.cpp release\moc_confirmcustom2.cpp release\moc_confirmdenver.cpp release\moc_confirmdetroit.cpp release\moc_denverto.cpp release\moc_dfs.cpp release\moc_divisions.cpp release\moc_editteam.cpp release\moc_info.cpp release\moc_login.cpp release\moc_mst.cpp release\moc_next.cpp release\moc_option2.cpp release\moc_uTeams.cpp release\moc_user.cpp
+	-$(DEL_FILE) release\moc_admin.cpp release\moc_arenas.cpp release\moc_citytocity.cpp release\moc_coaches.cpp release\moc_conference.cpp release\moc_confirmcustom2.cpp release\moc_confirmdenver.cpp release\moc_confirmdetroit.cpp release\moc_denverto.cpp release\moc_dfs.cpp release\moc_divisions.cpp release\moc_editteam.cpp release\moc_info.cpp release\moc_login.cpp release\moc_mst.cpp release\moc_next.cpp release\moc_option2.cpp release\moc_uTeams.cpp release\moc_user.cpp
 release/moc_admin.cpp: ../Basketball/admin.h \
 		../Basketball/uTeams.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QWidget \
@@ -370,7 +364,6 @@ release/moc_admin.cpp: ../Basketball/admin.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtSql/QSqlError \
 		C:/Qt/5.12.2/mingw73_64/include/QtSql/qsqlerror.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QDebug \
-		../Basketball/editteam.h \
 		release/moc_predefs.h \
 		C:/Qt/5.12.2/mingw73_64/bin/moc.exe
 	C:\Qt\5.12.2\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/Juliana/Documents/GitHub/CS1D-Basketball/CS1D-Basketball-master/build-Basketball-Desktop_Qt_5_12_2_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/5.12.2/mingw73_64/mkspecs/win32-g++ -IC:/Users/Juliana/Documents/GitHub/CS1D-Basketball/CS1D-Basketball-master/Basketball -IC:/Qt/5.12.2/mingw73_64/include -IC:/Qt/5.12.2/mingw73_64/include/QtWidgets -IC:/Qt/5.12.2/mingw73_64/include/QtGui -IC:/Qt/5.12.2/mingw73_64/include/QtANGLE -IC:/Qt/5.12.2/mingw73_64/include/QtSql -IC:/Qt/5.12.2/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\Basketball\admin.h -o release\moc_admin.cpp
@@ -494,122 +487,6 @@ release/moc_arenas.cpp: ../Basketball/arenas.h \
 		release/moc_predefs.h \
 		C:/Qt/5.12.2/mingw73_64/bin/moc.exe
 	C:\Qt\5.12.2\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/Juliana/Documents/GitHub/CS1D-Basketball/CS1D-Basketball-master/build-Basketball-Desktop_Qt_5_12_2_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/5.12.2/mingw73_64/mkspecs/win32-g++ -IC:/Users/Juliana/Documents/GitHub/CS1D-Basketball/CS1D-Basketball-master/Basketball -IC:/Qt/5.12.2/mingw73_64/include -IC:/Qt/5.12.2/mingw73_64/include/QtWidgets -IC:/Qt/5.12.2/mingw73_64/include/QtGui -IC:/Qt/5.12.2/mingw73_64/include/QtANGLE -IC:/Qt/5.12.2/mingw73_64/include/QtSql -IC:/Qt/5.12.2/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\Basketball\arenas.h -o release\moc_arenas.cpp
-
-release/moc_checkout.cpp: ../Basketball/checkout.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QWidget \
-		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qwidget.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtwidgetsglobal.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtguiglobal.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qglobal.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qconfig.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qtcore-config.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qsystemdetection.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qprocessordetection.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qcompilerdetection.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qtypeinfo.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qsysinfo.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qlogging.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qflags.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qatomic.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qbasicatomic.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qatomic_bootstrap.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qgenericatomic.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qatomic_cxx11.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qatomic_msvc.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qglobalstatic.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qmutex.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qnumeric.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qversiontagging.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtgui-config.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtwidgets-config.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qwindowdefs.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qobjectdefs.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qnamespace.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qobjectdefs_impl.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qwindowdefs_win.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qobject.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qstring.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qchar.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qbytearray.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qrefcount.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qarraydata.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qstringliteral.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qstringalgorithms.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qstringview.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qstringbuilder.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qlist.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qalgorithms.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qiterator.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qhashfunctions.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qpair.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qbytearraylist.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qstringlist.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qregexp.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qstringmatcher.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qcoreevent.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qscopedpointer.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qmetatype.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qvarlengtharray.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qcontainerfwd.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qobject_impl.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qmargins.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qpaintdevice.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qrect.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qsize.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qpoint.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qpalette.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qcolor.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qrgb.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qrgba64.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qbrush.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qvector.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qmatrix.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qpolygon.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qregion.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qdatastream.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qiodevice.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qline.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtransform.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qpainterpath.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qimage.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qpixelformat.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qpixmap.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qsharedpointer.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qshareddata.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qhash.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qsharedpointer_impl.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qfont.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qfontmetrics.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qfontinfo.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qsizepolicy.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qcursor.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qkeysequence.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qevent.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qvariant.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qmap.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qdebug.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qtextstream.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qlocale.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qset.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qcontiguouscache.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qurl.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qurlquery.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qfile.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qfiledevice.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qvector2d.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtouchdevice.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/QSqlDatabase \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/qsqldatabase.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/qtsqlglobal.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/qtsql-config.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/QSqlQuery \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/qsqlquery.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/QSqlError \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/qsqlerror.h \
-		release/moc_predefs.h \
-		C:/Qt/5.12.2/mingw73_64/bin/moc.exe
-	C:\Qt\5.12.2\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/Juliana/Documents/GitHub/CS1D-Basketball/CS1D-Basketball-master/build-Basketball-Desktop_Qt_5_12_2_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/5.12.2/mingw73_64/mkspecs/win32-g++ -IC:/Users/Juliana/Documents/GitHub/CS1D-Basketball/CS1D-Basketball-master/Basketball -IC:/Qt/5.12.2/mingw73_64/include -IC:/Qt/5.12.2/mingw73_64/include/QtWidgets -IC:/Qt/5.12.2/mingw73_64/include/QtGui -IC:/Qt/5.12.2/mingw73_64/include/QtANGLE -IC:/Qt/5.12.2/mingw73_64/include/QtSql -IC:/Qt/5.12.2/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\Basketball\checkout.h -o release\moc_checkout.cpp
 
 release/moc_citytocity.cpp: ../Basketball/citytocity.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QDialog \
@@ -1283,7 +1160,6 @@ release/moc_confirmdenver.cpp: ../Basketball/confirmdenver.h \
 		../Basketball/city.h \
 		../Basketball/graph.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/QList \
-		../Basketball/checkout.h \
 		release/moc_predefs.h \
 		C:/Qt/5.12.2/mingw73_64/bin/moc.exe
 	C:\Qt\5.12.2\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/Juliana/Documents/GitHub/CS1D-Basketball/CS1D-Basketball-master/build-Basketball-Desktop_Qt_5_12_2_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/5.12.2/mingw73_64/mkspecs/win32-g++ -IC:/Users/Juliana/Documents/GitHub/CS1D-Basketball/CS1D-Basketball-master/Basketball -IC:/Qt/5.12.2/mingw73_64/include -IC:/Qt/5.12.2/mingw73_64/include/QtWidgets -IC:/Qt/5.12.2/mingw73_64/include/QtGui -IC:/Qt/5.12.2/mingw73_64/include/QtANGLE -IC:/Qt/5.12.2/mingw73_64/include/QtSql -IC:/Qt/5.12.2/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\Basketball\confirmdenver.h -o release\moc_confirmdenver.cpp
@@ -1533,6 +1409,17 @@ release/moc_denverto.cpp: ../Basketball/denverto.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/qvector2d.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtouchdevice.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QWidget \
+		C:/Qt/5.12.2/mingw73_64/include/QtSql/QSqlDatabase \
+		C:/Qt/5.12.2/mingw73_64/include/QtSql/qsqldatabase.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtSql/qtsqlglobal.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtSql/qtsql-config.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtSql/QSqlQuery \
+		C:/Qt/5.12.2/mingw73_64/include/QtSql/qsqlquery.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtSql/QSqlQueryModel \
+		C:/Qt/5.12.2/mingw73_64/include/QtSql/qsqlquerymodel.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtSql/QSqlError \
+		C:/Qt/5.12.2/mingw73_64/include/QtSql/qsqlerror.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QDebug \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QListWidget \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlistwidget.h \
@@ -1540,7 +1427,6 @@ release/moc_denverto.cpp: ../Basketball/denverto.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractitemview.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qframe.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qabstractitemmodel.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/qitemselectionmodel.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractitemdelegate.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qstyleoption.h \
@@ -1559,16 +1445,6 @@ release/moc_denverto.cpp: ../Basketball/denverto.h \
 		../Basketball/node.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QString \
 		../Basketball/city.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/QSqlDatabase \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/qsqldatabase.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/qtsqlglobal.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/qtsql-config.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/QSqlQuery \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/qsqlquery.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/QSqlQueryModel \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/qsqlquerymodel.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/QSqlError \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/qsqlerror.h \
 		../Basketball/graph.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/QList \
 		release/moc_predefs.h \
@@ -2199,7 +2075,6 @@ release/moc_login.cpp: ../Basketball/login.h \
 		../Basketball/city.h \
 		../Basketball/graph.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/QList \
-		../Basketball/checkout.h \
 		../Basketball/confirmdetroit.h \
 		../Basketball/startingCity.h \
 		../Basketball/confirmcustom2.h \
@@ -2212,7 +2087,6 @@ release/moc_login.cpp: ../Basketball/login.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtablewidget.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtableview.h \
 		../Basketball/admin.h \
-		../Basketball/editteam.h \
 		../Basketball/databasemanager.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QObject \
 		release/moc_predefs.h \
@@ -2936,7 +2810,6 @@ release/moc_user.cpp: ../Basketball/user.h \
 		../Basketball/city.h \
 		../Basketball/graph.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/QList \
-		../Basketball/checkout.h \
 		../Basketball/confirmdetroit.h \
 		../Basketball/startingCity.h \
 		../Basketball/confirmcustom2.h \
@@ -2956,9 +2829,9 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_admin.h ui_arenas.h ui_checkout.h ui_citytocity.h ui_coaches.h ui_conference.h ui_confirmcustom2.h ui_confirmdenver.h ui_confirmdetroit.h ui_denverto.h ui_dfs.h ui_divisions.h ui_editteam.h ui_info.h ui_login.h ui_mainwindow.h ui_mst.h ui_next.h ui_option2.h ui_uTeams.h ui_user.h
+compiler_uic_make_all: ui_admin.h ui_arenas.h ui_citytocity.h ui_coaches.h ui_conference.h ui_confirmcustom2.h ui_confirmdenver.h ui_confirmdetroit.h ui_denverto.h ui_dfs.h ui_divisions.h ui_editteam.h ui_info.h ui_login.h ui_mainwindow.h ui_mst.h ui_next.h ui_option2.h ui_uTeams.h ui_user.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_admin.h ui_arenas.h ui_checkout.h ui_citytocity.h ui_coaches.h ui_conference.h ui_confirmcustom2.h ui_confirmdenver.h ui_confirmdetroit.h ui_denverto.h ui_dfs.h ui_divisions.h ui_editteam.h ui_info.h ui_login.h ui_mainwindow.h ui_mst.h ui_next.h ui_option2.h ui_uTeams.h ui_user.h
+	-$(DEL_FILE) ui_admin.h ui_arenas.h ui_citytocity.h ui_coaches.h ui_conference.h ui_confirmcustom2.h ui_confirmdenver.h ui_confirmdetroit.h ui_denverto.h ui_dfs.h ui_divisions.h ui_editteam.h ui_info.h ui_login.h ui_mainwindow.h ui_mst.h ui_next.h ui_option2.h ui_uTeams.h ui_user.h
 ui_admin.h: ../Basketball/admin.ui \
 		C:/Qt/5.12.2/mingw73_64/bin/uic.exe
 	C:\Qt\5.12.2\mingw73_64\bin\uic.exe ..\Basketball\admin.ui -o ui_admin.h
@@ -2966,10 +2839,6 @@ ui_admin.h: ../Basketball/admin.ui \
 ui_arenas.h: ../Basketball/arenas.ui \
 		C:/Qt/5.12.2/mingw73_64/bin/uic.exe
 	C:\Qt\5.12.2\mingw73_64\bin\uic.exe ..\Basketball\arenas.ui -o ui_arenas.h
-
-ui_checkout.h: ../Basketball/checkout.ui \
-		C:/Qt/5.12.2/mingw73_64/bin/uic.exe
-	C:\Qt\5.12.2\mingw73_64\bin\uic.exe ..\Basketball\checkout.ui -o ui_checkout.h
 
 ui_citytocity.h: ../Basketball/citytocity.ui \
 		C:/Qt/5.12.2/mingw73_64/bin/uic.exe
@@ -3172,7 +3041,6 @@ release/admin.o: ../Basketball/admin.cpp ../Basketball/admin.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtSql/QSqlError \
 		C:/Qt/5.12.2/mingw73_64/include/QtSql/qsqlerror.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QDebug \
-		../Basketball/editteam.h \
 		ui_admin.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QVariant \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QApplication \
@@ -3190,6 +3058,8 @@ release/admin.o: ../Basketball/admin.cpp ../Basketball/admin.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlayout.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlayoutitem.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgridlayout.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QLabel \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlabel.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QPushButton \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qpushbutton.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractbutton.h \
@@ -3316,132 +3186,38 @@ release/arenas.o: ../Basketball/arenas.cpp ../Basketball/arenas.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtSql/qsqlerror.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QDebug \
 		ui_arenas.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/QPixmap
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\arenas.o ..\Basketball\arenas.cpp
-
-release/checkout.o: ../Basketball/checkout.cpp ../Basketball/checkout.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QWidget \
-		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qwidget.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtwidgetsglobal.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtguiglobal.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qglobal.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qconfig.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qtcore-config.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qsystemdetection.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qprocessordetection.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qcompilerdetection.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qtypeinfo.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qsysinfo.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qlogging.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qflags.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qatomic.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qbasicatomic.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qatomic_bootstrap.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qgenericatomic.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qatomic_cxx11.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qatomic_msvc.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qglobalstatic.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qmutex.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qnumeric.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qversiontagging.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtgui-config.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtwidgets-config.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qwindowdefs.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qobjectdefs.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qnamespace.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qobjectdefs_impl.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qwindowdefs_win.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qobject.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qstring.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qchar.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qbytearray.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qrefcount.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qarraydata.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qstringliteral.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qstringalgorithms.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qstringview.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qstringbuilder.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qlist.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qalgorithms.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qiterator.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qhashfunctions.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qpair.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qbytearraylist.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qstringlist.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qregexp.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qstringmatcher.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qcoreevent.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qscopedpointer.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qmetatype.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qvarlengtharray.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qcontainerfwd.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qobject_impl.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qmargins.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qpaintdevice.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qrect.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qsize.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qpoint.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qpalette.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qcolor.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qrgb.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qrgba64.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qbrush.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qvector.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qmatrix.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qpolygon.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qregion.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qdatastream.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qiodevice.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qline.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtransform.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qpainterpath.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qimage.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qpixelformat.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qpixmap.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qsharedpointer.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qshareddata.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qhash.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qsharedpointer_impl.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qfont.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qfontmetrics.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qfontinfo.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qsizepolicy.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qcursor.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qkeysequence.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qevent.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qvariant.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qmap.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qdebug.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qtextstream.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qlocale.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qset.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qcontiguouscache.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qurl.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qurlquery.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qfile.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qfiledevice.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qvector2d.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtouchdevice.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/QSqlDatabase \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/qsqldatabase.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/qtsqlglobal.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/qtsql-config.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/QSqlQuery \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/qsqlquery.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/QSqlError \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/qsqlerror.h \
-		ui_checkout.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QMessageBox \
-		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qmessagebox.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qdialog.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QSpinBox \
-		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qspinbox.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/QVariant \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QApplication \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qeventloop.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qguiapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qinputmethod.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QHeaderView \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qheaderview.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qframe.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qstyleoption.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractspinbox.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/qvalidator.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/qregularexpression.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/QDebug
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\checkout.o ..\Basketball\checkout.cpp
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qicon.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qslider.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractslider.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qstyle.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtabbar.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qrubberband.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QLabel \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlabel.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QTableView \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtableview.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/QPixmap
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\arenas.o ..\Basketball\arenas.cpp
 
 release/city.o: ../Basketball/city.cpp ../Basketball/city.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QString \
@@ -3622,7 +3398,26 @@ release/citytocity.o: ../Basketball/citytocity.cpp ../Basketball/citytocity.h \
 		../Basketball/city.h \
 		../Basketball/graph.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/QList \
-		ui_citytocity.h
+		ui_citytocity.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/QVariant \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QApplication \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qeventloop.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qguiapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qinputmethod.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QPushButton \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QTextBrowser \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtextbrowser.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtextedit.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtextdocument.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtextoption.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtextcursor.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtextformat.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qpen.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\citytocity.o ..\Basketball\citytocity.cpp
 
 release/coaches.o: ../Basketball/coaches.cpp ../Basketball/coaches.h \
@@ -3742,6 +3537,36 @@ release/coaches.o: ../Basketball/coaches.cpp ../Basketball/coaches.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtSql/qsqlerror.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QDebug \
 		ui_coaches.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/QVariant \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QApplication \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qeventloop.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qguiapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qinputmethod.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QHeaderView \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qheaderview.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qframe.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qstyleoption.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qvalidator.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qregularexpression.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qicon.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qslider.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractslider.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qstyle.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtabbar.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qrubberband.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QLabel \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlabel.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QTableView \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtableview.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/QPixmap
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\coaches.o ..\Basketball\coaches.cpp
 
@@ -3861,7 +3686,37 @@ release/conference.o: ../Basketball/conference.cpp ../Basketball/conference.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtSql/QSqlError \
 		C:/Qt/5.12.2/mingw73_64/include/QtSql/qsqlerror.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QDebug \
-		ui_conference.h
+		ui_conference.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/QVariant \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QApplication \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qeventloop.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qguiapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qinputmethod.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QComboBox \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qcombobox.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qstyleoption.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qvalidator.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qregularexpression.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qicon.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qslider.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractslider.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qstyle.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtabbar.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qrubberband.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qframe.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QHeaderView \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qheaderview.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QTableView \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtableview.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\conference.o ..\Basketball\conference.cpp
 
 release/confirmcustom2.o: ../Basketball/confirmcustom2.cpp ../Basketball/confirmcustom2.h \
@@ -4160,7 +4015,6 @@ release/confirmdenver.o: ../Basketball/confirmdenver.cpp ../Basketball/confirmde
 		../Basketball/city.h \
 		../Basketball/graph.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/QList \
-		../Basketball/checkout.h \
 		ui_confirmdenver.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QVariant \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QApplication \
@@ -4598,6 +4452,17 @@ release/denverto.o: ../Basketball/denverto.cpp ../Basketball/denverto.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/qvector2d.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtouchdevice.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QWidget \
+		C:/Qt/5.12.2/mingw73_64/include/QtSql/QSqlDatabase \
+		C:/Qt/5.12.2/mingw73_64/include/QtSql/qsqldatabase.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtSql/qtsqlglobal.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtSql/qtsql-config.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtSql/QSqlQuery \
+		C:/Qt/5.12.2/mingw73_64/include/QtSql/qsqlquery.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtSql/QSqlQueryModel \
+		C:/Qt/5.12.2/mingw73_64/include/QtSql/qsqlquerymodel.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtSql/QSqlError \
+		C:/Qt/5.12.2/mingw73_64/include/QtSql/qsqlerror.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QDebug \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QListWidget \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlistwidget.h \
@@ -4605,7 +4470,6 @@ release/denverto.o: ../Basketball/denverto.cpp ../Basketball/denverto.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractitemview.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qframe.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtCore/qabstractitemmodel.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/qitemselectionmodel.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractitemdelegate.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qstyleoption.h \
@@ -4624,19 +4488,28 @@ release/denverto.o: ../Basketball/denverto.cpp ../Basketball/denverto.h \
 		../Basketball/node.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QString \
 		../Basketball/city.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/QSqlDatabase \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/qsqldatabase.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/qtsqlglobal.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/qtsql-config.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/QSqlQuery \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/qsqlquery.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/QSqlQueryModel \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/qsqlquerymodel.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/QSqlError \
-		C:/Qt/5.12.2/mingw73_64/include/QtSql/qsqlerror.h \
 		../Basketball/graph.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/QList \
-		ui_denverto.h
+		ui_denverto.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/QVariant \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QApplication \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qeventloop.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qguiapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qinputmethod.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QPushButton \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QTextBrowser \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtextbrowser.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtextedit.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtextdocument.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtextoption.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtextcursor.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtextformat.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qpen.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\denverto.o ..\Basketball\denverto.cpp
 
 release/dfs.o: ../Basketball/dfs.cpp ../Basketball/dfs.h \
@@ -4762,7 +4635,31 @@ release/dfs.o: ../Basketball/dfs.cpp ../Basketball/dfs.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QDebug \
 		../Basketball/graph.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/QList \
-		ui_dfs.h
+		ui_dfs.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/QVariant \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QApplication \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qeventloop.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qguiapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qinputmethod.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QLabel \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlabel.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qframe.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QPushButton \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qicon.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QTextBrowser \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtextbrowser.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtextedit.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtextdocument.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtextoption.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtextcursor.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtextformat.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qpen.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\dfs.o ..\Basketball\dfs.cpp
 
 release/divisions.o: ../Basketball/divisions.cpp ../Basketball/divisions.h \
@@ -4869,7 +4766,37 @@ release/divisions.o: ../Basketball/divisions.cpp ../Basketball/divisions.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/qfiledevice.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/qvector2d.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtouchdevice.h \
-		ui_divisions.h
+		ui_divisions.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/QVariant \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QApplication \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qeventloop.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qguiapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qinputmethod.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QHeaderView \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qheaderview.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qframe.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qstyleoption.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qvalidator.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qregularexpression.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qicon.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qslider.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractslider.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qstyle.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtabbar.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qrubberband.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QTableWidget \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtablewidget.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtableview.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\divisions.o ..\Basketball\divisions.cpp
 
 release/editteam.o: ../Basketball/editteam.cpp ../Basketball/editteam.h \
@@ -5197,6 +5124,37 @@ release/info.o: ../Basketball/info.cpp ../Basketball/info.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtSql/qsqlerror.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QDebug \
 		ui_info.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/QVariant \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QApplication \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qeventloop.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qguiapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qinputmethod.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QComboBox \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qcombobox.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qstyleoption.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qvalidator.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qregularexpression.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qicon.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qslider.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractslider.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qstyle.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtabbar.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qrubberband.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qframe.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QHeaderView \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qheaderview.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QTableWidget \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtablewidget.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtableview.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtSql/QSql
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\info.o ..\Basketball\info.cpp
 
@@ -5361,7 +5319,6 @@ release/login.o: ../Basketball/login.cpp ../Basketball/login.h \
 		../Basketball/city.h \
 		../Basketball/graph.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/QList \
-		../Basketball/checkout.h \
 		../Basketball/confirmdetroit.h \
 		../Basketball/startingCity.h \
 		../Basketball/confirmcustom2.h \
@@ -5374,10 +5331,35 @@ release/login.o: ../Basketball/login.cpp ../Basketball/login.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtablewidget.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtableview.h \
 		../Basketball/admin.h \
-		../Basketball/editteam.h \
 		../Basketball/databasemanager.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QObject \
 		ui_login.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/QVariant \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QApplication \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qeventloop.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qguiapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qinputmethod.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QGraphicsView \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgraphicsview.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qpainter.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtextoption.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qpen.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qscrollarea.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgraphicsscene.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QLineEdit \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlineedit.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtextcursor.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtextformat.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QPushButton \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QTextBrowser \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtextbrowser.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtextedit.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtextdocument.h \
 		../Basketball/mainwindow.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QMainWindow \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qmainwindow.h
@@ -5547,7 +5529,6 @@ release/main.o: ../Basketball/main.cpp ../Basketball/mainwindow.h \
 		../Basketball/denverto.h \
 		../Basketball/graph.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/QList \
-		../Basketball/checkout.h \
 		../Basketball/confirmdetroit.h \
 		../Basketball/startingCity.h \
 		../Basketball/confirmcustom2.h \
@@ -5560,7 +5541,6 @@ release/main.o: ../Basketball/main.cpp ../Basketball/mainwindow.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtablewidget.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtableview.h \
 		../Basketball/admin.h \
-		../Basketball/editteam.h \
 		../Basketball/databasemanager.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QObject \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QApplication \
@@ -5714,7 +5694,28 @@ release/mst.o: ../Basketball/mst.cpp ../Basketball/mst.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtabbar.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtabwidget.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qrubberband.h \
-		ui_mst.h
+		ui_mst.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/QVariant \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QApplication \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qeventloop.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qguiapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qinputmethod.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QLabel \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlabel.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QPushButton \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QTextBrowser \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtextbrowser.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtextedit.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtextdocument.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtextoption.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtextcursor.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qtextformat.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qpen.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mst.o ..\Basketball\mst.cpp
 
 release/next.o: ../Basketball/next.cpp ../Basketball/next.h \
@@ -6192,6 +6193,38 @@ release/uTeams.o: ../Basketball/uTeams.cpp ../Basketball/uTeams.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtSql/qsqlerror.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QDebug \
 		ui_uTeams.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/QVariant \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QApplication \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qeventloop.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qguiapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qinputmethod.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QComboBox \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qcombobox.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qstyleoption.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qvalidator.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qregularexpression.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qicon.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qslider.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractslider.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qstyle.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtabbar.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qrubberband.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qframe.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QHeaderView \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qheaderview.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QLabel \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlabel.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QTableView \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtableview.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtSql/QSql \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/QPixmap
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\uTeams.o ..\Basketball\uTeams.cpp
@@ -6348,7 +6381,6 @@ release/user.o: ../Basketball/user.cpp ../Basketball/user.h \
 		../Basketball/city.h \
 		../Basketball/graph.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtGui/QList \
-		../Basketball/checkout.h \
 		../Basketball/confirmdetroit.h \
 		../Basketball/startingCity.h \
 		../Basketball/confirmcustom2.h \
@@ -6361,17 +6393,34 @@ release/user.o: ../Basketball/user.cpp ../Basketball/user.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtablewidget.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qtableview.h \
 		ui_user.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/QVariant \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QApplication \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtCore/qeventloop.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qguiapplication.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtGui/qinputmethod.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QGroupBox \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgroupbox.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QHBoxLayout \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qboxlayout.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlayout.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgridlayout.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QLabel \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlabel.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QPushButton \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QStackedWidget \
+		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qstackedwidget.h \
 		../Basketball/login.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QStackedLayout \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qstackedlayout.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlayout.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qlayoutitem.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qboxlayout.h \
-		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qgridlayout.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/QMessageBox \
 		C:/Qt/5.12.2/mingw73_64/include/QtWidgets/qmessagebox.h \
 		../Basketball/admin.h \
-		../Basketball/editteam.h \
 		../Basketball/databasemanager.h \
 		C:/Qt/5.12.2/mingw73_64/include/QtCore/QObject \
 		C:/Qt/5.12.2/mingw73_64/include/QtSql/QSql
@@ -6385,9 +6434,6 @@ release/moc_admin.o: release/moc_admin.cpp
 
 release/moc_arenas.o: release/moc_arenas.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_arenas.o release\moc_arenas.cpp
-
-release/moc_checkout.o: release/moc_checkout.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_checkout.o release\moc_checkout.cpp
 
 release/moc_citytocity.o: release/moc_citytocity.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_citytocity.o release\moc_citytocity.cpp

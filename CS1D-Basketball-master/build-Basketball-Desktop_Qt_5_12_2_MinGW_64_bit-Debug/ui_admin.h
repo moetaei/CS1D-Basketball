@@ -27,6 +27,7 @@ public:
     QHBoxLayout *horizontalLayout;
     QPushButton *adminButton;
     QPushButton *teamButton;
+    QPushButton *distanceButton;
     QPushButton *souvenirButton;
     QPushButton *logoutButton;
     QStackedWidget *stackedWidget;
@@ -77,6 +78,18 @@ public:
 
         horizontalLayout->addWidget(teamButton);
 
+        distanceButton = new QPushButton(layoutWidget);
+        distanceButton->setObjectName(QString::fromUtf8("distanceButton"));
+        distanceButton->setMaximumSize(QSize(16777215, 16777215));
+        distanceButton->setFont(font);
+        distanceButton->setStyleSheet(QString::fromUtf8("background-color:#ccccff;\n"
+"border-style: solid;\n"
+"border-color: black;\n"
+"border-width: 2px;\n"
+"border-radius: 5px;"));
+
+        horizontalLayout->addWidget(distanceButton);
+
         souvenirButton = new QPushButton(layoutWidget);
         souvenirButton->setObjectName(QString::fromUtf8("souvenirButton"));
         souvenirButton->setMaximumSize(QSize(16777215, 16777215));
@@ -118,7 +131,8 @@ public:
         admin->setWindowTitle(QApplication::translate("admin", "Form", nullptr));
         pushButtonGroup->setTitle(QString());
         adminButton->setText(QApplication::translate("admin", "Admin Options", nullptr));
-        teamButton->setText(QApplication::translate("admin", "Add Teams", nullptr));
+        teamButton->setText(QApplication::translate("admin", "Edit/Add Teams", nullptr));
+        distanceButton->setText(QApplication::translate("admin", "Edit Distances", nullptr));
         souvenirButton->setText(QApplication::translate("admin", "Souvenirs", nullptr));
         logoutButton->setText(QApplication::translate("admin", "LOGOUT", nullptr));
     } // retranslateUi
