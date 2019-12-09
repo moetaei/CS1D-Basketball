@@ -13,6 +13,8 @@ class editTeam : public QWidget
 
 public:
     explicit editTeam(QWidget *parent = nullptr);
+
+    //! destructor
     ~editTeam();
 
 private:

@@ -32,10 +32,10 @@ public:
 private slots:
     void on_denverList_itemClicked(QListWidgetItem *item);
 
-
+    //! close window
     void on_exitButton_clicked();
 
-
+    //! opens checkout window
     void on_pushButton_clicked();
 
 private:

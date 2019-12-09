@@ -18,6 +18,8 @@ class coaches : public QWidget
 
 public:
     explicit coaches(QWidget *parent = nullptr);
+
+    //! destructor
     ~coaches();
 
     void defaultReset();

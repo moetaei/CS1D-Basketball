@@ -16,6 +16,7 @@ namespace Ui {
 class ConfirmDetroit;
 }
 
+/*! class ConfirmDetroit is used so a basketball fan can plan a trip starting from detroit */
 class ConfirmDetroit : public QWidget
 {
     Q_OBJECT
@@ -40,6 +41,7 @@ private slots:
 
     void on_confirm_clicked();
 
+    //! closes window
     void on_exitButton_clicked();
 
 private:
@@ -47,8 +49,8 @@ private:
 
     QList<QString> customList;
 
-    class Graph graf;
-    class data datah;
+    class Graph graf; //!< Graph object
+    class data datah; //!< data object
 
     QString* sortedDest = nullptr;
     float* sortedDist = nullptr;

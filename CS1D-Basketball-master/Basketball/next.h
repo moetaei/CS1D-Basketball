@@ -30,6 +30,7 @@ private slots:
     void defaultListView();
     //!< Sets the default view the window by enabling and disabling items.
 
+    //! exits out
     void on_exitButton_clicked();
 
 private:

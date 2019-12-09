@@ -12,6 +12,8 @@ denverTo::~denverTo()
 {
     delete ui;
 }
+
+//! set team name
 QString denverTo::setCityName(QString city)
 {
     QString output = "";

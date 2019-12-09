@@ -49,6 +49,7 @@ void confirmCustom2::defaultListView()
     }
 }
 
+/*! Sorts the teams in the list */
 void confirmCustom2::sortCities()
 {
     QString temp;
@@ -181,6 +182,7 @@ void confirmCustom2::sortCities()
     sortedDist[cityNum-1] = qry.value(3).toInt();
 }
 
+/*! Changes the values to default values */
 void confirmCustom2::on_reset_clicked()
 {
     ui->customList->reset();
@@ -196,11 +198,13 @@ void confirmCustom2::on_reset_clicked()
     ui->confirm->setEnabled(false);
 }
 
+/*! close window */
 void confirmCustom2::on_cancel_clicked()
 {
     this->close();
 }
 
+/*! purchase souveneir on tip when clicked */
 void confirmCustom2::on_select_clicked()
 {
     // Stores selected items from availDestListWidget into customList
@@ -229,6 +233,7 @@ void confirmCustom2::on_select_clicked()
     }
 }
 
+/*! Sort teams on click */
 void confirmCustom2::on_confirm_clicked()
 {
     sortCities();

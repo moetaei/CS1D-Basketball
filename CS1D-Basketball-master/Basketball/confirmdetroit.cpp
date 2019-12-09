@@ -64,6 +64,7 @@ void ConfirmDetroit::defaultListView()
     }
 }
 
+//! sorts array of teams
 void ConfirmDetroit::sortCities()
 {
     QString temp;
@@ -170,7 +171,8 @@ void ConfirmDetroit::sortCities()
     sortedDist[cityNum-1] = qry.value(3).toInt();
 }
 
-/****************************************************************************
+/*!
+ ****************************************************************************
  * METHOD - on_cancel_clicked
  * --------------------------------------------------------------------------
  * This method clears the cities selected when this button is clicked.
@@ -186,7 +188,8 @@ void ConfirmDetroit::on_cancel_clicked()
     ui->confirm->setEnabled(false);
 }
 
-/****************************************************************************
+/*!
+ ****************************************************************************
  * METHOD - on_select_clicked
  * --------------------------------------------------------------------------
  * This method changes to a different widget view so the traveler can see
@@ -203,7 +206,8 @@ void ConfirmDetroit::on_select_clicked()
     ui->confirm->setEnabled(true);
 }
 
-/****************************************************************************
+/*!
+ ****************************************************************************
  * METHOD - on_confirm_clicked
  * --------------------------------------------------------------------------
  * This method clears the cities selected when this button is clicked.
@@ -219,6 +223,7 @@ void ConfirmDetroit::on_confirm_clicked()
 
 }
 
+/*! close window */
 void ConfirmDetroit::on_exitButton_clicked()
 {
     close();

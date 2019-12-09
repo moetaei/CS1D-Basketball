@@ -1,7 +1,8 @@
 #include "confirmdenver.h"
 #include "ui_confirmdenver.h"
 
-/****************************************************************************
+/*!
+ ****************************************************************************
  * METHOD - ConfirmDenver
  * --------------------------------------------------------------------------
  * This method is the constructor.
@@ -25,7 +26,8 @@ confirmDenver::confirmDenver(QWidget *parent) :
     distances = new double[1];
 }
 
-/****************************************************************************
+/*!
+ ****************************************************************************
  * METHOD - ~ConfirmDenver
  * --------------------------------------------------------------------------
  * This method is the desconstructor.
@@ -80,6 +82,7 @@ void confirmDenver::on_denverList_itemClicked(QListWidgetItem *item)
     destinations[0] = item->text();
 }
 
+/*! shows checkout window after trip */
 void confirmDenver::on_pushButton_clicked()
 {
     checkoutWindow = new checkout(destinations,distances,1);
@@ -87,6 +90,7 @@ void confirmDenver::on_pushButton_clicked()
     this->close();
 }
 
+/*! close */
 void confirmDenver::on_exitButton_clicked()
 {
     close();

@@ -13,6 +13,8 @@ namespace Ui {
 class confirmCustom2;
 }
 
+/*! class confirmCustom2 is used so the basketball fan can plan the second type of custon trip.
+ * It also allows the fan to purchase souviners */
 class confirmCustom2 : public QWidget
 {
     Q_OBJECT
@@ -20,6 +22,7 @@ class confirmCustom2 : public QWidget
 public:
     explicit confirmCustom2(QWidget *parent = nullptr);
 
+    //! destructor
     ~confirmCustom2();
 
     void defaultListView();
@@ -29,12 +32,17 @@ public:
     //!< Creates a sorted list of destinations and distances from selected.
 
 private slots:
+
+    //! reset values
     void on_reset_clicked();
 
+    //! on click close window
     void on_cancel_clicked();
 
+    //! on click purchase souveneir
     void on_select_clicked();
 
+    //! on click call sort
     void on_confirm_clicked();
 
     void on_startCityComboBox_currentIndexChanged(int index);
