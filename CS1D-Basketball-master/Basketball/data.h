@@ -9,6 +9,10 @@
 #include <QSqlQueryModel>
 #include <QSqlError>
 #include <QDebug>
+#include <QMessageBox>
+#include <QFileDialog>
+#include <QFile>
+
 struct enter
 {
     QString type;
@@ -18,7 +22,7 @@ struct enter
 
 /*! Class data is used to make the use of data easier to handle with functions
  * that can find the team in the database that is needed and can return the name, index and etc */
-class data
+class data : public QWidget
 {
 public:
 
@@ -49,6 +53,11 @@ public:
 
     //! Displays the team and distance
     QString showMe(node team);
+
+    void updateDB1(); // updates distance
+
+    void updateDB2(); // updates info
+
 private:
     QVector<node> team; //! distances, doubles
     QVector<city> names; //! names, strings

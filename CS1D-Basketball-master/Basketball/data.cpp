@@ -124,3 +124,106 @@ int data::getSizeC()
 {
     return names.size();
 }
+
+void data::updateDB1()
+{
+        QString Team1, Arena1, Team2, Distance; //IN, CALC - data fields for database
+        QSqlQuery *qry = new QSqlQuery(myDB); //IN, CALC - database query
+        QString file_name = QFileDialog::getOpenFileName(this,"Open A File", "C://"); // IN, CALC - file name
+        QFile file(file_name); // CALC - QFile input file
+
+        if(!file.open(QFile::ReadOnly | QFile::Text))
+        {
+           qDebug() << "Warning, File Not Added.";
+        }
+        else
+        {
+            qDebug() << "Success, File Added.";
+        }
+
+        QTextStream in(&file);
+
+        while(!in.atEnd())
+        {
+            Team1 = in.readLine();
+            Arena1 = in.readLine();
+            Team2 = in.readLine();
+            Distance = in.readLine();
+
+
+            qry->prepare("insert into distances (Team1,Arena1,Team2,Distance) "
+                        "values('"+Team1+"', '"+Arena1+"', '"+Team2+"', '"+Distance+"') ");
+
+            if(qry->exec())
+            {
+
+                qDebug() << "Database updated with file.";
+            }
+            else
+            {
+                qDebug() << qry->lastError();
+
+            }
+
+        }
+        in.readLine();
+        file.close();
+
+    //
+    //  END OF ADDING DISTANCES
+    //
+    //
+    //
+
+
+}
+
+void data::updateDB2()
+{
+    QString Conference, Division, TeamName, Location, ArenaName, StadiumCapacity, JoinedLeague, Coach; //IN, CALC - data fields for database
+    QSqlQuery *qry = new QSqlQuery(myDB); //IN, CALC - database query
+    QString file_name = QFileDialog::getOpenFileName(this,"Open A File", "C://"); // IN, CALC - file name
+    QFile file(file_name); // CALC - QFile input file
+
+    if(!file.open(QFile::ReadOnly | QFile::Text))
+    {
+       qDebug() << "Warning, File Not Added.";
+    }
+    else
+    {
+        qDebug() << "Success, File Added.";
+    }
+
+    QTextStream in(&file);
+
+    while(!in.atEnd())
+    {
+        Conference = in.readLine();
+        Division = in.readLine();
+        TeamName = in.readLine();
+        Location = in.readLine();
+
+        ArenaName = in.readLine();
+        StadiumCapacity = in.readLine();
+        JoinedLeague = in.readLine();
+        Coach = in.readLine();
+
+
+        qry->prepare("insert into info (Conference,Division,TeamName,Location,ArenaName,StadiumCapacity,JoinedLeague,Coach) "
+                    "values('"+Conference+"', '"+Division+"', '"+TeamName+"', '"+Location+"','"+ArenaName+"','"+StadiumCapacity+"','"+JoinedLeague+"','"+Coach+"') ");
+
+        if(qry->exec())
+        {
+
+            qDebug() << "Database updated with file.";
+        }
+        else
+        {
+            qDebug() << qry->lastError();
+
+        }
+
+    }
+    in.readLine();
+    file.close();
+}
