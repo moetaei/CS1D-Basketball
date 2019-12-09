@@ -344,12 +344,15 @@ void Graph :: calcMst(QString &output)
  * Displays team name at vertex of each edge and the distance */
 void Graph::printMST(int parent[],QString &output)
 {
+    double total = 0;
     output += "Edge \t\t\t Weight\n";
     for (int i = 1; i < V; i++)
     {
         output+= datah.findCityName(parent[i]) + " - " + datah.findCityName(i) + "\n" + "     \t\t\t" + QString:: number(mst[0][i][parent[i]]) +" \n";
+        total += mst[0][i][parent[i]];
     }
-
+    output +="\n\n";
+    output +="Total Distance: " + QString:: number(total);
 }
 
 /*! returns the totalDistance for the BFS */
