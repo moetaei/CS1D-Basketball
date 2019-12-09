@@ -1,7 +1,7 @@
 #include "graph.h"
 #include <QDebug>
 
-// Allocates memory for adjacency list
+/*! Constructor: Allocates memory for adjacency list
 Graph::Graph()
 {
     V = datah.getSizeC();
@@ -16,14 +16,14 @@ Graph::Graph()
     setBFS();
 }
 
-/*! adds an edge to the adjacency list for dfs*/
+/*! adds an edge to the adjacency list for dfs */
 void Graph::addEdge(int u, int v, double w)
 {
     adj[u].push_back(make_pair(v, w));
     adj[v].push_back(make_pair(u, w));
 }
 
-/*! adds edge to the dfs list taking in both vertexes*/
+/*! adds edge to the dfs list taking in both vertexes */
 void Graph::addEdgeDFS(int src, int dest)
 {
     dfs[src].push_back(dest);
@@ -39,6 +39,8 @@ void Graph::setDijEdges()
         addEdge(index1, index2, datah.findDistance(index1, index2));
     }
 }
+
+/*! sets the dfs edges */
 void  Graph:: setDFSEdges()
 {
     int index1, index2;
@@ -60,6 +62,8 @@ bool Graph :: checkVisits(int cities)
     }
     return true;
 }
+
+/*! Performs the DFS */
 void Graph::DFS(int vertex, QString &output, double &distance, double &total)
 {
     if(!checkVisits(datah.getSizeC()) && distance > 0)
@@ -128,6 +132,7 @@ void Graph::DFS(int vertex, QString &output, double &distance, double &total)
         }
     }
 }
+/*! if team is visted */
 bool Graph::visit(QString city,int vertex)
 {
     QList<int>::iterator k;
@@ -140,6 +145,8 @@ bool Graph::visit(QString city,int vertex)
     }
     return false;
 }
+
+/*! reset function for dfs */
 void  Graph::reset()
 {
     for(int i = 0; i < datah.getSizeC() ; i++)
@@ -147,6 +154,8 @@ void  Graph::reset()
         visited[i]= false;
     }
 }
+
+/*! Finds the shortest path with to given teams and outputs for dfs */
 void Graph::shortestPath(int src, int dest, QString &output)
 {
     priority_queue< iPair, vector <iPair> , greater<iPair> > pq;
