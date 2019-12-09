@@ -67,7 +67,6 @@ void ConfirmDetroit::defaultListView()
 //! sorts array of teams
 void ConfirmDetroit::sortCities()
 {
-    QString temp;
     stack<float> smallest;
     float tempDist[cityNum];
 //        QString tempDest[cityNum]/* = {*sortedDest}*/;
@@ -92,17 +91,19 @@ void ConfirmDetroit::sortCities()
         for(int k = 0; k < cityNum-1; k++)
         {
             qDebug() << "get dist" << customList[k];
+
             graf.shortestPath(datah.findCityIndex(startCity),datah.findCityIndex(customList[k]), output);
             qDebug() << "got dist";
             output = output.right(6);
             output.remove(QChar('e'));
             output.remove(QChar(' '));
             output.remove(QChar(':'));
-//            qDebug() << output;
+    //            qDebug() << output;
             tempDist[k] = output.toFloat();
             output = "";
-//            qDebug() << tempDist[k] << customList[k];
+            qDebug() << tempDist[k] << customList[k];
         }
+
 
 //        return;
 
@@ -113,7 +114,6 @@ void ConfirmDetroit::sortCities()
             if(smallest.top() >= tempDist[k])
             {
                 smallest.push(tempDist[k]);
-                temp = customList[k];
                 tempDest.push(customList[k]);
                 qDebug() << tempDest.top();
             }
@@ -149,25 +149,9 @@ void ConfirmDetroit::sortCities()
 
         qDebug() << sortedDest[i];
 
-//        if(i == 10)
-//        {
-//            qDebug() << sortedDest[0] << ' ' << sortedDest[1] << ' ' << sortedDest[2] << ' ' << sortedDest[3] << ' ' << sortedDest[4] << ' ' << sortedDest[5] << ' ' << endl
-//                     << sortedDest[6] << ' ' << sortedDest[7] << ' ' << sortedDest[8] << ' ' << sortedDest[9] << ' ' << sortedDest[10];
-//        }
-    }
-
 //    closestCity = sortedDest[cityNum-1];
 
-    // Last destination distance in list
-    QSqlQuery qry;
-    qry.prepare("SELECT * "
-                "FROM distances "
-                 "WHERE Team1 = '"+startCity+"' AND Team2 = '"+closestCity+"' "
-                 "ORDER BY Distances ASC");
-    qry.exec();
-    // Select first row of query and set closestCity to first item
-    qry.next();
-    sortedDist[cityNum-1] = qry.value(3).toInt();
+
 }
 
 /*!
