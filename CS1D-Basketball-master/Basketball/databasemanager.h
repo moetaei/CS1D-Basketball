@@ -43,8 +43,13 @@ public:
     //!< Returns connected database object
     /*!< POSTCONDITONS: return database */
 
+    void openSecondDb();
+    //!< Creates and opens the updated database connection if not open
+    /*!< POSTCONDITONS: return database.open(); */
+
 private:
     QSqlDatabase database; /*!< SQL Database Object created for connection */
+    bool secondDb;
 };
 
 #endif // DATABASEMANAGER_H
