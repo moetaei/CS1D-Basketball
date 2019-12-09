@@ -54,10 +54,8 @@ void ConfirmDetroit::defaultListView()
     sortedDist[0] = 0;
 
     sortCities();
-//    int tst = asd.calcMst("Detroit Pistons");
-//    qDebug() << tst;
 
-    for (int i = 0; i < cityNum ; i++)
+    for (int i = 0; i < cityNum -1 ; i++)
     {
         ui->detroitList->addItem(customList.at(i));
         qDebug() << customList.at(i);
@@ -85,8 +83,12 @@ void ConfirmDetroit::sortCities()
      *          Index n (max index for array) is last element, which does
      *              not require sorting.  It is the end.
      ***********************************************************************/
-    for(int i = 1; i < (cityNum); i++)
+    int src = datah.findCityIndex(startCity);
+    int d = src;
+    int i = 0;
+    while(i < datah.getSizeC())
     {
+<<<<<<< Updated upstream
         qDebug() << "start city: " << startCity;
         for(int k = 0; k < cityNum-1; k++)
         {
@@ -152,6 +154,15 @@ void ConfirmDetroit::sortCities()
 //    closestCity = sortedDest[cityNum-1];
 
 
+=======
+        graf.shortestPath1(d, output, d);
+        qDebug() << "End";
+        smallest.push(output.toFloat());
+        tempDest.push(datah.findCityName(d));
+        output = "";
+        i++;
+    }
+>>>>>>> Stashed changes
 }
 
 /*!
