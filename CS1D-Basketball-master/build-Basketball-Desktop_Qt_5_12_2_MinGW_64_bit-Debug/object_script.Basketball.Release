@@ -1,5 +1,6 @@
 release/admin.o
 release/arenas.o
+release/checkout.o
 release/city.o
 release/citytocity.o
 release/coaches.o
@@ -26,6 +27,7 @@ release/user.o
 release/qrc_resource.o
 release/moc_admin.o
 release/moc_arenas.o
+release/moc_checkout.o
 release/moc_citytocity.o
 release/moc_coaches.o
 release/moc_conference.o

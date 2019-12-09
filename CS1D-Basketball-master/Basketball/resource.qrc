@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/rec">
         <file>graph.png</file>
+        <file>newGraph.PNG</file>
+        <file>arrow.png</file>
     </qresource>
 </RCC>

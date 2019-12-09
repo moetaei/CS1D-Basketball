@@ -1,5 +1,6 @@
 debug/admin.o
 debug/arenas.o
+debug/checkout.o
 debug/city.o
 debug/citytocity.o
 debug/coaches.o
@@ -26,6 +27,7 @@ debug/user.o
 debug/qrc_resource.o
 debug/moc_admin.o
 debug/moc_arenas.o
+debug/moc_checkout.o
 debug/moc_citytocity.o
 debug/moc_coaches.o
 debug/moc_conference.o
