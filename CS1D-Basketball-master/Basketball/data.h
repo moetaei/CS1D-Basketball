@@ -58,7 +58,7 @@ public:
 private:
     QVector<node> team; //!< distances, doubles
     QVector<city> names; //!< names, strings
-    int totalCap; //!< total seating capacity of all stadiums
+    int totalCap = 0; //!< total seating capacity of all stadiums
     QSqlDatabase myDB;
 };
 

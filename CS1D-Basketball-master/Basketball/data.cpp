@@ -42,14 +42,17 @@ void data::setVector()
 void data::setSeatingCapacity()
 {
     QSqlQuery * qry = new QSqlQuery(myDB);
-    qry->prepare("SELECT StadiumCapacity "
+    qry->prepare("SELECT * "
                  "FROM info ");
-
+    QString temp;
     if(qry->exec())
     {
         while(qry->next())
         {
-            totalCap += qry->value(0).toInt();
+            temp = qry->value(5).toString();
+            temp.remove(',');
+            totalCap = temp.toInt() + totalCap;
+            qDebug() << temp;
         }
     }
     else
