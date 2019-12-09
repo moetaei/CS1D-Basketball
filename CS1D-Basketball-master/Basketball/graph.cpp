@@ -1,7 +1,7 @@
 #include "graph.h"
 #include <QDebug>
 
-/*! Constructor: Allocates memory for adjacency list
+/*! Constructor: Allocates memory for adjacency list */
 Graph::Graph()
 {
     V = datah.getSizeC();

@@ -20,6 +20,8 @@ class Option2 : public QWidget
 
 public:
     explicit Option2(QWidget *parent = nullptr);
+
+    //! destructor
     ~Option2();
     void defaultListView();
     //!< Sets the default view the window by enabling and disabling items.
@@ -28,6 +30,7 @@ public:
 private slots:
     void on_newList_itemClicked(QListWidgetItem *item);
 
+    //! exits window
     void on_exitButton_clicked();
 
 private:

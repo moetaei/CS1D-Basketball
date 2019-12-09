@@ -35,10 +35,12 @@ public:
     //!< Creates a sorted list of cities and distances from selected choices.
 
 private slots:
+
     void on_cancel_clicked();
 
     void on_select_clicked();
 
+    //! confirms purchase
     void on_confirm_clicked();
 
     //! closes window
