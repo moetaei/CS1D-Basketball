@@ -33,7 +33,7 @@ void ConfirmDetroit::defaultListView()
         {
             cityNum++;
             cityName = qry->value(0).toString();
-            ui->confirmListWidget->addItem(cityName);
+            ui->detroitList->addItem(cityName);
             customList.push_back(cityName);
 //            qDebug() << cityName;
         }
@@ -43,6 +43,7 @@ void ConfirmDetroit::defaultListView()
         qDebug() << ("confirmDetroit Error: qry failed.");
         return;
     }
+    customList.push_back(startCity);
     qDebug() << customList.at(cityNum-1);
     qDebug() << cityNum;
     delete sortedDest;
@@ -50,13 +51,13 @@ void ConfirmDetroit::defaultListView()
     sortedDest = new QString[cityNum];
     sortedDist = new float[cityNum];
 
-//    sortCities();
+    sortCities();
 //    int tst = asd.calcMst("Detroit Pistons");
 //    qDebug() << tst;
 
     for (int i = 0; i < cityNum ; i++)
     {
-        ui->confirmListWidget->addItem(customList.at(i));
+        ui->detroitList->addItem(customList.at(i));
     }
 }
 
@@ -205,9 +206,7 @@ void ConfirmDetroit::sortCities()
  ***************************************************************************/
 void ConfirmDetroit::on_cancel_clicked()
 {
-    ui->select->setEnabled(true);
     ui->confirm->setEnabled(false);
-    ui->stackedWidget->setCurrentIndex(0);
 }
 
 /****************************************************************************
@@ -225,8 +224,6 @@ void ConfirmDetroit::on_cancel_clicked()
 void ConfirmDetroit::on_select_clicked()
 {
     ui->confirm->setEnabled(true);
-    ui->select->setEnabled(false);
-    ui->stackedWidget->setCurrentIndex(1);
 }
 
 /****************************************************************************

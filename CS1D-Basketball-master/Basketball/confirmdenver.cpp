@@ -72,9 +72,7 @@ void confirmDenver::on_denverList_itemClicked(QListWidgetItem *item)
     denverto = new denverTo();
     temp = denverto->setCityName(item->text());
     denverto->show();
-//    dist.remove(startCity,Qt::CaseInsensitive);//25
-//    dist.remove(0,3);
-//    dist.remove(25,47);
+
     temp = temp.right(6);
     dist = temp.toDouble();
     qDebug() << dist;

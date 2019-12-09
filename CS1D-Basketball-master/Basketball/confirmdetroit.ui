@@ -69,7 +69,7 @@
     <string>Cancel</string>
    </property>
   </widget>
-  <widget class="QListWidget" name="confirmListWidget">
+  <widget class="QListWidget" name="detroitList">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -94,22 +94,5 @@
   </widget>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>exitButton</sender>
-   <signal>clicked()</signal>
-   <receiver>exitButton</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>54</x>
-     <y>464</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>80</x>
-     <y>463</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

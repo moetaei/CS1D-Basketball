@@ -29,19 +29,6 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>500</x>
-     <y>490</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Confirm</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
      <x>630</x>
      <y>500</y>
      <width>93</width>

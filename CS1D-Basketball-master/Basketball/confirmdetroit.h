@@ -52,7 +52,7 @@ private:
 
     QString* sortedDest = nullptr;
     float* sortedDist = nullptr;
-    int cityNum = 0;
+    int cityNum = 1;
     QString closestCity;
     QString startCity = "Detroit Pistons";          /*!< the starting city */
     QSqlDatabase myDB;                      /*!< database connection */
