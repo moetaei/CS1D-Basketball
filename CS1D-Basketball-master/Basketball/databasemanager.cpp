@@ -23,7 +23,8 @@ databaseManager::~databaseManager() {}  //Destructor
  ***************************************************************************/
 bool databaseManager::openDB()
 {
-    const QString DB_PATH = "CS1D_NBA_DB.db";
+
+        const QString DB_PATH = "CS1D_NBA_DB.db";
 
     // If database is already opened, skip creation and connection process
     if(!database.open())
