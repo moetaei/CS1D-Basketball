@@ -19,6 +19,10 @@ admin::admin(QWidget *parent) :
 
     myDB = QSqlDatabase::database();
 
+    //int total = 12;
+    //datah.setSeatingCapacity(total);
+    ui->totalSeatingValue->setText(QString::number(datah.getSeatingCapacity()));
+
 }
 
 admin::~admin()
@@ -50,3 +54,4 @@ void admin::on_adminButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }
+

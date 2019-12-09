@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>475</width>
+    <width>500</width>
     <height>487</height>
    </rect>
   </property>
@@ -18,7 +18,7 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>471</width>
+     <width>491</width>
      <height>41</height>
     </rect>
    </property>
@@ -31,7 +31,7 @@
     </font>
    </property>
    <property name="text">
-    <string>BFS starting with Los Angeles (shortest distance) </string>
+    <string>BFS starting with Los Angeles Lakers (shortest distance) </string>
    </property>
    <property name="textFormat">
     <enum>Qt::PlainText</enum>
