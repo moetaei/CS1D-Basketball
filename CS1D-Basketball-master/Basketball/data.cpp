@@ -1,11 +1,14 @@
 #include "data.h"
 
+/*! Constructor*/
 data::data()
 {
     myDB = QSqlDatabase::database();
     setNames();
     setVector();
 }
+
+/*! Populates the vector with the team names and distances */
 void data::setVector()
 {
     QString city1;
@@ -33,6 +36,8 @@ void data::setVector()
         qDebug() << ("denverTo Error: qry failed.");
     }
 }
+
+/*! sets the team names and populates query */
 void data::setNames()
 {
     QString cityName;
@@ -56,6 +61,8 @@ void data::setNames()
         qDebug() << ("denverTo Error: qry failed.");
     }
 }
+
+/*! Finds specific index of given team */
 int data::findCityIndex(QString name)
 {
     for(int i = 0; i <names.size(); i++)
@@ -69,10 +76,13 @@ int data::findCityIndex(QString name)
 
 }
 
+/*! Return team name found with specific index */
 QString data::findCityName(int i)
 {
     return names[i].getName();
 }
+
+/*! calculates distance */
 double data::findDistance(int c1, int c2)
 {
     QString city1 = findCityName(c1);
@@ -90,20 +100,27 @@ double data::findDistance(int c1, int c2)
     }
     return -1;
 }
+
+/*! returns the team name specified */
 QVector<node> data::getTeams()
 {
     return team;
 }
 
+/*! Shows the team given and distance to another */
 QString data::showMe(node city)
 {
     return(city.getCity1() + " / " + city.getCity2() + " / " + QString::number(city.getDistance()));
 }
-int data::getSizeN() // size of
+
+/*! Size of teams */
+int data::getSizeN()
 {
     return team.size();
 }
-int data::getSizeC() // size of cities (vertices)
+
+/*! size of names (vertices) */
+int data::getSizeC()
 {
     return names.size();
 }
