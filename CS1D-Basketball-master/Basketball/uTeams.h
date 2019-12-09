@@ -18,10 +18,9 @@ class uTeams : public QWidget
 
 public:
     explicit uTeams(QWidget *parent = nullptr);
-    //! Constructor
 
-    ~uTeams();
     //! Destructor
+    ~uTeams();
 
     void defaultReset();
     //!< initializes the QTableWidget and loads with data from a database query

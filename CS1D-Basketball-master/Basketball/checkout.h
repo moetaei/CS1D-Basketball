@@ -10,6 +10,7 @@ namespace Ui {
 class checkout;
 }
 
+/*! Class checkout takes care of the purchases that are made during the basketball fans trip at each arena and total cost of all arenas */
 class checkout : public QWidget
 {
     Q_OBJECT

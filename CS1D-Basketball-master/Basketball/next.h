@@ -21,6 +21,8 @@ class next : public QWidget
 public:
     explicit next(QWidget *parent = nullptr);
     void setCity(QString s);
+
+    //! destructor
     ~next();
 
 private slots:
@@ -34,7 +36,7 @@ private:
     Ui::next *ui;
     QString starting;
     cityToCity *direct;
-    QSqlDatabase myDB;
+    QSqlDatabase myDB; //!< database
 
 };
 

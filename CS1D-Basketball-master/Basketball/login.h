@@ -26,20 +26,21 @@ class login : public QDialog
 
 public:
     explicit login(QWidget *parent = nullptr);
+
     //! destructor
     ~login();
 
 private slots:
 
-    //!
+    //! opens the user window or the admin window
     void on_pushButton_login_clicked();
 
 private:
     Ui::login *ui;
     user *userWindow;
     admin* adminWindow;
-    QSqlDatabase userDB;
-    databaseManager myDB;
+    QSqlDatabase userDB; //!< database for users
+    databaseManager myDB; //!< database
 };
 
 #endif // LOGIN_H

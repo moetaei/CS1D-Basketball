@@ -23,6 +23,7 @@ public:
     //! destructor
     ~arenas();
 
+    //! resets values to default
     void defaultReset();
 
 private:

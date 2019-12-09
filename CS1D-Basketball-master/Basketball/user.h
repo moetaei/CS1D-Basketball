@@ -22,6 +22,8 @@ namespace Ui {
 class user;
 }
 
+/*! Class user is used so when the basketball fan logs in they can axcess all the
+ * intended feature of the program. For example perform BFS, MST and DFS. Also be able to plan different kinds of trips. */
 class user : public QWidget
 {
     Q_OBJECT
@@ -63,16 +65,19 @@ private slots:
 
     void on_pushButton_4_clicked();
 
+    //! when clicked opens dfs window
     void on_dfs_clicked();
 
+    //! when clicked opens mst window
     void on_mst_clicked();
 
+    //! when clicked opens bfs window
     void on_bfs_clicked();
 
 private:
     Ui::user *ui;
 
-    QSqlDatabase myDB;
+    QSqlDatabase myDB; //!< database
 
     uTeams teamWindow;
     info infoWindow;
@@ -85,9 +90,9 @@ private:
     ConfirmDetroit* detroitWindow;
     Option2 *option2;
     confirmCustom2* custom2Window;
-    dfs *DFS;
-    mst *MST;
-    bfs *BFS;
+    dfs *DFS; //!< dfs object pointer
+    mst *MST; //!< mst object pointer
+    bfs *BFS; //!< bfs object pointer
 };
 
 #endif // USER_H
