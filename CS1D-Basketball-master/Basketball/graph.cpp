@@ -66,11 +66,16 @@ bool Graph :: checkVisits(int cities)
 /*! Performs the DFS */
 void Graph::DFS(int vertex, QString &output, double &distance, double &total)
 {
-    if(!checkVisits(datah.getSizeC()) && distance > 0)
+    if(!checkVisits(datah.getSizeC()) && distance >= 0)
     {
-        QString d = QString::number(distance);
-        output += " --(" + d +")--> \n";
+        if(output != "")
+        {
+            QString d = QString::number(distance);
+            output += " --(" + d +")--> \n";
+        }
+
     }
+
     if(!visited[vertex])
     {
         output += datah.findCityName(vertex);
@@ -78,7 +83,7 @@ void Graph::DFS(int vertex, QString &output, double &distance, double &total)
     visited[vertex] = true;
 
     QString target = datah.findCityName(vertex);
-    double temp = 0;
+    double temp = -1.0;
     QString shortDist = "";
     QList<int>::iterator k;
 
@@ -86,7 +91,7 @@ void Graph::DFS(int vertex, QString &output, double &distance, double &total)
     {
         if(datah.getTeams()[i].getCity1() == target)
         {
-            if(temp == 0.0 && visit(datah.getTeams()[i].getCity2(), vertex))
+            if(temp == -1.0 && visit(datah.getTeams()[i].getCity2(), vertex))
             {
                 shortDist = datah.getTeams()[i].getCity2();
                 temp = datah.getTeams()[i].getDistance();
@@ -103,7 +108,7 @@ void Graph::DFS(int vertex, QString &output, double &distance, double &total)
         }
         else if( datah.getTeams()[i].getCity2() == target)
         {
-            if(temp == 0.0 && visit(datah.getTeams()[i].getCity1(), vertex))
+            if(temp == -1.0 && visit(datah.getTeams()[i].getCity1(), vertex))
             {
                 shortDist = datah.getTeams()[i].getCity1();
                 temp = datah.getTeams()[i].getDistance();
