@@ -26,8 +26,10 @@ public:
     //! adds edges
     void addEdge(int u, int v, double w);
 
-    //! finds the shortest path for dfs
+    //! finds the shortest path for Dijkstra
     void shortestPath(int s,int dest, QString &output);
+
+    void shortestPath1(int s, QString &output, int &d);
 
     //! gets the path for dfs
     void getPath(int s,int city, QVector<int> &path);
