@@ -72,11 +72,13 @@ void Graph::DFS(int vertex, QString &output, double &distance, double &total)
         output += datah.findCityName(vertex);
     }
     visited[vertex] = true;
+
     QString target = datah.findCityName(vertex);
     double temp = 0;
     QString shortDist = "";
     QList<int>::iterator k;
-    for(int i = 0; i < datah.getSizeC(); i++)
+
+    for(int i = 0; i < datah.getSizeN(); i++)
     {
         if(datah.getTeams()[i].getCity1() == target)
         {
@@ -102,7 +104,7 @@ void Graph::DFS(int vertex, QString &output, double &distance, double &total)
                 shortDist = datah.getTeams()[i].getCity1();
                 temp = datah.getTeams()[i].getDistance();
             }
-            else if( datah.getTeams()[i].getDistance() < temp)
+            else if(datah.getTeams()[i].getDistance() < temp)
             {
                 if(visit(datah.getTeams()[i].getCity1(), vertex))
                 {
@@ -120,7 +122,6 @@ void Graph::DFS(int vertex, QString &output, double &distance, double &total)
         if(datah.findCityName(*k) == shortDist && !visited[*k])
         {
             DFS(*k, output, distance,total);
-            DFS(*k, output, distance, total);
             DFS(*k, output, distance, total);
             DFS(*k, output, distance, total);
             DFS(*k, output, distance, total);
