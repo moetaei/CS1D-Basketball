@@ -68,6 +68,7 @@ int data::findCityIndex(QString name)
     return -1;
 
 }
+
 QString data::findCityName(int i)
 {
     return names[i].getName();
