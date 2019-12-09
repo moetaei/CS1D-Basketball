@@ -43,15 +43,13 @@ void ConfirmDetroit::defaultListView()
         qDebug() << ("confirmDetroit Error: qry failed.");
         return;
     }
-//    customList.push_back(startCity);
-//    qDebug() << customList.at(cityNum);
+    customList.push_back(startCity);
+    qDebug() << customList.at(cityNum-1);
     qDebug() << cityNum;
     delete sortedDest;
     delete sortedDist;
     sortedDest = new QString[cityNum];
     sortedDist = new float[cityNum];
-    sortedDest[0] = startCity;
-    sortedDist[0] = 0;
 
     sortCities();
 //    int tst = asd.calcMst("Detroit Pistons");
@@ -60,103 +58,128 @@ void ConfirmDetroit::defaultListView()
     for (int i = 0; i < cityNum ; i++)
     {
         ui->detroitList->addItem(customList.at(i));
-        qDebug() << customList.at(i);
     }
 }
 
 void ConfirmDetroit::sortCities()
 {
     QString temp;
+    /************************************************************************
+     * PROCESS: Copy contents of customList (traveler's selected citites)
+     *          into tempList (QVector <QString> array).
+     ***********************************************************************/
+    for(int i = 0; i < customList.count(); i++)
+    {
+        temp = customList.at(i);
+        sortedDest[i] = temp;
+    }
 
     qDebug() << "size: " << cityNum;
 
-//    startCity = sortedDest[0];
-//    sortedDist[0] = 0;
+    /************************************************************************
+     * PROCESS: Check if traveler's selected startCity is index 0 in
+     *          sortedDestinationList array.
+     *          If startCity is not at index 0, swap position.
+     ***********************************************************************/
+    if(sortedDest[0] != startCity)
+    {
+        int index = 0;
+        // Find index location of the startCity
+        while(index < cityNum && sortedDest[index] != startCity)
+        {
+            index++;
+        }
+        temp = sortedDest[index];
+        sortedDest[index] = sortedDest[0];
+        sortedDest[0] = temp;
+    }
+    startCity = sortedDest[0];
+    sortedDist[0] = 0;
 
     qDebug() << "start city: " << startCity;
+
     /************************************************************************
      * PROCESS: Sort array from index 1 to n (max index) -1.
      *          Index 0 is the start destination.
      *          Index n (max index for array) is last element, which does
      *              not require sorting.  It is the end.
      ***********************************************************************/
-    for(int i = 1; i < (cityNum); i++)
+    for(int i = 1; i < (cityNum-1); i++)
     {
-        stack<float> smallest;
-        float tempDist[cityNum];
-//        QString tempDest[cityNum]/* = {*sortedDest}*/;
-        QString output = "";
-        stack<QString> tempDest;
+        bool isFound = false;
+        int  j = i;
 
-        for(int k = 0; k < cityNum-1; k++)
-        {
-            qDebug() << "get dist";
-            graf.shortestPath(datah.findCityIndex(startCity),datah.findCityIndex(customList[k]), output);
-            qDebug() << "got dist";
-            output = output.right(6);
-            output.remove(QChar('e'));
-            output.remove(QChar(' '));
-            output.remove(QChar(':'));
-//            qDebug() << output;
-            tempDist[k] = output.toFloat();
-            output = "";
-//            qDebug() << tempDist[k] << customList[k];
-        }
-
-//        return;
-
+        // Create query for list of cities closest to the startCity in order
+        // by distance.
+        QSqlQuery sortQry;
+        sortQry.prepare("SELECT * "
+                        "FROM distances "
+                        "WHERE Team1 = '"+startCity+"' "
+                        "ORDER BY Distance");
+        sortQry.exec();
         qDebug() << "hi";
-        smallest.push(tempDist[0]);
-        for(int k = 0; k < cityNum-1; k++)
-        {
-            if(smallest.top() >= tempDist[k])
-            {
-                smallest.push(tempDist[k]);
-                temp = customList[k];
-                tempDest.push(customList[k]);
-                qDebug() << tempDest.top();
-            }
-        }
-
-        closestCity = tempDest.top();
+        // Select first row of query and set closestCity to first item
+        sortQry.next();
+        closestCity = sortQry.value(2).toString();
 
         qDebug() << "The next closest city is: " << closestCity;
 
-       /************************************************************************
-        * PROCESS: checks if the the city in idValue is in the
-        *          sortedDestinations array and selects the next closest city
-        *          if they are the same. Checks every city in the array
-        ***********************************************************************/
-        for(int k = 0; k < i; k++)
+        /********************************************************************
+         * PROCESS: Find next closestCity to the StartCity that is in the
+         *          array sortedDestinationList.
+         *******************************************************************/
+        while(!isFound)
         {
-            qDebug() << k;
-            if(closestCity==sortedDest[k])
+            // Stay within array boundry
+            if(j < cityNum)
             {
-                qDebug() << closestCity << sortedDest[k];
-                tempDest.pop();
-                smallest.pop();
-                closestCity = tempDest.top();
-                k = -1;
+                // closestCity found
+                if(closestCity == sortedDest[j])
+                {
+                    isFound = true;
+                    qDebug() << "It matches next item in array: "
+                             << closestCity << endl;
+                }
+                // Check next element in array
+                else
+                {
+                    qDebug() << "It does not match next item in array: "
+                             << sortedDest[j] << endl;
+                    j++;
+                }
+            }
+            // If out of array boundry, move to next row in query and make
+            // that city the next closestCity
+            else
+            {
+                j = i;
+                sortQry.next();
+                closestCity = sortQry.value(2).toString();
             }
         }
-        qDebug() << "hi";
 
-        sortedDest[i] = closestCity;
-        sortedDist[i] = smallest.top();
-        startCity = closestCity;
-        customList.removeOne(closestCity);
+        // If closestCity is found in the array, do the swap
+        if(isFound)
+        {
+            temp = sortedDest[j];
+            sortedDest[j] = sortedDest[i];
+            sortedDest[i] = temp;
+            startCity = sortedDest[i];
+            sortedDist[i] = sortQry.value(3).toInt();
 
-        qDebug() << sortedDest[i];
+            qDebug() << sortedDest[i];
+        }
 
         qDebug() << "start city: " << startCity;
         if(i == 10)
         {
             qDebug() << sortedDest[0] << ' ' << sortedDest[1] << ' ' << sortedDest[2] << ' ' << sortedDest[3] << ' ' << sortedDest[4] << ' ' << sortedDest[5] << ' ' << endl
                      << sortedDest[6] << ' ' << sortedDest[7] << ' ' << sortedDest[8] << ' ' << sortedDest[9] << ' ' << sortedDest[10];
+            return;
         }
     }
 
-//    closestCity = sortedDest[cityNum-1];
+    closestCity = sortedDest[cityNum-1];
 
     // Last destination distance in list
     QSqlQuery qry;
