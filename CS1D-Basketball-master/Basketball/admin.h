@@ -4,6 +4,7 @@
 
 #include "uTeams.h"
 #include "editteam.h"
+#include "data.h"
 // need to include distances and souvenirs
 
 #include <QWidget>
@@ -30,12 +31,13 @@ private slots:
     void on_distanceButton_clicked(); //!< Distance page is displayed in stackedWidget
     void on_souvinerButton_clicked(); //!< Souviner page is diplayed in stackedWidget
     void on_logoutButton_clicked(); //!< Admin window closes
-    void on_adminButton_clicked(); //!<
+    void on_adminButton_clicked(); //!< default admin page is displayed in stackedWidget
 
 private:
     Ui::admin *ui;
     editTeam editWindow;
     QSqlDatabase myDB; //!< QSqlDatabase for the teams
+    class data datah;
 };
 
 #endif // ADMIN_H
