@@ -68,13 +68,18 @@ void ConfirmDetroit::defaultListView()
 void ConfirmDetroit::sortCities()
 {
     QString temp;
+    stack<float> smallest;
+    float tempDist[cityNum];
+//        QString tempDest[cityNum]/* = {*sortedDest}*/;
+    QString output = "";
+    stack<QString> tempDest;
 
     qDebug() << "size: " << cityNum;
 
 //    startCity = sortedDest[0];
 //    sortedDist[0] = 0;
 
-    qDebug() << "start city: " << startCity;
+
     /************************************************************************
      * PROCESS: Sort array from index 1 to n (max index) -1.
      *          Index 0 is the start destination.
@@ -83,15 +88,10 @@ void ConfirmDetroit::sortCities()
      ***********************************************************************/
     for(int i = 1; i < (cityNum); i++)
     {
-        stack<float> smallest;
-        float tempDist[cityNum];
-//        QString tempDest[cityNum]/* = {*sortedDest}*/;
-        QString output = "";
-        stack<QString> tempDest;
-
+        qDebug() << "start city: " << startCity;
         for(int k = 0; k < cityNum-1; k++)
         {
-            qDebug() << "get dist";
+            qDebug() << "get dist" << customList[k];
             graf.shortestPath(datah.findCityIndex(startCity),datah.findCityIndex(customList[k]), output);
             qDebug() << "got dist";
             output = output.right(6);
@@ -140,21 +140,20 @@ void ConfirmDetroit::sortCities()
                 k = -1;
             }
         }
-        qDebug() << "hi";
+        qDebug() << i;
 
         sortedDest[i] = closestCity;
         sortedDist[i] = smallest.top();
         startCity = closestCity;
-        customList.removeOne(closestCity);
+//        customList.removeOne(closestCity);
 
         qDebug() << sortedDest[i];
 
-        qDebug() << "start city: " << startCity;
-        if(i == 10)
-        {
-            qDebug() << sortedDest[0] << ' ' << sortedDest[1] << ' ' << sortedDest[2] << ' ' << sortedDest[3] << ' ' << sortedDest[4] << ' ' << sortedDest[5] << ' ' << endl
-                     << sortedDest[6] << ' ' << sortedDest[7] << ' ' << sortedDest[8] << ' ' << sortedDest[9] << ' ' << sortedDest[10];
-        }
+//        if(i == 10)
+//        {
+//            qDebug() << sortedDest[0] << ' ' << sortedDest[1] << ' ' << sortedDest[2] << ' ' << sortedDest[3] << ' ' << sortedDest[4] << ' ' << sortedDest[5] << ' ' << endl
+//                     << sortedDest[6] << ' ' << sortedDest[7] << ' ' << sortedDest[8] << ' ' << sortedDest[9] << ' ' << sortedDest[10];
+//        }
     }
 
 //    closestCity = sortedDest[cityNum-1];
