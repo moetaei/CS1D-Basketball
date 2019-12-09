@@ -31,7 +31,7 @@ public:
 
 private slots:
 
-    //! when clicked it opens the menu
+    //!
     void on_pushButton_login_clicked();
 
 private:

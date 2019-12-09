@@ -8,13 +8,10 @@ dfs::dfs(QWidget *parent) :
     ui->setupUi(this);
 }
 
-//! destructor
 dfs::~dfs()
 {
     delete ui;
 }
-
-/*! Displays the results from the DFSMST to ui text */
 void dfs::setText()
 {
     QString output = "";
@@ -24,8 +21,6 @@ void dfs::setText()
     graf.DFS(datah.findCityIndex("Orlando Magic"), output, distance, total);
     ui->path->setText(output + '\n' + '\n' + "TOTAL DISTANCE: " + QString::number(total));
 }
-
-/*! Closes the DFS window and goes back to user menu */
 void dfs::on_exit_clicked()
 {
     close();

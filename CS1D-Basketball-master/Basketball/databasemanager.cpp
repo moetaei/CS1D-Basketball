@@ -7,8 +7,7 @@
 databaseManager::databaseManager() {}   //Constructor
 databaseManager::~databaseManager() {}  //Destructor
 
-/*!
- ****************************************************************************
+/****************************************************************************
  * METHOD - openDB
  * --------------------------------------------------------------------------
  * This method creates and opens a sqlite database connection if not
@@ -47,8 +46,7 @@ bool databaseManager::openDB()
     return database.open();
 }
 
-/*!
- ****************************************************************************
+/****************************************************************************
  * METHOD - closeDB
  * --------------------------------------------------------------------------
  * This method closes the sqlite database connection.  It also
@@ -73,8 +71,7 @@ bool databaseManager::closeDB()
     return database.isOpen();
 }
 
-/*!
-****************************************************************************
+/****************************************************************************
  * METHOD - lastError
  * --------------------------------------------------------------------------
  * This method returns the last database error created
@@ -90,8 +87,7 @@ QSqlError databaseManager::lastError()
     return database.lastError();
 }
 
-/*!
- ****************************************************************************
+/****************************************************************************
  * METHOD - currentDB
  * --------------------------------------------------------------------------
  * This method returns the currently connected database object

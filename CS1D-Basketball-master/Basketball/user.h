@@ -22,16 +22,12 @@ namespace Ui {
 class user;
 }
 
-/*! Class user is used to create the Ui for the basketball fan to interact with.
- * The Basketball fan can perform the necesary searches and plan their trip to the different teams in many diferent ways */
 class user : public QWidget
 {
     Q_OBJECT
 
 public:
     explicit user(QWidget *parent = nullptr);
-
-    //! destructor
     ~user();
 
 private slots:
@@ -67,13 +63,10 @@ private slots:
 
     void on_pushButton_4_clicked();
 
-    //! When clicked it opens dfs window
     void on_dfs_clicked();
 
-    //! When clicked it opens mst window
     void on_mst_clicked();
 
-    //! When clicked it opens bfs window
     void on_bfs_clicked();
 
 private:
@@ -81,20 +74,20 @@ private:
 
     QSqlDatabase myDB;
 
-    uTeams teamWindow; //!< object to open team window
-    info infoWindow; //!< object to open info window
-    arenas arenaWindow; //!< object to open arena window
-    coaches coachWindow; //!< object to open coach window
-    divisions divisionWindow; //!< object to open division window
-    conference conferenceWindow; //!< object to open conference window
+    uTeams teamWindow;
+    info infoWindow;
+    arenas arenaWindow;
+    coaches coachWindow;
+    divisions divisionWindow;
+    conference conferenceWindow;
 
     confirmDenver* denverWindow;
     ConfirmDetroit* detroitWindow;
     Option2 *option2;
     confirmCustom2* custom2Window;
-    dfs *DFS; //!< dfs object
-    mst *MST; //!< mst object
-    bfs *BFS; //!< bfs object
+    dfs *DFS;
+    mst *MST;
+    bfs *BFS;
 };
 
 #endif // USER_H

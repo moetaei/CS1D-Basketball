@@ -1,8 +1,7 @@
 #include "confirmdenver.h"
 #include "ui_confirmdenver.h"
 
-/*!
- ****************************************************************************
+/****************************************************************************
  * METHOD - ConfirmDenver
  * --------------------------------------------------------------------------
  * This method is the constructor.
@@ -26,9 +25,7 @@ confirmDenver::confirmDenver(QWidget *parent) :
     distances = new double[1];
 }
 
-
-/*!
- ****************************************************************************
+/****************************************************************************
  * METHOD - ~ConfirmDenver
  * --------------------------------------------------------------------------
  * This method is the desconstructor.
@@ -44,7 +41,7 @@ confirmDenver::~confirmDenver()
     delete ui;
 }
 
-/*! Displays the List View */
+
 void confirmDenver::defaultListView()
 {
     QString cityName;
@@ -90,7 +87,6 @@ void confirmDenver::on_pushButton_clicked()
     this->close();
 }
 
-/*! This function closes the window */
 void confirmDenver::on_exitButton_clicked()
 {
     close();

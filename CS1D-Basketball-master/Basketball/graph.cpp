@@ -29,8 +29,6 @@ void Graph::addEdgeDFS(int src, int dest)
     dfs[src].push_back(dest);
     dfs[dest].push_back(src);
 }
-
-/*! Finds the index of the teams and calls the addEdge() function to add edges to the adjacency list */
 void Graph::setDijEdges()
 {
     int index1, index2;
@@ -41,9 +39,6 @@ void Graph::setDijEdges()
         addEdge(index1, index2, datah.findDistance(index1, index2));
     }
 }
-
-
-/*! Finds the index of the teams and calls the addEdgeDFS() function to add edges */
 void  Graph:: setDFSEdges()
 {
     int index1, index2;
@@ -54,8 +49,6 @@ void  Graph:: setDFSEdges()
         addEdgeDFS(index1,index2);
     }
 }
-
-/*! Checks to see if a team has been visited */
 bool Graph :: checkVisits(int cities)
 {
     for(int i = 0; i < cities; i++)
@@ -67,8 +60,6 @@ bool Graph :: checkVisits(int cities)
     }
     return true;
 }
-
-/*! Function that performs the DFS and takes in the output, distance and total. */
 void Graph::DFS(int vertex, QString &output, double &distance, double &total)
 {
     if(!checkVisits(datah.getSizeC()) && distance > 0)
@@ -136,8 +127,6 @@ void Graph::DFS(int vertex, QString &output, double &distance, double &total)
         }
     }
 }
-
-/*! Function that finds the team name and compares it to see if it has been visited allready */
 bool Graph::visit(QString city,int vertex)
 {
     QList<int>::iterator k;
@@ -150,8 +139,6 @@ bool Graph::visit(QString city,int vertex)
     }
     return false;
 }
-
-/*! reset the data */
 void  Graph::reset()
 {
     for(int i = 0; i < datah.getSizeC() ; i++)
@@ -159,8 +146,6 @@ void  Graph::reset()
         visited[i]= false;
     }
 }
-
-/*! Function to find the shortest path for the dfs */
 void Graph::shortestPath(int src, int dest, QString &output)
 {
     priority_queue< iPair, vector <iPair> , greater<iPair> > pq;
