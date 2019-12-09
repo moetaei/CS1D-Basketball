@@ -12,6 +12,8 @@ Graph::Graph()
     setMST();
     setDFSEdges();
     setDijEdges();
+
+    setBFS();
 }
 void Graph::addEdge(int u, int v, double w)
 {
@@ -325,6 +327,101 @@ void Graph::printMST(int parent[],QString &output)
         output+= datah.findCityName(parent[i]) + " - " + datah.findCityName(i) + "\n" + "     \t\t\t" + QString:: number(mst[0][i][parent[i]]) +" \n";
     }
 
+}
+
+double Graph::getTotalDistance()
+{
+    return totalDistance;
+}
+void Graph::setBFS()
+{
+    this->e = e;
+       adjBFS = new int* [V];
+       adjDistance = new double* [V];
+       for (int row = 0; row < V; row++)
+       {
+           adjBFS[row] = new int[V];
+           adjDistance[row] = new double[V];
+           for (int column = 0; column < V; column++)
+           {
+               adjBFS[row][column] = 0;
+               adjDistance[row][column] = 0;
+           }
+       }
+
+       totalDistance = 0;
+}
+
+void Graph::addEdgeBFS(int start, int e, double distance)
+{
+    // Considering a bidirectional edge
+    adjBFS[start][e] = 1;
+    adjBFS[e][start] = 1;
+
+    adjDistance[start][e] = distance;
+    adjDistance[e][start] = distance;
+}
+void Graph::setBFSEdges()
+{
+    int index1, index2;
+    for(int i = 0; i< datah.getSizeN(); i++)
+    {
+        index1 = datah.findCityIndex(datah.getTeams()[i].getCity1());
+        index2 = datah.findCityIndex(datah.getTeams()[i].getCity2());
+        addEdgeBFS(index1, index2, datah.findDistance(index1, index2));
+    }
+}
+void Graph::BFS(int start)
+{
+    // Visited vector to so that
+    // a vertex is not visited more than once
+    // Initializing the vector to false as no
+    // vertex is visited at the beginning
+    vector<bool> visited(V, false);
+    vector<int> q;
+    q.push_back(start);
+
+
+    // Set source as visited
+    visited[start] = true;
+
+    int vis;
+    while (!q.empty()) {
+        vis = q[0];
+
+        // Print the current node
+       // std::cout << citiesAr[vis] << "->";
+        q.erase(q.begin());
+
+        // For every adjacent vertex to the current vertex
+        for (int i = 0; i < V; i++) {
+            if (adjBFS[vis][i] == 1 && (!visited[i]))
+            {
+                totalDistance += adjDistance[vis][i];
+                // Push the adjacent node to the queue
+                q.push_back(i);
+
+                // Set
+                visited[i] = true;
+            }
+        }
+
+    }
+
+}
+
+void Graph::printBFS(QString &output)
+{
+    for (int i = 0; i < 12; i++)
+    {
+        for (int j = 0; j < 12; j++)
+        {
+            if (adjBFS[i][j] == 1)
+            {
+                output+= datah.findCityName(i) + " - " + datah.findCityName(j) + "\n" + "     \t\t\t" + QString:: number(adjDistance[i][j]) +" \n";
+            }
+        }
+    }
 }
 
 

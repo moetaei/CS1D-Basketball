@@ -34,7 +34,12 @@ public:
     double minKey(double key[], bool mstSet[]);
     void printMST(int parent[], QString &output);
 
-
+    double getTotalDistance();
+    void setBFSEdges();
+    void setBFS();
+    void addEdgeBFS(int start, int e, double distance);
+    void BFS(int start);
+    void printBFS(QString &output);
 
 
 private:
@@ -47,6 +52,15 @@ private:
 
     class data datah;
     bool *visited;
+
+    // Number of edges
+    int e;
+
+    // Adjacency matrix
+    int** adjBFS;
+    double** adjDistance;
+
+    int totalDistance;
 };
 
 #endif // GRAPH_H

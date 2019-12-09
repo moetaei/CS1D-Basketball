@@ -19,6 +19,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     admin.cpp \
     arenas.cpp \
+    bfs.cpp \
     checkout.cpp \
     city.cpp \
     citytocity.cpp \
@@ -47,6 +48,7 @@ SOURCES += \
 HEADERS += \
     admin.h \
     arenas.h \
+    bfs.h \
     checkout.h \
     city.h \
     citytocity.h \
@@ -74,6 +76,7 @@ HEADERS += \
 FORMS += \
     admin.ui \
     arenas.ui \
+    bfs.ui \
     checkout.ui \
     citytocity.ui \
     coaches.ui \

@@ -224,6 +224,19 @@ color:black;</string>
       <string>MST</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="bfs">
+     <property name="geometry">
+      <rect>
+       <x>620</x>
+       <y>40</y>
+       <width>261</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>BFS Starting with Los Angeles Lakers</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QGroupBox" name="pushButtonGroup">

@@ -106,3 +106,10 @@ void user::on_mst_clicked()
     MST->setLabel();
     MST->show();
 }
+
+void user::on_bfs_clicked()
+{
+    BFS= new bfs();
+    BFS->setText();
+    BFS->show();
+}
