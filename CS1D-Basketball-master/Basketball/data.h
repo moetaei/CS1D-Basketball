@@ -33,6 +33,12 @@ public:
     //! Set the team names
     void setNames();
 
+    //! Sets the seating capacity of the teams
+    void setSeatingCapacity();
+
+    //! returns total seating capacity of all teams
+    int getSeatingCapacity();
+
     //! Returns a team
     QVector<node> getTeams();
 
@@ -59,8 +65,9 @@ public:
     void updateDB2(); // updates info
 
 private:
-    QVector<node> team; //! distances, doubles
-    QVector<city> names; //! names, strings
+    QVector<node> team; //!< distances, doubles
+    QVector<city> names; //!< names, strings
+    int totalCap = 0; //!< total seating capacity of all stadiums
     QSqlDatabase myDB;
 };
 

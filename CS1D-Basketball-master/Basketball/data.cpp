@@ -6,6 +6,8 @@ data::data()
     myDB = QSqlDatabase::database();
     setNames();
     setVector();
+
+    setSeatingCapacity();
 }
 
 /*! Populates the vector with the team names and distances */
@@ -35,6 +37,33 @@ void data::setVector()
     {
         qDebug() << ("denverTo Error: qry failed.");
     }
+}
+
+void data::setSeatingCapacity()
+{
+    QSqlQuery * qry = new QSqlQuery(myDB);
+    qry->prepare("SELECT * "
+                 "FROM info ");
+    QString temp;
+    if(qry->exec())
+    {
+        while(qry->next())
+        {
+            temp = qry->value(5).toString();
+            temp.remove(',');
+            totalCap = temp.toInt() + totalCap;
+            qDebug() << temp;
+        }
+    }
+    else
+    {
+        qDebug() << ("Error: qry failed.");
+    }
+}
+
+int data::getSeatingCapacity()
+{
+    return totalCap;
 }
 
 /*! sets the team names and populates query */

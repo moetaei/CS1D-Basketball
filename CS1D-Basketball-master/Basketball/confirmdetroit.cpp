@@ -54,10 +54,8 @@ void ConfirmDetroit::defaultListView()
     sortedDist[0] = 0;
 
     sortCities();
-//    int tst = asd.calcMst("Detroit Pistons");
-//    qDebug() << tst;
 
-    for (int i = 0; i < cityNum ; i++)
+    for (int i = 0; i < cityNum -1 ; i++)
     {
         ui->detroitList->addItem(customList.at(i));
         qDebug() << customList.at(i);
@@ -67,7 +65,6 @@ void ConfirmDetroit::defaultListView()
 //! sorts array of teams
 void ConfirmDetroit::sortCities()
 {
-    QString temp;
     stack<float> smallest;
     float tempDist[cityNum];
 //        QString tempDest[cityNum]/* = {*sortedDest}*/;
@@ -86,23 +83,29 @@ void ConfirmDetroit::sortCities()
      *          Index n (max index for array) is last element, which does
      *              not require sorting.  It is the end.
      ***********************************************************************/
-    for(int i = 1; i < (cityNum); i++)
+    int src = datah.findCityIndex(startCity);
+    int d = src;
+    int i = 0;
+    while(i < datah.getSizeC())
     {
+<<<<<<< Updated upstream
         qDebug() << "start city: " << startCity;
         for(int k = 0; k < cityNum-1; k++)
         {
             qDebug() << "get dist" << customList[k];
+
             graf.shortestPath(datah.findCityIndex(startCity),datah.findCityIndex(customList[k]), output);
             qDebug() << "got dist";
             output = output.right(6);
             output.remove(QChar('e'));
             output.remove(QChar(' '));
             output.remove(QChar(':'));
-//            qDebug() << output;
+    //            qDebug() << output;
             tempDist[k] = output.toFloat();
             output = "";
-//            qDebug() << tempDist[k] << customList[k];
+            qDebug() << tempDist[k] << customList[k];
         }
+
 
 //        return;
 
@@ -113,7 +116,6 @@ void ConfirmDetroit::sortCities()
             if(smallest.top() >= tempDist[k])
             {
                 smallest.push(tempDist[k]);
-                temp = customList[k];
                 tempDest.push(customList[k]);
                 qDebug() << tempDest.top();
             }
@@ -149,25 +151,18 @@ void ConfirmDetroit::sortCities()
 
         qDebug() << sortedDest[i];
 
-//        if(i == 10)
-//        {
-//            qDebug() << sortedDest[0] << ' ' << sortedDest[1] << ' ' << sortedDest[2] << ' ' << sortedDest[3] << ' ' << sortedDest[4] << ' ' << sortedDest[5] << ' ' << endl
-//                     << sortedDest[6] << ' ' << sortedDest[7] << ' ' << sortedDest[8] << ' ' << sortedDest[9] << ' ' << sortedDest[10];
-//        }
-    }
-
 //    closestCity = sortedDest[cityNum-1];
 
-    // Last destination distance in list
-    QSqlQuery qry;
-    qry.prepare("SELECT * "
-                "FROM distances "
-                 "WHERE Team1 = '"+startCity+"' AND Team2 = '"+closestCity+"' "
-                 "ORDER BY Distances ASC");
-    qry.exec();
-    // Select first row of query and set closestCity to first item
-    qry.next();
-    sortedDist[cityNum-1] = qry.value(3).toInt();
+
+=======
+        graf.shortestPath1(d, output, d);
+        qDebug() << "End";
+        smallest.push(output.toFloat());
+        tempDest.push(datah.findCityName(d));
+        output = "";
+        i++;
+    }
+>>>>>>> Stashed changes
 }
 
 /*!

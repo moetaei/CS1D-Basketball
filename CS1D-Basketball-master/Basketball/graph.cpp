@@ -159,7 +159,66 @@ void  Graph::reset()
         visited[i]= false;
     }
 }
+void Graph::shortestPath1(int src, QString &output, int &d)
+{
+    priority_queue< iPair, vector <iPair> , greater<iPair> > pq;
 
+    QVector<double> dist(V, INF);
+    if(visited[src] != true)
+    {
+        visited[src] = true;
+    }
+    pq.push(make_pair(0, src));
+    dist[src] = 0;
+
+    while (!pq.empty())
+    {
+        int u = pq.top().second;
+        pq.pop();
+
+        QList< pair<int, int> >::iterator i;
+        for (i = adj[u].begin(); i != adj[u].end(); ++i)
+        {
+            int v = (*i).first;
+            double weight = (*i).second;
+
+            if (dist[v] > dist[u] + weight)
+            {
+                if(adjLists.size() != 0)
+                {
+                    if(datah.findCityName(v) == adjLists.back().getCity2())
+                    {
+                        adjLists.pop_back();
+                    }
+                }
+
+                node newNode(datah.findCityName(u),datah.findCityName(v),weight);
+                adjLists.push_back(newNode);
+                dist[v] = dist[u] + weight;
+                pq.push(make_pair(dist[v], v));
+
+            }
+        }
+    }
+    double temp = dist[0];
+    d = 0;
+    for (int i = 1; i < V; ++i)
+    {
+        if(temp == 0.0 && !visited[i])
+        {
+            temp = dist[i];
+            d = i;
+        }
+        if(temp > dist[i] && dist[i] !=0.0 && !visited[i])
+        {
+            temp = dist[i];
+            d = i;
+        }
+    }
+    visited[d] = true;
+    output += QString:: number(dist[d]);
+
+}
 /*! Finds the shortest path with to given teams and outputs for dfs */
 void Graph::shortestPath(int src, int dest, QString &output)
 {
@@ -191,18 +250,23 @@ void Graph::shortestPath(int src, int dest, QString &output)
                         adjLists.pop_back();
                     }
                 }
+
                 node newNode(datah.findCityName(u),datah.findCityName(v),weight);
                 adjLists.push_back(newNode);
                 dist[v] = dist[u] + weight;
                 pq.push(make_pair(dist[v], v));
+
             }
         }
     }
+
     if(dest <= datah.getSizeC())
     {
         QVector<int> path;
         path.push_front(dest);
+        qDebug() << "Start3";
         getPath(src,dest,path);
+        qDebug() << "Start4";
         for(int i = 0; i < path.size(); i++)
         {
             if(i + 1 < path.size())
@@ -218,16 +282,22 @@ void Graph::shortestPath(int src, int dest, QString &output)
 }
 void Graph :: getPath(int s, int city, QVector<int> &path)
 {
+
     if(s != city)
     {
         int i = 0;
         while(adjLists[i].getCity2() != datah.findCityName(city) && i < datah.getSizeC())
         {
             i++;
+
         }
+
         city = datah.findCityIndex(adjLists[i].getCity1());
+        qDebug() << "Start1";
         path.push_front(city);
+
         getPath(s,city,path);
+        qDebug() << "Start2";
     }
 
 }
