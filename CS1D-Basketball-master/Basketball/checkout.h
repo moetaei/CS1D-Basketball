@@ -32,12 +32,16 @@ public:
     //!< Updates food table with values for current city active
 
 private slots:
+    //! is called when the confirm food button is clicked
     void on_confirmFoodButton_clicked();
 
+    //! is called when the next destination button is clicked
     void on_nextDestButton_clicked();
 
+    //! is called when the exit simulation button is clicked
     void on_exitSimulationButton_clicked();
 
+    //! is called when the end vacation button is clicked
     void on_endVacationButton_clicked();
 
 private:

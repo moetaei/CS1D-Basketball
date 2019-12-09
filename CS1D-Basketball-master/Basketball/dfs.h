@@ -8,6 +8,8 @@ namespace Ui {
 class dfs;
 }
 
+/*! Class dfs is used to perform a Depth First Search on the teams to find the
+ * shortest path starting from . Also displays the total distance. */
 class dfs : public QWidget
 {
     Q_OBJECT
