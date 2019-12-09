@@ -50,7 +50,7 @@ void info::info::defaultReset()
     // Gets the teams in the database
     list->setQuery("SELECT DISTINCT TeamName "
                           "FROM info ");
-//    ui->teamOptions->setModel(list);
+    ui->teamOptions->setModel(list);
 
     QAbstractItemModel* tableModel= ui->teamTable->model();
 

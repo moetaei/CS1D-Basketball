@@ -30,12 +30,13 @@ public:
     //!< Sets the default view the window by enabling and disabling items.
 
 private slots:
-
     void on_denverList_itemClicked(QListWidgetItem *item);
 
 
     void on_exitButton_clicked();
 
+
+    void on_pushButton_clicked();
 
 private:
     Ui::confirmDenver *ui;  /*!< class object */

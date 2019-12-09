@@ -46,7 +46,7 @@ void login::on_pushButton_login_clicked()
             adminWindow = new admin();
             adminWindow->show();
         }
-        else if("test"== username && "test" == password)
+        else if(""== username && "" == password)
         {
 
             //QMessageBox::information(this,QObject::tr("System Message"),tr("Login successful!"),QMessageBox::Ok);

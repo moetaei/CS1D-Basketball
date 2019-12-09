@@ -1,0 +1,100 @@
+Team1,Arena1,Team2,Distance
+Atlanta Hawks,State Farm Arena,Charlotte Hornets,244.8
+Atlanta Hawks,State Farm Arena,Memphis Grizzlies,383.8
+Atlanta Hawks,State Farm Arena,New Orleans Pelicans,469.1
+Atlanta Hawks,State Farm Arena,Orlando Magic,438.8
+Boston Celtics,TD Garden,New York Knicks,215.3
+Boston Celtics,TD Garden,Toronto Raptors,550
+Brooklyn Nets,Barclays Center,New York Knicks,5.1
+Brooklyn Nets,Barclays Center,Philadelphia 76ers,97.4
+Charlotte Hornets,Spectrum Center,Atlanta Hawks,244.8
+Charlotte Hornets,Spectrum Center,Indiana Pacers,585.1
+Charlotte Hornets,Spectrum Center,Miami Heat,730.9
+Charlotte Hornets,Spectrum Center,Washington Wizards,402
+Chicago Bulls,United Center,Detroit Pistons,282.6
+Chicago Bulls,United Center,Indiana Pacers,181.6
+Chicago Bulls,United Center,Milwaukee Bucks,92.1
+Cleveland Cavaliers,Quicken Loans Arena,Detroit Pistons,164.9
+Cleveland Cavaliers,Quicken Loans Arena,Indiana Pacers,315.5
+Cleveland Cavaliers,Quicken Loans Arena,Philadelphia 76ers,431.2
+Cleveland Cavaliers,Quicken Loans Arena,Washington Wizards,371
+Dallas Mavericks,American Airlines Center,Houston Rockets,239.8
+Dallas Mavericks,American Airlines Center,Oklahoma City Thunder,206.7
+Dallas Mavericks,American Airlines Center,San Antonio Spurs,273.8
+Denver Nuggets,Pepsi Center,Los Angeles Lakers,1016.1
+Denver Nuggets,Pepsi Center,Minnesota Timberwolves,913.9
+Denver Nuggets,Pepsi Center,Oklahoma City Thunder,679.6
+Denver Nuggets,Pepsi Center,Phoenix Suns,862.4
+Denver Nuggets,Pepsi Center,Utah Jazz,519.1
+Detroit Pistons,Little Caesars Arena,Chicago Bulls,282.6
+Detroit Pistons,Little Caesars Arena,Cleveland Cavaliers,164.9
+Detroit Pistons,Little Caesars Arena,Minnesota Timberwolves,694.7
+Detroit Pistons,Little Caesars Arena,New York Knicks,616.1
+Detroit Pistons,Little Caesars Arena,Toronto Raptors,231
+Golden State Warriors,Oracle Arena,Los Angeles Lakers,385.1
+Golden State Warriors,Oracle Arena,Sacramento Kings,87.9
+Houston Rockets,Toyota Center,Dallas Mavericks,239.8
+Houston Rockets,Toyota Center,New Orleans Pelicans,347.7
+Houston Rockets,Toyota Center,San Antonio Spurs,197.4
+Indiana Pacers,Bankers Life Fieldhouse,Charlotte Hornets,585.1
+Indiana Pacers,Bankers Life Fieldhouse,Chicago Bulls,181.6
+Indiana Pacers,Bankers Life Fieldhouse,Cleveland Cavaliers,315.5
+Los Angeles Clippers,Staples Center,Los Angeles Lakers,0
+Los Angeles Clippers,Staples Center,Denver Nuggets,1016.1
+Los Angeles Clippers,Staples Center,Golden State Warriors,385.1
+Los Angeles Clippers,Staples Center,Phoenix Suns,373
+Los Angeles Clippers,Staples Center,Sacramento Kings,388.4
+Los Angeles Clippers,Staples Center,Utah Jazz,688.4
+Los Angeles Lakers,Staples Center,Los Angeles Clippers,0
+Los Angeles Lakers,Staples Center,Denver Nuggets,1016.1
+Los Angeles Lakers,Staples Center,Golden State Warriors,385.1
+Los Angeles Lakers,Staples Center,Phoenix Suns,373
+Los Angeles Lakers,Staples Center,Sacramento Kings,388.4
+Los Angeles Lakers,Staples Center,Utah Jazz,688.4
+Memphis Grizzlies,FedExForum,Atlanta Hawks,383.8
+Memphis Grizzlies,FedExForum,New Orleans Pelicans,395
+Memphis Grizzlies,FedExForum,Oklahoma City Thunder,466
+Miami Heat,American Airlines Arena,Charlotte Hornets,730.9
+Miami Heat,American Airlines Arena,New Orleans Pelicans,866.1
+Miami Heat,American Airlines Arena,Orlando Magic,235.6
+Milwaukee Bucks,Fiserv Forum,Chicago Bulls,92.1
+Milwaukee Bucks,Fiserv Forum,Minnesota Timberwolves,337.1
+Minnesota Timberwolves,Target Center,Denver Nuggets,913.9
+Minnesota Timberwolves,Target Center,Detroit Pistons,694.7
+Minnesota Timberwolves,Target Center,Milwaukee Bucks,337.1
+Minnesota Timberwolves,Target Center,Portland Trail Blazers,1729.3
+New Orleans Pelicans,Smoothie King Center,Atlanta Hawks,469.1
+New Orleans Pelicans,Smoothie King Center,Houston Rockets,347.7
+New Orleans Pelicans,Smoothie King Center,Memphis Grizzlies,395
+New Orleans Pelicans,Smoothie King Center,Miami Heat,866.1
+New York Knicks,Madison Square Garden,Boston Celtics,215.3
+New York Knicks,Madison Square Garden,Brooklyn Nets,5.1
+New York Knicks,Madison Square Garden,Detroit Pistons,616.1
+New York Knicks,Madison Square Garden,Toronto Raptors,491.1
+Oklahoma City Thunder,Chesapeake Energy Arena,Dallas Mavericks,206.7
+Oklahoma City Thunder,Chesapeake Energy Arena,Denver Nuggets,679.6
+Oklahoma City Thunder,Chesapeake Energy Arena,Memphis Grizzlies,466
+Orlando Magic,Amway Center,Atlanta Hawks,438.8
+Orlando Magic,Amway Center,Miami Heat,235.6
+Philadelphia 76ers,Wells Fargo Center,Brooklyn Nets,97.4
+Philadelphia 76ers,Wells Fargo Center,Cleveland Cavaliers,431.2
+Philadelphia 76ers,Wells Fargo Center,Washington Wizards,140
+Phoenix Suns,Talking Stick Resort Arena,Denver Nuggets,862.4
+Phoenix Suns,Talking Stick Resort Arena,Los Angeles Lakers,373
+Portland Trail Blazers,Moda Center,Minnesota Timberwolves,1729.3
+Portland Trail Blazers,Moda Center,Sacramento Kings,579.7
+Portland Trail Blazers,Moda Center,Utah Jazz,765.5
+Sacramento Kings,Golden 1 Center,Golden State Warriors,87.9
+Sacramento Kings,Golden 1 Center,Los Angeles Lakers,388.4
+Sacramento Kings,Golden 1 Center,Portland Trail Blazers,579.7
+San Antonio Spurs,AT&T Center,Dallas Mavericks,273.8
+San Antonio Spurs,AT&T Center,Houston Rockets,197.4
+Toronto Raptors,Scotiabank Arena,Boston Celtics,550
+Toronto Raptors,Scotiabank Arena,Detroit Pistons,231
+Toronto Raptors,Scotiabank Arena,New York Knicks,491.1
+Utah Jazz,Vivint Smart Home Arena,Denver Nuggets,519.1
+Utah Jazz,Vivint Smart Home Arena,Los Angeles Lakers,688.4
+Utah Jazz,Vivint Smart Home Arena,Portland Trail Blazers,765.5
+Washington Wizards,Capital One Arena,Charlotte Hornets,402
+Washington Wizards,Capital One Arena,Cleveland Cavaliers,371
+Washington Wizards,Capital One Arena,Philadelphia 76ers,140

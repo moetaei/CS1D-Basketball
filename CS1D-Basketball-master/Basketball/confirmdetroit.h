@@ -8,6 +8,9 @@
 #include <QSqlError>
 #include <QDebug>
 #include <QListWidget>
+#include "graph.h"
+#include "data.h"
+#include "checkout.h"
 
 namespace Ui {
 class ConfirmDetroit;
@@ -42,7 +45,16 @@ private slots:
 private:
     Ui::ConfirmDetroit *ui;
 
-    QString startCity = "Detroit";          /*!< the starting city */
+    QList<QString> customList;
+
+    class Graph graf;
+    class data datah;
+
+    QString* sortedDest = nullptr;
+    float* sortedDist = nullptr;
+    int cityNum = 1;
+    QString closestCity;
+    QString startCity = "Detroit Pistons";          /*!< the starting city */
     QSqlDatabase myDB;                      /*!< database connection */
 };
 

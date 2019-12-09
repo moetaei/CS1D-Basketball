@@ -47,9 +47,9 @@ void confirmDenver::defaultListView()
     QString cityName;
     QSqlQuery * qry = new QSqlQuery(myDB);
 
-    qry->prepare("SELECT TeamName "
-                    "FROM info "
-                    "ORDER BY TeamName ASC ");
+    qry->prepare("SELECT DISTINCT Team1 "
+                 "FROM distances "
+                 "WHERE NOT Team1 = 'Denver Nuggets' ");
 
     if(qry->exec())
     {
@@ -72,9 +72,7 @@ void confirmDenver::on_denverList_itemClicked(QListWidgetItem *item)
     denverto = new denverTo();
     temp = denverto->setCityName(item->text());
     denverto->show();
-//    dist.remove(startCity,Qt::CaseInsensitive);//25
-//    dist.remove(0,3);
-//    dist.remove(25,47);
+
     temp = temp.right(6);
     dist = temp.toDouble();
     qDebug() << dist;
