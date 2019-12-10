@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>adminSouvenirs</class>
+ <widget class="QWidget" name="adminSouvenirs">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>640</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="editteamLabel">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>50</y>
+     <width>331</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>13</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+     <kerning>true</kerning>
+    </font>
+   </property>
+   <property name="text">
+    <string>Add/Edit Souvenirs</string>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::PlainText</enum>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="selectTeam">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>180</y>
+     <width>161</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="selTeamLabel">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>150</y>
+     <width>171</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Please select a Team</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

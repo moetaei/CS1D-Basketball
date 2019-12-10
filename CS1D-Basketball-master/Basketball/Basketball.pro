@@ -18,6 +18,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     admin.cpp \
+    adminsouvenirs.cpp \
     arenas.cpp \
     bfs.cpp \
     checkout.cpp \
@@ -47,6 +48,7 @@ SOURCES += \
 
 HEADERS += \
     admin.h \
+    adminsouvenirs.h \
     arenas.h \
     bfs.h \
     checkout.h \
@@ -75,6 +77,7 @@ HEADERS += \
 
 FORMS += \
     admin.ui \
+    adminsouvenirs.ui \
     arenas.ui \
     bfs.ui \
     checkout.ui \

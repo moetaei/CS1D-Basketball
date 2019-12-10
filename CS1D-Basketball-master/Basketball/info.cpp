@@ -31,7 +31,7 @@ info::~info()
     delete ui;
 }
 
-/*! resets everything ot its default values */
+/*! resets everything to its default values */
 void info::info::defaultReset()
 {
     QString start = ui->teamOptions->currentText();
