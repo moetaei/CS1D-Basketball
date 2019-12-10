@@ -8,6 +8,9 @@
 #include <QSqlError>
 #include <QDebug>
 #include <QListWidget>
+#include "graph.h"
+#include "data.h"
+#include "checkout.h"
 
 namespace Ui {
 class confirmCustom2;
@@ -50,10 +53,14 @@ private slots:
 private:
     Ui::confirmCustom2 *ui;
 
+    checkout* checkoutWindow;
+
     QList<QListWidgetItem *> cityList;  /*!< list of destinations selected */
+    class Graph graf; //!< Graph object
+    class data datah; //!< data object
 
     QString* sortedDest = nullptr;
-    float* sortedDist = nullptr;
+    double* sortedDist = nullptr;
     int cityNum = 0;
     QString closestCity;
     QString startCity = "";          /*!< the starting city */
