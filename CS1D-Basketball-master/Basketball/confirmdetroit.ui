@@ -31,7 +31,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Pick cities to travel to visit starting from Detroit</string>
+    <string>Visiting all cities starting from Detroit</string>
    </property>
    <property name="textFormat">
     <enum>Qt::PlainText</enum>
