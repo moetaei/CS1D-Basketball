@@ -10,7 +10,6 @@ ConfirmDetroit::ConfirmDetroit(QWidget *parent) :
     myDB = QSqlDatabase::database();
     defaultListView();
     ui->detroitList->setEnabled(true);
-    ui->confirm->setEnabled(false);
 }
 
 ConfirmDetroit::~ConfirmDetroit()
@@ -33,7 +32,7 @@ void ConfirmDetroit::defaultListView()
         {
             cityNum++;
             cityName = qry->value(0).toString();
-            ui->detroitList->addItem(cityName);
+//            ui->detroitList->addItem(cityName);
             customList.push_back(cityName);
 //            qDebug() << cityName;
         }
@@ -49,33 +48,29 @@ void ConfirmDetroit::defaultListView()
     delete sortedDest;
     delete sortedDist;
     sortedDest = new QString[cityNum];
-    sortedDist = new float[cityNum];
+    sortedDist = new double[cityNum];
     sortedDest[0] = startCity;
     sortedDist[0] = 0;
 
+    qDebug() << "size: " << cityNum;
+
     sortCities();
 
-    for (int i = 0; i < cityNum -1 ; i++)
+    for (int i = 0; i < cityNum ; i++)
     {
-        ui->detroitList->addItem(customList.at(i));
-        qDebug() << customList.at(i);
+        qDebug() << sortedDest[i];
+        ui->detroitList->addItem(sortedDest[i]);
     }
 }
 
 //! sorts array of teams
 void ConfirmDetroit::sortCities()
 {
-    stack<float> smallest;
-    float tempDist[cityNum];
-//        QString tempDest[cityNum]/* = {*sortedDest}*/;
+    queue<double> smallest;
     QString output = "";
-    stack<QString> tempDest;
+    queue<QString> tempDest;
 
     qDebug() << "size: " << cityNum;
-
-//    startCity = sortedDest[0];
-//    sortedDist[0] = 0;
-
 
     /************************************************************************
      * PROCESS: Sort array from index 1 to n (max index) -1.
@@ -88,81 +83,30 @@ void ConfirmDetroit::sortCities()
     int i = 0;
     while(i < datah.getSizeC())
     {
-<<<<<<< Updated upstream
-        qDebug() << "start city: " << startCity;
-        for(int k = 0; k < cityNum-1; k++)
-        {
-            qDebug() << "get dist" << customList[k];
-
-            graf.shortestPath(datah.findCityIndex(startCity),datah.findCityIndex(customList[k]), output);
-            qDebug() << "got dist";
-            output = output.right(6);
-            output.remove(QChar('e'));
-            output.remove(QChar(' '));
-            output.remove(QChar(':'));
-    //            qDebug() << output;
-            tempDist[k] = output.toFloat();
-            output = "";
-            qDebug() << tempDist[k] << customList[k];
-        }
-
-
-//        return;
-
-        qDebug() << "hi";
-        smallest.push(tempDist[0]);
-        for(int k = 0; k < cityNum-1; k++)
-        {
-            if(smallest.top() >= tempDist[k])
-            {
-                smallest.push(tempDist[k]);
-                tempDest.push(customList[k]);
-                qDebug() << tempDest.top();
-            }
-        }
-
-        closestCity = tempDest.top();
-
-        qDebug() << "The next closest city is: " << closestCity;
-
-       /************************************************************************
-        * PROCESS: checks if the the city in idValue is in the
-        *          sortedDestinations array and selects the next closest city
-        *          if they are the same. Checks every city in the array
-        ***********************************************************************/
-        for(int k = 0; k < i; k++)
-        {
-            qDebug() << k;
-            if(closestCity==sortedDest[k])
-            {
-                qDebug() << closestCity << sortedDest[k];
-                tempDest.pop();
-                smallest.pop();
-                closestCity = tempDest.top();
-                k = -1;
-            }
-        }
-        qDebug() << i;
-
-        sortedDest[i] = closestCity;
-        sortedDist[i] = smallest.top();
-        startCity = closestCity;
-//        customList.removeOne(closestCity);
-
-        qDebug() << sortedDest[i];
-
-//    closestCity = sortedDest[cityNum-1];
-
-
-=======
         graf.shortestPath1(d, output, d);
-        qDebug() << "End";
-        smallest.push(output.toFloat());
+//        qDebug() << output;
+        smallest.push(output.toDouble());
         tempDest.push(datah.findCityName(d));
+//        qDebug() << smallest.back() << tempDest.back();
+
         output = "";
         i++;
     }
->>>>>>> Stashed changes
+
+    double f;
+    QString s;
+    for(int j = 1; j < datah.getSizeC(); j++)
+    {
+        s = tempDest.front();
+        f = smallest.front();
+
+        sortedDest[j] = s;
+        sortedDist[j] = f;
+        tempDest.pop();
+        smallest.pop();
+//        qDebug() << sortedDest[i] << sortedDist[i];
+        qDebug() << f << s << j;
+    }
 }
 
 /*!
@@ -179,26 +123,9 @@ void ConfirmDetroit::sortCities()
  ***************************************************************************/
 void ConfirmDetroit::on_cancel_clicked()
 {
-    ui->confirm->setEnabled(false);
+    this->close();
 }
 
-/*!
- ****************************************************************************
- * METHOD - on_select_clicked
- * --------------------------------------------------------------------------
- * This method changes to a different widget view so the traveler can see
- * their travel plan when this button is clicked.
- * --------------------------------------------------------------------------
- * PRE-CONDITIONS
- *      None.
- *
- * POST-CONDITIONS
- *      ==> Returns nothing.
- ***************************************************************************/
-void ConfirmDetroit::on_select_clicked()
-{
-    ui->confirm->setEnabled(true);
-}
 
 /*!
  ****************************************************************************
@@ -214,11 +141,8 @@ void ConfirmDetroit::on_select_clicked()
  ***************************************************************************/
 void ConfirmDetroit::on_confirm_clicked()
 {
-
+    checkoutWindow = new checkout(sortedDest,sortedDist, cityNum);
+    checkoutWindow->show();
+    this->close();
 }
 
-/*! close window */
-void ConfirmDetroit::on_exitButton_clicked()
-{
-    close();
-}

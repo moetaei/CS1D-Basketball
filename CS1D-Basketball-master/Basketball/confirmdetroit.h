@@ -35,27 +35,23 @@ public:
     //!< Creates a sorted list of cities and distances from selected choices.
 
 private slots:
-
+    //! closes window
     void on_cancel_clicked();
-
-    void on_select_clicked();
 
     //! confirms purchase
     void on_confirm_clicked();
 
-    //! closes window
-    void on_exitButton_clicked();
-
 private:
     Ui::ConfirmDetroit *ui;
 
-    QList<QString> customList;
+    checkout* checkoutWindow;
 
+    QList<QString> customList;
     class Graph graf; //!< Graph object
     class data datah; //!< data object
 
     QString* sortedDest = nullptr;
-    float* sortedDist = nullptr;
+    double* sortedDist = nullptr;
     int cityNum = 1;
     QString closestCity;
     QString startCity = "Detroit Pistons";          /*!< the starting city */
