@@ -3,6 +3,6 @@ Northwest
 Seattle Supersonics
 Seattle, Washington
 Seattle Stadium
-18,919
+18919
 2019
 Koby Bryant
