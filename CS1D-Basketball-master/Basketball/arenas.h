@@ -7,6 +7,7 @@
 #include <QSqlQueryModel>
 #include <QSqlError>
 #include <QDebug>
+#include "data.h"
 
 namespace Ui {
 class arenas;
@@ -29,6 +30,7 @@ public:
 private:
     Ui::arenas *ui;
     QSqlDatabase myDB;      //!< database connection
+    class data datah;
 };
 
 #endif // ARENAS_H

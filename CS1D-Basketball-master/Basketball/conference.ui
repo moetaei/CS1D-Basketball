@@ -16,18 +16,18 @@
   <widget class="QTableView" name="conferenceTable">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>180</y>
+     <x>50</x>
+     <y>90</y>
      <width>256</width>
-     <height>301</height>
+     <height>421</height>
     </rect>
    </property>
   </widget>
   <widget class="QComboBox" name="comboBox">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>120</y>
+     <x>400</x>
+     <y>90</y>
      <width>121</width>
      <height>31</height>
     </rect>
@@ -44,6 +44,30 @@
    </property>
    <property name="text">
     <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>40</y>
+     <width>331</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>13</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+     <kerning>true</kerning>
+    </font>
+   </property>
+   <property name="text">
+    <string>Conferences</string>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::PlainText</enum>
    </property>
   </widget>
  </widget>

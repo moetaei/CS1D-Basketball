@@ -11,6 +11,7 @@ arenas::arenas(QWidget *parent) :
     ui->graphPic->setPixmap(pix.scaled(561,491,Qt::KeepAspectRatio));
     myDB = QSqlDatabase::database();
     defaultReset();
+    ui->totalSeatingValue->setText(QString::number(datah.getSeatingCapacity()));
 }
 
 /*! destructor */
