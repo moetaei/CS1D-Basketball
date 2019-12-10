@@ -12,6 +12,7 @@ namespace Ui {
 class coaches;
 }
 
+/*! Class coaches is used to get the coaches from the database and to be able to sett it all to its default value */
 class coaches : public QWidget
 {
     Q_OBJECT

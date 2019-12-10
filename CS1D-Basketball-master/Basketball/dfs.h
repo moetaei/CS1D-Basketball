@@ -15,11 +15,16 @@ class dfs : public QWidget
     Q_OBJECT
 
 public:
+    //! displays the dfs onto a window
     void setText();
     explicit dfs(QWidget *parent = nullptr);
+
+    //! destructor
     ~dfs();
 
 private slots:
+
+    //! exits dfs window
     void on_exit_clicked();
 
 private:
