@@ -13,9 +13,8 @@ admin::admin(QWidget *parent) :
 
     // Creates a stacked widget index for different pages
       ui->stackedWidget->insertWidget(1, &editWindow);
-//    ui->stackedWidget->insertWidget(2, &infoWindow);
-//    ui->stackedWidget->insertWidget(3, &coachWindow);
-//    ui->stackedWidget->insertWidget(4, &conferenceWindow);
+      ui->stackedWidget->insertWidget(2, &souvenirWindow);
+
 
     myDB = QSqlDatabase::database();
 
@@ -35,15 +34,6 @@ void admin::on_teamButton_clicked()
     ui->stackedWidget->setCurrentIndex(1);
 }
 
-void admin::on_distanceButton_clicked()
-{
-
-}
-
-void admin::on_souvinerButton_clicked()
-{
-
-}
 
 void admin::on_logoutButton_clicked()
 {
@@ -55,3 +45,8 @@ void admin::on_adminButton_clicked()
     ui->stackedWidget->setCurrentIndex(0);
 }
 
+
+void admin::on_souvenirButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
+}

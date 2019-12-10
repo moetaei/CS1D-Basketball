@@ -186,6 +186,30 @@ border-radius: 5px;</string>
       <string>TextLabel</string>
      </property>
     </widget>
+    <widget class="QLabel" name="editteamLabel">
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>80</y>
+       <width>371</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>13</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+       <kerning>true</kerning>
+      </font>
+     </property>
+     <property name="text">
+      <string>Welcome to the Admin interface!</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::PlainText</enum>
+     </property>
+    </widget>
    </widget>
   </widget>
  </widget>

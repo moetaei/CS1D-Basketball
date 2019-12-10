@@ -21,8 +21,7 @@ uTeams::uTeams(QWidget *parent) :
     ui(new Ui::uTeams)
 {
     ui->setupUi(this);
-//    QString path = qApp->applicationDirPath();
-//    QPixmap pix(path + "/graph.png");
+
     QPixmap pix(":/rec/graph.png");
     ui->label_pic->setPixmap(pix.scaled(561,491,Qt::KeepAspectRatio));
 

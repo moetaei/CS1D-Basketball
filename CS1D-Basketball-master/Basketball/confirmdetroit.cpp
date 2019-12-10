@@ -88,7 +88,6 @@ void ConfirmDetroit::sortCities()
     int i = 0;
     while(i < datah.getSizeC())
     {
-<<<<<<< Updated upstream
         qDebug() << "start city: " << startCity;
         for(int k = 0; k < cityNum-1; k++)
         {
@@ -154,7 +153,6 @@ void ConfirmDetroit::sortCities()
 //    closestCity = sortedDest[cityNum-1];
 
 
-=======
         graf.shortestPath1(d, output, d);
         qDebug() << "End";
         smallest.push(output.toFloat());
@@ -162,7 +160,6 @@ void ConfirmDetroit::sortCities()
         output = "";
         i++;
     }
->>>>>>> Stashed changes
 }
 
 /*!

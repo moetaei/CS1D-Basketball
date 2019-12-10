@@ -1,5 +1,6 @@
 #include "conference.h"
 #include "ui_conference.h"
+#include <QPixmap>
 
 conference::conference(QWidget *parent) :
     QWidget(parent),
@@ -10,6 +11,8 @@ conference::conference(QWidget *parent) :
     ui->comboBox->addItem("East");
     ui->comboBox->addItem("West");
 
+    QPixmap pix(":/rec/graph.png");
+    ui->label_pic->setPixmap(pix.scaled(561,491,Qt::KeepAspectRatio));
     defaultReset();
 }
 
