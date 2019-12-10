@@ -8,7 +8,9 @@
 #include <QSqlError>
 #include <QDebug>
 #include <QListWidget>
-#include "citytocity.h"
+#include <QVector>
+#include "data.h"
+#include "graph.h"
 
 namespace Ui {
 class next;
@@ -20,24 +22,23 @@ class next : public QWidget
 
 public:
     explicit next(QWidget *parent = nullptr);
-    void setCity(QString s);
+    void setCity(QVector<QString> s);
 
     //! destructor
     ~next();
 
 private slots:
-    void on_newList_itemClicked(QListWidgetItem *item);
-    void defaultListView();
-    //!< Sets the default view the window by enabling and disabling items.
 
     //! exits out
     void on_exitButton_clicked();
 
+    void on_route_textChanged();
+
 private:
     Ui::next *ui;
-    QString starting;
-    cityToCity *direct;
-    QSqlDatabase myDB; //!< database
+    QVector<QString> cityOrder;
+    class Graph graf;
+    class data datah;
 
 };
 

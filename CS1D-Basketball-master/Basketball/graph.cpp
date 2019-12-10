@@ -220,7 +220,7 @@ void Graph::shortestPath1(int src, QString &output, int &d)
 
 }
 /*! Finds the shortest path with to given teams and outputs for dfs */
-void Graph::shortestPath(int src, int dest, QString &output)
+void Graph::shortestPath(int src, int dest, QString &output, double &all)
 {
     priority_queue< iPair, vector <iPair> , greater<iPair> > pq;
 
@@ -264,9 +264,7 @@ void Graph::shortestPath(int src, int dest, QString &output)
     {
         QVector<int> path;
         path.push_front(dest);
-        qDebug() << "Start3";
         getPath(src,dest,path);
-        qDebug() << "Start4";
         for(int i = 0; i < path.size(); i++)
         {
             if(i + 1 < path.size())
@@ -277,7 +275,8 @@ void Graph::shortestPath(int src, int dest, QString &output)
             }
         }
         output += '\n';
-        output += "Total Distance: " + QString::number(total /*dist[dest]*/);
+        output += "Total Distance from "+ datah.findCityName(src)+" to " + datah.findCityName(dest)+ ": "+ QString::number(total /*dist[dest]*/);
+        all += total;
     }
 }
 void Graph :: getPath(int s, int city, QVector<int> &path)
