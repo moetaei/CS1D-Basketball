@@ -2,6 +2,7 @@
 #define EDITTEAM_H
 
 #include <QWidget>
+#include "data.h"
 
 namespace Ui {
 class editTeam;
@@ -20,8 +21,12 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::editTeam *ui;
+
+    class data test;        ///////////////////////////
 };
 
 #endif // EDITTEAM_H

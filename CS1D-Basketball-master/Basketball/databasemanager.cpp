@@ -3,6 +3,9 @@
 #include <QDebug>
 #include <QSqlError>
 #include <QSqlError>
+#include <QMessageBox>
+#include <QFile>
+#include <QFileDialog>
 
 databaseManager::databaseManager() {}   //Constructor
 databaseManager::~databaseManager() {}  //Destructor
@@ -25,6 +28,7 @@ bool databaseManager::openDB()
 {
 
         const QString DB_PATH = "CS1D_NBA_DB.db";
+
 
     // If database is already opened, skip creation and connection process
     if(!database.open())
@@ -107,3 +111,5 @@ QSqlDatabase databaseManager::currentDB() const
 {
     return database;
 }
+
+

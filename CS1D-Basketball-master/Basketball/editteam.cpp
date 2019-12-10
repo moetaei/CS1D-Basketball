@@ -25,5 +25,13 @@ editTeam::~editTeam()
 
 void editTeam::on_pushButton_clicked()
 {
+    test.updateDB1();
     QMessageBox::information(this, "Load From File", "Successfully loaded from file");
+}
+
+void editTeam::on_pushButton_2_clicked()
+{
+    test.updateDB2();
+    QMessageBox::information(this, "Load From File", "Successfully loaded from file");
+
 }

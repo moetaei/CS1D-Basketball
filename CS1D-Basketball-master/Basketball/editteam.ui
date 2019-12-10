@@ -47,7 +47,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Load From File</string>
+    <string>Load Distances From File</string>
    </property>
   </widget>
   <widget class="QLabel" name="OrigGraph">
@@ -87,6 +87,19 @@
    </property>
    <property name="text">
     <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>160</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Load Info From File</string>
    </property>
   </widget>
  </widget>
