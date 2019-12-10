@@ -18,15 +18,20 @@ public:
 
     void editLocation();
 
+    void editCapacity();
+
     //! destructor
     ~editarena();
 
 private slots:
     void on_confirmLocation_clicked();
 
+    void on_confirmCapacity_clicked();
+
 private:
     Ui::editarena *ui;
     QSqlQueryModel * list;
+    QSqlDatabase myDB;
 };
 
 #endif // EDITARENA_H

@@ -7,6 +7,7 @@ editarena::editarena(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    myDB = QSqlDatabase::database();
     list = new QSqlQueryModel();
 
     // Gets the teams in the database
@@ -22,14 +23,32 @@ editarena::~editarena()
 
 void editarena::editLocation()
 {
-    QString Location;
-    Location=ui->txt_Location->text();
+    QString location;
+    location=ui->txt_Location->text();
 
-    QSqlQuery qry;
-    qry.prepare("update info set Location='"+Location+"' where Location='"+ui->List->currentText()+"'");
+    QSqlQuery * qry = new QSqlQuery(myDB);
+    qry->prepare("update info set Location='"+location+"' where Location='"+ui->List->currentText()+"'");
+}
+
+void editarena::editCapacity()
+{
+    QString Capacity;
+    Capacity=ui->txt_Capacity->text();
+
+    QSqlQuery * qry = new QSqlQuery(myDB);
+    qry->prepare("INSERT INTO info (StadiumCapacity) "
+                 "VALUES (:StadiumCapacity)");
+
+    qry->bindValue(":StadiumCapacity", Capacity);
+    qry->exec();
 }
 
 void editarena::on_confirmLocation_clicked()
 {
     editLocation();
+}
+
+void editarena::on_confirmCapacity_clicked()
+{
+    editCapacity();
 }
