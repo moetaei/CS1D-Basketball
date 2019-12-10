@@ -36,7 +36,7 @@
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color:#ffffff;
+      <string notr="true">background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.506, y2:0, stop:0 rgba(13, 34, 64, 255), stop:1 rgba(255, 198, 39, 255));
 color:black;</string>
      </property>
      <property name="title">
@@ -46,13 +46,19 @@ color:black;</string>
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>30</y>
-        <width>131</width>
-        <height>16</height>
+        <y>10</y>
+        <width>191</width>
+        <height>81</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+      </property>
       <property name="text">
-       <string>Start from Denver</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; color:#8b8b8b;&quot;&gt;Visit any city starting from Dever&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton">
@@ -64,8 +70,30 @@ color:black;</string>
         <height>28</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+      </property>
       <property name="text">
        <string>Select</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>90</y>
+        <width>191</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#7e7e7e;&quot;&gt;Visit Denver and one other city&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
@@ -88,14 +116,17 @@ color:black;</string>
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>30</y>
+        <x>30</x>
+        <y>20</y>
         <width>191</width>
-        <height>16</height>
+        <height>51</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+      </property>
       <property name="text">
-       <string>Custom trip (they pick city order)</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Plan your own trip&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_2">
@@ -107,8 +138,30 @@ color:black;</string>
         <height>28</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+      </property>
       <property name="text">
        <string>Select</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>90</y>
+        <width>221</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can pick where you want to go and the order&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
@@ -122,7 +175,7 @@ color:black;</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color:#ffffff;
+      <string notr="true">background-color: qlineargradient(spread:pad, x1:0.493, y1:0, x2:0.5, y2:0, stop:0 rgba(0, 72, 127, 255), stop:1 rgba(255, 0, 0, 255));
 color:black;</string>
      </property>
      <property name="title">
@@ -134,11 +187,17 @@ color:black;</string>
         <x>30</x>
         <y>30</y>
         <width>201</width>
-        <height>16</height>
+        <height>51</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+      </property>
       <property name="text">
-       <string>Visit all cities starting from Detroit</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Vistit every city starting at Detroit&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_3">
@@ -150,8 +209,30 @@ color:black;</string>
         <height>28</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+      </property>
       <property name="text">
        <string>Select</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>90</y>
+        <width>221</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Travel to every city and start from Detroit&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
@@ -174,14 +255,20 @@ color:black;</string>
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>40</y>
+        <x>30</x>
+        <y>90</y>
         <width>231</width>
-        <height>16</height>
+        <height>51</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+      </property>
       <property name="text">
-       <string>Custom trip (we pick city order)</string>
+       <string>Choose Where you want to start and everywhere you want to go, and we will find the best order for you</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_4">
@@ -193,8 +280,30 @@ color:black;</string>
         <height>28</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+      </property>
       <property name="text">
        <string>Select</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>30</y>
+        <width>201</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Pick wherever you want to go&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
