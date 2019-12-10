@@ -12,6 +12,8 @@ namespace Ui {
 class info;
 }
 
+/*! Class info is used to get the data from the info panel of the database,
+ * can also be used to initialize data back to its default values. */
 class info : public QWidget
 {
     Q_OBJECT
