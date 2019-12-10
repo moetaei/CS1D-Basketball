@@ -34,6 +34,7 @@ SOURCES += \
     denverto.cpp \
     dfs.cpp \
     divisions.cpp \
+    editarena.cpp \
     editteam.cpp \
     graph.cpp \
     info.cpp \
@@ -64,6 +65,7 @@ HEADERS += \
     denverto.h \
     dfs.h \
     divisions.h \
+    editarena.h \
     editteam.h \
     graph.h \
     info.h \
@@ -90,6 +92,7 @@ FORMS += \
     denverto.ui \
     dfs.ui \
     divisions.ui \
+    editarena.ui \
     editteam.ui \
     info.ui \
     login.ui \

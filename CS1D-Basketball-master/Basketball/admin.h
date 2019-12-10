@@ -1,7 +1,7 @@
 
 #ifndef ADMIN_H
 #define ADMIN_H
-
+#include "editarena.h"
 #include "uTeams.h"
 #include "editteam.h"
 #include "adminsouvenirs.h"
@@ -33,10 +33,13 @@ private slots:
 
     void on_souvenirButton_clicked();//!< Souviner page is diplayed in stackedWidget
 
+    void on_arenaButton_clicked();
+
 private:
     Ui::admin *ui;
     editTeam editWindow;
     adminSouvenirs souvenirWindow;
+    editarena arenaWindow;
     QSqlDatabase myDB; //!< QSqlDatabase for the teams
     class data datah;
 };

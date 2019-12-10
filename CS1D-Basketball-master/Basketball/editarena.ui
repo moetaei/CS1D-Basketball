@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>adminSouvenirs</class>
- <widget class="QWidget" name="adminSouvenirs">
+ <class>editarena</class>
+ <widget class="QWidget" name="editarena">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>80</x>
-     <y>50</y>
+     <y>80</y>
      <width>331</width>
      <height>41</height>
     </rect>
@@ -31,30 +31,10 @@
     </font>
    </property>
    <property name="text">
-    <string>Add/Edit Souvenirs</string>
+    <string>Modify Arena</string>
    </property>
    <property name="textFormat">
     <enum>Qt::PlainText</enum>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit">
-   <property name="geometry">
-    <rect>
-     <x>400</x>
-     <y>220</y>
-     <width>113</width>
-     <height>22</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QTableView" name="tableView">
-   <property name="geometry">
-    <rect>
-     <x>350</x>
-     <y>290</y>
-     <width>256</width>
-     <height>192</height>
-    </rect>
    </property>
   </widget>
  </widget>
