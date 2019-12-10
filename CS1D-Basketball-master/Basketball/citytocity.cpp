@@ -10,7 +10,8 @@ cityToCity::cityToCity(QWidget *parent) :
 void cityToCity::setCityName(QString start, QString end)
 {
     QString text = "";
-    graf.shortestPath(datah.findCityIndex(start),datah.findCityIndex(end),text);
+    double total = 0;
+    graf.shortestPath(datah.findCityIndex(start),datah.findCityIndex(end),text,total);
     ui->displayDistance->setText(text);
 }
 cityToCity::~cityToCity()

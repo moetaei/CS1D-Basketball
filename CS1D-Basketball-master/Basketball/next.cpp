@@ -6,49 +6,42 @@ next::next(QWidget *parent) :
     ui(new Ui::next)
 {
     ui->setupUi(this);
-    myDB = QSqlDatabase::database();
-    defaultListView();
-    ui->newList->setEnabled(true);
+
 }
 
 next::~next()
 {
     delete ui;
 }
-void next::setCity(QString s)
+void next::setCity(QVector<QString> s)
 {
-    starting = s;
-}
-void next::defaultListView()
-{
-    QString cityName;
-    QSqlQuery * qry = new QSqlQuery(myDB);
-    qry->prepare("SELECT TeamName "
-                    "FROM info WHERE TeamName NOT IN ('"+starting+"') "
-                    "ORDER BY TeamName ASC ");
+  for(int i = 0; i < s.size(); i++)
+  {
+      cityOrder.push_back(s[i]);
+  }
+  QString text = "";
+  QString cities = "";
+  double total = 0;
+  for(int i = 0; i < cityOrder.size(); i++)
+  {
+      if(i + 1 != cityOrder.size() )
+      {
+          graf.shortestPath(datah.findCityIndex(cityOrder[i]),datah.findCityIndex(cityOrder[i+1]),text, total);
+          text += "\n\n";
+      }
+      cities += cityOrder[i];
+      cities += '\n';
 
-    if(qry->exec())
-    {
-        // Populating list from query
-        while(qry->next())
-        {
-            cityName = qry->value(0).toString();
-            ui->newList->addItem(cityName);
-        }
-    }
-    else
-    {
-        qDebug() << ("next Error: qry failed.");
-    }
+  }
+  text += "TOTAL DISTANCE FOR YOUR ROUTE: " + QString::number(total);
+  ui->route->setText(text);
+  ui->cityList->setText(cities);
 }
-void next::on_newList_itemClicked(QListWidgetItem *item)
-{
-    direct = new cityToCity();
-    direct->setCityName(starting, item->text());
-    direct->show();
-}
-
 void next::on_exitButton_clicked()
 {
+    cityOrder.clear();
+    ui->route->clear();
+    ui->cityList->clear();
     close();
 }
+

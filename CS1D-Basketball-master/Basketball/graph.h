@@ -27,7 +27,8 @@ public:
     void addEdge(int u, int v, double w);
 
     //! finds the shortest path for Dijkstra
-    void shortestPath(int s,int dest, QString &output);
+    void shortestPath(int s,int dest, QString &output, double &all);
+
 
     void shortestPath1(int s, QString &output, int &d);
 

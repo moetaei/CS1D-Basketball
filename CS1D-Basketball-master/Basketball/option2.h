@@ -25,6 +25,7 @@ public:
     ~Option2();
     void defaultListView();
     //!< Sets the default view the window by enabling and disabling items.
+    void defaultListView1();
 
 
 private slots:
@@ -33,8 +34,19 @@ private slots:
     //! exits window
     void on_exitButton_clicked();
 
+    void on_newList1_itemClicked(QListWidgetItem *item);
+
+    void on_exit1_clicked();
+
+    void on_exit2_clicked();
+
+    void on_confirm_clicked();
+
+    void on_newList2_itemClicked(QListWidgetItem *item);
+
 private:
     Ui::Option2 *ui;
+    QVector<QString> cityList;
     class next *next1;
     QSqlDatabase myDB;          /*!< database connection */
 };
