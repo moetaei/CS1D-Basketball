@@ -52,7 +52,6 @@ void data::setSeatingCapacity()
             temp = qry->value(5).toString();
             temp.remove(',');
             totalCap = temp.toInt() + totalCap;
-            qDebug() << temp;
         }
     }
     else

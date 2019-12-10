@@ -86,6 +86,9 @@ void uTeams::uTeams::defaultReset()
     ui->uTeamsTable->setModel(model);
 
     QAbstractItemModel* tableModel= ui->uTeamsTable->model();
+    ui->uTeamsTable->setColumnWidth(0, 150);
+    ui->uTeamsTable->setColumnWidth(1, 150);
+//    ui->uTeamsTable->setColumnWidth(2, 100);
 
     int w = ui->uTeamsTable->verticalHeader()->width();//change +4 if its too big or small
     for (int i = 0; i < tableModel->columnCount(); i++)

@@ -28,7 +28,7 @@ void divisions::divisions::defaultReset()
     model->setQuery("SELECT TeamName "
                     "FROM info WHERE NOT Division = 'Southwest' "
                     "AND NOT Division = 'Pacific' "
-                    "AND NOT Division = 'SouthWest' "
+                    "AND NOT Division = 'Southeast' "
                     "AND NOT Division = 'Central' "
                     "AND NOT Division = 'Atlantic' "
                     "ORDER BY TeamName ");
@@ -46,8 +46,15 @@ void divisions::divisions::defaultReset()
     for (int i = 0; i < tableModel->columnCount(); i++)
        w += ui->tableWidget->columnWidth(i); // seems to include gridline
 
+    int h = ui->tableWidget->horizontalHeader()->height()+0;//change +4 if its too big or small
+    for (int i = 0; i < tableModel->rowCount(); i++)
+        h += ui->tableWidget->rowHeight(i);
+
     ui->tableWidget->setMinimumWidth(w);
     ui->tableWidget->setMaximumWidth(w);
+
+    ui->tableWidget->setMinimumHeight(h);
+    ui->tableWidget->setMaximumHeight(h);
 }
 
 void divisions::on_comboBox_currentIndexChanged(int index)
@@ -60,7 +67,7 @@ void divisions::on_comboBox_currentIndexChanged(int index)
     case 0: model->setQuery("SELECT TeamName "
                             "FROM info WHERE NOT Division = 'Southwest' "
                             "AND NOT Division = 'Pacific' "
-                            "AND NOT Division = 'SouthWest' "
+                            "AND NOT Division = 'Southeast' "
                             "AND NOT Division = 'Central' "
                             "AND NOT Division = 'Atlantic' "
                             "ORDER BY TeamName ");
@@ -68,9 +75,41 @@ void divisions::on_comboBox_currentIndexChanged(int index)
     case 1: model->setQuery("SELECT TeamName "
                             "FROM info WHERE NOT Division = 'Northwest' "
                             "AND NOT Division = 'Pacific' "
-                            "AND NOT Division = 'SouthWest' "
+                            "AND NOT Division = 'Southeast' "
                             "AND NOT Division = 'Central' "
                             "AND NOT Division = 'Atlantic' "
+                            "ORDER BY TeamName ");
+        break;
+    case 2: model->setQuery("SELECT TeamName "
+                            "FROM info WHERE NOT Division = 'Southwest' "
+                            "AND NOT Division = 'Pacific' "
+                            "AND NOT Division = 'Northwest' "
+                            "AND NOT Division = 'Central' "
+                            "AND NOT Division = 'Atlantic' "
+                            "ORDER BY TeamName ");
+        break;
+    case 3: model->setQuery("SELECT TeamName "
+                            "FROM info WHERE NOT Division = 'Southwest' "
+                            "AND NOT Division = 'Northwest' "
+                            "AND NOT Division = 'Southeast' "
+                            "AND NOT Division = 'Central' "
+                            "AND NOT Division = 'Atlantic' "
+                            "ORDER BY TeamName ");
+        break;
+    case 4: model->setQuery("SELECT TeamName "
+                            "FROM info WHERE NOT Division = 'Southwest' "
+                            "AND NOT Division = 'Pacific' "
+                            "AND NOT Division = 'Southeast' "
+                            "AND NOT Division = 'Northwest' "
+                            "AND NOT Division = 'Atlantic' "
+                            "ORDER BY TeamName ");
+        break;
+    case 5: model->setQuery("SELECT TeamName "
+                            "FROM info WHERE NOT Division = 'Southwest' "
+                            "AND NOT Division = 'Pacific' "
+                            "AND NOT Division = 'Southeast' "
+                            "AND NOT Division = 'Central' "
+                            "AND NOT Division = 'Northwest' "
                             "ORDER BY TeamName ");
         break;
     }
