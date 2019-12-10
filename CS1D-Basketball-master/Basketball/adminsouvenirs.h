@@ -12,12 +12,15 @@ namespace Ui {
 class adminSouvenirs;
 }
 
+/*! Class for editing souvenirs for the teams */
 class adminSouvenirs : public QWidget
 {
     Q_OBJECT
 
 public:
     explicit adminSouvenirs(QWidget *parent = nullptr);
+
+    //! destructor
     ~adminSouvenirs();
 
     void defaultReset();

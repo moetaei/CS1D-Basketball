@@ -20,8 +20,6 @@ admin::admin(QWidget *parent) :
 
     //int total = 12;
     //datah.setSeatingCapacity(total);
-    ui->totalSeatingValue->setText(QString::number(datah.getSeatingCapacity()));
-
 }
 
 admin::~admin()

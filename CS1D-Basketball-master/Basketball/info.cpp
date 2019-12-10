@@ -44,8 +44,8 @@ void info::info::defaultReset()
     model->setHeaderData(5, Qt::Horizontal, QObject::tr("Stadium Capavity"));
     model->setHeaderData(6, Qt::Horizontal, QObject::tr("Date Joined"));
 
-    ui->teamTable->verticalHeader()->setVisible(false);
-//    ui->teamTable->setModel(model);
+    ui->tableView->verticalHeader()->setVisible(false);
+    ui->tableView->setModel(model);
 
     QSqlQueryModel * list = new QSqlQueryModel();
 
@@ -53,20 +53,19 @@ void info::info::defaultReset()
     list->setQuery("SELECT DISTINCT TeamName "
                           "FROM info ");
     ui->teamOptions->setModel(list);
+    QAbstractItemModel* tableModel= ui->tableView->model();
 
-    QAbstractItemModel* tableModel= ui->teamTable->model();
-
-    int w = ui->teamTable->verticalHeader()->width();//change +4 if its too big or small
+    int w = ui->tableView->verticalHeader()->width();//change +4 if its too big or small
     for (int i = 0; i < tableModel->columnCount(); i++)
-       w += ui->teamTable->columnWidth(i); // seems to include gridline
+       w += ui->tableView->columnWidth(i); // seems to include gridline
 
-    int h = ui->teamTable->horizontalHeader()->height()+4;//change +4 if its too big or small
+    int h = ui->tableView->horizontalHeader()->height()+4;//change +4 if its too big or small
     for (int i = 0; i < tableModel->rowCount(); i++)
-       h += ui->teamTable->rowHeight(i);
+       h += ui->tableView->rowHeight(i);
 
-    ui->teamTable->setMinimumWidth(w);
-    ui->teamTable->setMaximumWidth(w);
+    ui->tableView->setMinimumWidth(w);
+    ui->tableView->setMaximumWidth(w);
 
-    ui->teamTable->setMinimumHeight(h);
-    ui->teamTable->setMaximumHeight(h);
+    ui->tableView->setMinimumHeight(h);
+    ui->tableView->setMaximumHeight(h);
 }

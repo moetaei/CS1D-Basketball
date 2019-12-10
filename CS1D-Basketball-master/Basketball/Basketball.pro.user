@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
+
 <!-- Written by QtCreator 4.10.2, 2019-12-09T18:45:48. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
   <value type="QByteArray">{53790eb5-f76a-4d98-bd7b-aa1e03dd157e}</value>
+
+<!-- Written by QtCreator 4.10.2, 2019-12-09T18:38:22. -->
+<qtcreator>
+ <data>
+  <variable>EnvironmentId</variable>
+  <value type="QByteArray">{7ac86698-792f-49ca-bd2d-ba540be0da82}</value>
+ 2a1cc15b988c2ecf61ebfef5374d5b30a9f73dc4
  </data>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -67,11 +75,19 @@
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop Qt 5.12.2 MinGW 64-bit</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop Qt 5.12.2 MinGW 64-bit</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">qt.qt5.5122.win64_mingw73_kit</value>
+
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop Qt 5.12.6 MinGW 64-bit</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop Qt 5.12.6 MinGW 64-bit</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">qt.qt5.5126.win64_mingw73_kit</value>
+ 2a1cc15b988c2ecf61ebfef5374d5b30a9f73dc4
    <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/Juliana/Documents/GitHub/CS1D-Basketball/CS1D-Basketball-master/build-Basketball-Desktop_Qt_5_12_2_MinGW_64_bit-Debug</value>
+
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/myles/Documents/GitHub/CS1D-Basketball/CS1D-Basketball-master/build-Basketball-Desktop_Qt_5_12_6_MinGW_64_bit-Debug</value>
+ 2a1cc15b988c2ecf61ebfef5374d5b30a9f73dc4
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -128,6 +144,9 @@
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.1">
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/Juliana/Documents/GitHub/CS1D-Basketball/CS1D-Basketball-master/build-Basketball-Desktop_Qt_5_12_2_MinGW_64_bit-Release</value>
+
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/myles/Documents/GitHub/CS1D-Basketball/CS1D-Basketball-master/build-Basketball-Desktop_Qt_5_12_6_MinGW_64_bit-Release</value>
+ 2a1cc15b988c2ecf61ebfef5374d5b30a9f73dc4
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -184,6 +203,9 @@
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.2">
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/Juliana/Documents/GitHub/CS1D-Basketball/CS1D-Basketball-master/build-Basketball-Desktop_Qt_5_12_2_MinGW_64_bit-Profile</value>
+
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/myles/Documents/GitHub/CS1D-Basketball/CS1D-Basketball-master/build-Basketball-Desktop_Qt_5_12_6_MinGW_64_bit-Profile</value>
+ 2a1cc15b988c2ecf61ebfef5374d5b30a9f73dc4
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -308,6 +330,9 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Basketball</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/Juliana/Documents/GitHub/CS1D-Basketball/CS1D-Basketball-master/Basketball/Basketball.pro</value>
+
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/myles/Documents/GitHub/CS1D-Basketball/CS1D-Basketball-master/Basketball/Basketball.pro</value>
+ 2a1cc15b988c2ecf61ebfef5374d5b30a9f73dc4
     <value type="QString" key="RunConfiguration.Arguments"></value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
@@ -318,6 +343,9 @@
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
     <value type="QString" key="RunConfiguration.WorkingDirectory.default">C:/Users/Juliana/Documents/GitHub/CS1D-Basketball/CS1D-Basketball-master/build-Basketball-Desktop_Qt_5_12_2_MinGW_64_bit-Debug</value>
+
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">C:/Users/myles/Documents/GitHub/CS1D-Basketball/CS1D-Basketball-master/build-Basketball-Desktop_Qt_5_12_6_MinGW_64_bit-Debug</value>
+ 2a1cc15b988c2ecf61ebfef5374d5b30a9f73dc4
    </valuemap>
    <value type="int" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>
