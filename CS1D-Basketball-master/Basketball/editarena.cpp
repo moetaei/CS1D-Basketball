@@ -54,7 +54,7 @@ void editarena::editLocation()
     QString location;
     location=ui->txt_Location->text();
 
-    QSqlQuery * qry = new QSqlQuery(myDB);
+   // QSqlQuery * qry = new QSqlQuery(myDB);
     qry->prepare("update info set Location='"+location+"' where Location='"+ui->List->currentText()+"'");
 }
 
