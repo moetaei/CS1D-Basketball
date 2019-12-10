@@ -37,7 +37,7 @@ private slots:
 private:
     Ui::next *ui;
     QVector<QString> cityOrder;
-    class Graph graf;
+    class Graph *graf;
     class data datah;
 
 };

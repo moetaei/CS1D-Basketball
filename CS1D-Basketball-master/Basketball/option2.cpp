@@ -114,12 +114,9 @@ void Option2::on_newList2_itemClicked(QListWidgetItem *item)
 {
 
     cityList.push_back(item->text());
-    ui->stackedWidget->setCurrentIndex(0);
     ui->stackedWidget->setCurrentIndex(1);
-    qDebug() << "Start1";
     myDB = QSqlDatabase::database();
+    ui->newList2->clear();
     defaultListView1();
-    qDebug() << "Start3";
     ui->newList2->setEnabled(true);
-    qDebug() << "End";
 }

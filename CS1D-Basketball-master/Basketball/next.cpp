@@ -26,7 +26,8 @@ void next::setCity(QVector<QString> s)
   {
       if(i + 1 != cityOrder.size() )
       {
-          graf.shortestPath(datah.findCityIndex(cityOrder[i]),datah.findCityIndex(cityOrder[i+1]),text, total);
+          graf = new Graph();
+          graf->shortestPath(datah.findCityIndex(cityOrder[i]),datah.findCityIndex(cityOrder[i+1]),text, total);
           text += "\n\n";
       }
       cities += cityOrder[i];

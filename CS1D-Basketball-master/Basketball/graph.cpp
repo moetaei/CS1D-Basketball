@@ -292,11 +292,9 @@ void Graph :: getPath(int s, int city, QVector<int> &path)
         }
 
         city = datah.findCityIndex(adjLists[i].getCity1());
-        qDebug() << "Start1";
         path.push_front(city);
-
         getPath(s,city,path);
-        qDebug() << "Start2";
+
     }
 
 }
