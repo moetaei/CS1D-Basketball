@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QSqlQuery>
 #include <QSqlQueryModel>
+#include "databasemanager.h"
 
 namespace Ui {
 class editarena;
@@ -27,6 +28,7 @@ private slots:
 private:
     Ui::editarena *ui;
     QSqlQueryModel * list;
+    QSqlDatabase myDB;
 };
 
 #endif // EDITARENA_H

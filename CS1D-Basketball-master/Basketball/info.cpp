@@ -34,6 +34,13 @@ info::~info()
 /*! resets everything to its default values */
 void info::info::defaultReset()
 {
+    QSqlQueryModel * list = new QSqlQueryModel();
+
+    // Gets the teams in the database
+    list->setQuery("SELECT DISTINCT TeamName "
+                          "FROM info ");
+    ui->teamOptions->setModel(list);
+
     QString start = ui->teamOptions->currentText();
 
     QSqlQueryModel * model = new QSqlQueryModel();
@@ -41,25 +48,22 @@ void info::info::defaultReset()
 
     model->setHeaderData(2, Qt::Horizontal, QObject::tr("Team Name"));
     model->setHeaderData(4, Qt::Horizontal, QObject::tr("Arena Name"));
-    model->setHeaderData(5, Qt::Horizontal, QObject::tr("Stadium Capavity"));
+    model->setHeaderData(5, Qt::Horizontal, QObject::tr("Stadium Capacity"));
     model->setHeaderData(6, Qt::Horizontal, QObject::tr("Date Joined"));
+
+    ui->tableView->setColumnWidth(0, 150);
 
     ui->tableView->verticalHeader()->setVisible(false);
     ui->tableView->setModel(model);
 
-    QSqlQueryModel * list = new QSqlQueryModel();
 
-    // Gets the teams in the database
-    list->setQuery("SELECT DISTINCT TeamName "
-                          "FROM info ");
-    ui->teamOptions->setModel(list);
     QAbstractItemModel* tableModel= ui->tableView->model();
 
-    int w = ui->tableView->verticalHeader()->width();//change +4 if its too big or small
+    int w = ui->tableView->verticalHeader()->width()+2;//change +4 if its too big or small
     for (int i = 0; i < tableModel->columnCount(); i++)
        w += ui->tableView->columnWidth(i); // seems to include gridline
 
-    int h = ui->tableView->horizontalHeader()->height()+4;//change +4 if its too big or small
+    int h = ui->tableView->horizontalHeader()->height()+3;//change +4 if its too big or small
     for (int i = 0; i < tableModel->rowCount(); i++)
        h += ui->tableView->rowHeight(i);
 
@@ -68,4 +72,11 @@ void info::info::defaultReset()
 
     ui->tableView->setMinimumHeight(h);
     ui->tableView->setMaximumHeight(h);
+}
+
+void info::on_teamOptions_currentIndexChanged(const QString &arg1)
+{
+    QSqlQueryModel * model = new QSqlQueryModel();
+    model->setQuery("SELECT * FROM info WHERE TeamName = '"+arg1+"'");
+    ui->tableView->setModel(model);
 }

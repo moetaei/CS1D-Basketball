@@ -31,6 +31,8 @@ public:
 private slots:
 
 
+    void on_teamOptions_currentIndexChanged(const QString &arg1);
+
 private:
     Ui::info *ui;           /*!< class object */
     QSqlDatabase myDB;      /*!< database connection */
