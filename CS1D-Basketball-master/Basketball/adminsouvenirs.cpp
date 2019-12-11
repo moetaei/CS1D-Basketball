@@ -1,5 +1,6 @@
 #include "adminsouvenirs.h"
 #include "ui_adminsouvenirs.h"
+#include <QMessageBox>
 #include <QSqlQuery>
 #include <QSql>
 
@@ -9,6 +10,12 @@ adminSouvenirs::adminSouvenirs(QWidget *parent) :
 {
     ui->setupUi(this);
     myDB = QSqlDatabase::database();
+    list = new QSqlQueryModel();
+
+    list->setQuery("SELECT DISTINCT item "
+                                "FROM souvenirs ");
+    ui->editComboBox->setModel(list);
+    ui->deleteSouvenir->setModel(list);
 
     defaultReset();
 }
@@ -38,5 +45,36 @@ void adminSouvenirs::defaultReset()
 //    list->setQuery("SELECT DISTINCT TeamName "
 //                          "FROM info ");
 //    ui->selectTeam->setModel(list);
+
+}
+
+void adminSouvenirs::on_confirmAddSouvenir_clicked()
+{
+    QString name;
+    float price;
+
+    if(ui->addPrice->value() < -1) // checks if only correct price is added, no checks for name
+    {
+        QMessageBox::warning(this, "Invalid Input", "Please enter a positive number");
+    }
+    else
+    {
+        price = ui->addPrice->value();      // is this alright?
+        name = ui->addNameLineEdit->text();
+        QSqlQuery* qry = new QSqlQuery(myDB);
+        qry->prepare("insert into souvenirs (item,cost) "
+                    "values('"+name+"', '"+price+"') ");
+        qry->exec();
+
+        if(qry->exec())
+        {
+            QMessageBox::information(this, "Success", "New Souvenir Added");
+        }
+        else
+        {
+            QMessageBox::critical(this, "Error", "Souvenir unable to be added");
+            qDebug() << "Failed to add Souvenir";
+        }
+    }
 
 }
