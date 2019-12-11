@@ -1,5 +1,6 @@
 #include "adminsouvenirs.h"
 #include "ui_adminsouvenirs.h"
+#include <QMessageBox>
 #include <QSqlQuery>
 #include <QSql>
 
@@ -9,6 +10,12 @@ adminSouvenirs::adminSouvenirs(QWidget *parent) :
 {
     ui->setupUi(this);
     myDB = QSqlDatabase::database();
+    list = new QSqlQueryModel();
+
+    list->setQuery("SELECT DISTINCT item "
+                                "FROM souvenirs ");
+    ui->editComboBox->setModel(list);
+    ui->deleteSouvenir->setModel(list);
 
     defaultReset();
 }
@@ -38,5 +45,27 @@ void adminSouvenirs::defaultReset()
 //    list->setQuery("SELECT DISTINCT TeamName "
 //                          "FROM info ");
 //    ui->selectTeam->setModel(list);
+
+}
+
+void adminSouvenirs::on_confirmAddSouvenir_clicked()
+{
+    QString name;
+    double price;
+
+    if(ui->addPrice->value() < -1)
+    {
+        QMessageBox::warning(this, "Invalid Input", "Please enter a positive number");
+    }
+    else
+    {
+        price = ui->addPrice->value();
+        name = ui->confirmAddSouvenir->text();
+        QSqlQuery* qry = new QSqlQuery(myDB);
+
+    }
+
+
+
 
 }

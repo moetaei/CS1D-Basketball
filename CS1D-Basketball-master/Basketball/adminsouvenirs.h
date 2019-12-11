@@ -26,9 +26,13 @@ public:
     void defaultReset();
 
 
+private slots:
+    void on_confirmAddSouvenir_clicked();
+
 private:
     Ui::adminSouvenirs *ui;
     QSqlDatabase myDB;
+    QSqlQueryModel *list;
 };
 
 #endif // ADMINSOUVENIRS_H
