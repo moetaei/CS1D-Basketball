@@ -105,6 +105,23 @@ void checkout::loadTables()
 
     updateTable();
 }
+void checkout::setTables(QVector<int> route, QVector<double> distances, int cityNum)
+{
+    for(int i = 0; i < total; i++)
+    {
+        qDebug() << route[i] << ' ' << distances[i];
+        qDebug() << "Total: " << total;
+        ui->destinationWidget->addItem(datah.findCityName(route[i]));
+    }
+
+    // Set colors
+    font.setBold(true);
+    ui->destinationWidget->item(index)->setFont(font);
+    ui->destinationWidget->item(index)->setForeground(Qt::yellow);
+    ui->destinationWidget->item(index)->setBackground(Qt::black);
+
+    updateTable();
+}
 
  /*!
  ****************************************************************************

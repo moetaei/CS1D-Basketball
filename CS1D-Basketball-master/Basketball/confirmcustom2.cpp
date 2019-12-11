@@ -13,10 +13,8 @@ confirmCustom2::confirmCustom2(QWidget *parent) :
     ui->select->setEnabled(true);
     ui->customList->setEnabled(true);
     ui->confirmListWidget->setEnabled(false);
-//    ui->startCityComboBox->clear();
     cityList.clear();
     ui->confirm->setEnabled(false);
-
     defaultListView();
 }
 
@@ -51,10 +49,10 @@ void confirmCustom2::defaultListView()
 /*! Sorts the teams in the list */
 void confirmCustom2::sortCities()
 {
-    queue<double> smallest;
-    QString output = "";
-    queue<QString> tempDest;
-
+    QVector<double> total;
+    QVector<bool> checker;
+    QVector<int> cityChoice;
+    QVector<int> route;
     qDebug() << "size: " << cityNum;
 
     /************************************************************************
@@ -63,35 +61,23 @@ void confirmCustom2::sortCities()
      *          Index n (max index for array) is last element, which does
      *              not require sorting.  It is the end.
      ***********************************************************************/
-    int src = datah.findCityIndex(startCity);
-    int d = src;
-    int i = 0;
-    while(i < datah.getSizeC())
+    for(int i = 0; i < cityList.size(); i++)
     {
-        graf.shortestPath1(d, output, d);
-//        qDebug() << output;
-        smallest.push(output.toDouble());
-        tempDest.push(datah.findCityName(d));
-//        qDebug() << smallest.back() << tempDest.back();
-
-        output = "";
-        i++;
+        cityChoice.push_back(datah.findCityIndex(cityList.at(i)->text()));
+        checker.push_back(false);
     }
 
-    double f;
-    QString s;
-    for(int j = 1; j < datah.getSizeC(); j++)
-    {
-        s = tempDest.front();
-        f = smallest.front();
+    qDebug() << "Start" ;
 
-        sortedDest[j] = s;
-        sortedDist[j] = f;
-        tempDest.pop();
-        smallest.pop();
-//        qDebug() << sortedDest[i] << sortedDist[i];
-//        qDebug() << f << s << j;
+    graf.efficientPath(route,total,cityChoice,checker,cityChoice[0]);
+    qDebug() << "End";
+    for(int i = 1; i < route.size(); i++)
+    {
+        sortedDest[i] = datah.findCityName(route[i]);
+        sortedDist[i] = total[i-1];
+
     }
+    checkoutWindow->setTables(route,total,route.size());
 }
 
 /*! Changes the values to default values */
@@ -163,8 +149,9 @@ void confirmCustom2::on_select_clicked()
  ***************************************************************************/
 void confirmCustom2::on_confirm_clicked()
 {
+    checkoutWindow = new checkout;
     sortCities();
-    checkoutWindow = new checkout(sortedDest,sortedDist, cityNum);
+    qDebug() << "END";
     checkoutWindow->show();
     this->close();
 }

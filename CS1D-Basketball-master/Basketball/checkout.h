@@ -5,6 +5,7 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlError>
+#include "data.h"
 
 namespace Ui {
 class checkout;
@@ -25,6 +26,8 @@ public:
 
     ~checkout();
     //!< Default Destructor
+
+    void setTables(QVector<int> route, QVector<double> distances, int cityNum);
 
     void loadTables();
     //!< Loads destination list with starting values
@@ -58,6 +61,7 @@ private:
     int total;                          /*!< Number of destinations */
     int index;                          /*!< Index of the current arena */
     QFont font;                         /*!< Modified attributes in QListView */
+    class data datah;
 };
 
 #endif // CHECKOUT_H

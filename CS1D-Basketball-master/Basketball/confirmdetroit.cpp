@@ -83,7 +83,7 @@ void ConfirmDetroit::sortCities()
     int i = 0;
     while(i < datah.getSizeC())
     {
-        graf.shortestPath1(d, output, d);
+        //graf.shortestPath1(d, output, d);
 //        qDebug() << output;
         smallest.push(output.toDouble());
         tempDest.push(datah.findCityName(d));
