@@ -71,7 +71,8 @@ color:black;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+       <string notr="true">background-color: rgba(255, 255, 255, 0);
+border-color: rgb(0, 0, 0);</string>
       </property>
       <property name="text">
        <string>Select</string>
@@ -139,7 +140,8 @@ color:black;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+       <string notr="true">background-color: rgba(255, 255, 255, 0);
+border-color: rgb(0, 0, 0);</string>
       </property>
       <property name="text">
        <string>Select</string>
@@ -210,7 +212,8 @@ color:black;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+       <string notr="true">background-color: rgba(255, 255, 255, 0);
+border-color: rgb(0, 0, 0);</string>
       </property>
       <property name="text">
        <string>Select</string>
@@ -280,7 +283,8 @@ color:black;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+       <string notr="true">background-color: rgba(255, 255, 255, 0);
+border-color: rgb(0, 0, 0);</string>
       </property>
       <property name="text">
        <string>Select</string>
