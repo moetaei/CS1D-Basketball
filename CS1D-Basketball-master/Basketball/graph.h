@@ -29,6 +29,21 @@ public:
     //! finds the shortest path for Dijkstra
     void shortestPath(int s,int dest, QString &output, double &all);
 
+    double shortestPath2(int s,int dest);
+
+    void shortestPath3(int src, int dest, QVector<int>& route, QVector<double> &total);
+
+    void efficientPath(QVector<int>& route, QVector<double> &total, QVector<int>& cities, QVector<bool>& checker,  int startCity);
+
+    bool customCheck(QVector<bool> checker);
+
+    void smallest(QVector<double> s, QVector<int> city, int& dest);
+
+    void initalize();
+
+    int findIndex(QVector<int> city, int start);
+
+    void checkPath(QVector<bool>& checker,QVector<int>& cities, QVector<int>& route);
 
     void shortestPath1(int s, QString &output, int &d);
 
