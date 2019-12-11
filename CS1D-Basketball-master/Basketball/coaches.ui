@@ -60,6 +60,35 @@
     <string/>
    </property>
   </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>-1</x>
+     <y>-1</y>
+     <width>1201</width>
+     <height>701</height>
+    </rect>
+   </property>
+   <property name="accessibleDescription">
+    <string/>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:red;</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <property name="lineWidth">
+    <number>10</number>
+   </property>
+  </widget>
+  <zorder>frame</zorder>
+  <zorder>coachTable</zorder>
+  <zorder>label</zorder>
+  <zorder>graph_pic2</zorder>
  </widget>
  <resources/>
  <connections/>

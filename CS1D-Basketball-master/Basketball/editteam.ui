@@ -6,12 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1200</width>
-    <height>700</height>
+    <width>1201</width>
+    <height>699</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:pink;</string>
   </property>
   <widget class="QLabel" name="editteamLabel">
    <property name="geometry">
@@ -50,19 +53,6 @@
     <string>Load Distances From File</string>
    </property>
   </widget>
-  <widget class="QLabel" name="OrigGraph">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>210</y>
-     <width>411</width>
-     <height>311</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
   <widget class="QLabel" name="NewGraph">
    <property name="geometry">
     <rect>
@@ -70,19 +60,6 @@
      <y>200</y>
      <width>411</width>
      <height>311</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="arrowLabel">
-   <property name="geometry">
-    <rect>
-     <x>480</x>
-     <y>320</y>
-     <width>181</width>
-     <height>101</height>
     </rect>
    </property>
    <property name="text">
@@ -102,6 +79,59 @@
     <string>Load Info From File</string>
    </property>
   </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>-1</x>
+     <y>-1</y>
+     <width>1201</width>
+     <height>701</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:pink;</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <property name="lineWidth">
+    <number>10</number>
+   </property>
+   <widget class="QLabel" name="OrigGraph">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>210</y>
+      <width>411</width>
+      <height>311</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="arrowLabel">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>320</y>
+      <width>181</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <zorder>frame</zorder>
+  <zorder>NewGraph</zorder>
+  <zorder>editteamLabel</zorder>
+  <zorder>pushButton</zorder>
+  <zorder>pushButton_2</zorder>
  </widget>
  <resources/>
  <connections/>

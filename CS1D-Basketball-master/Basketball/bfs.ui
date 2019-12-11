@@ -6,12 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>500</width>
-    <height>487</height>
+    <width>511</width>
+    <height>506</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:gray;</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
@@ -48,6 +54,9 @@
      <width>231</width>
      <height>401</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:white;</string>
    </property>
   </widget>
   <widget class="QPushButton" name="exit">

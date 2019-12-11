@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:brown;</string>
+  </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
@@ -77,6 +80,9 @@
      <width>251</width>
      <height>311</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:white;</string>
    </property>
   </widget>
   <widget class="QLabel" name="confirmedDestLabel">

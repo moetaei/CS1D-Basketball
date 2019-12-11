@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QTableView" name="conferenceTable">
    <property name="geometry">
     <rect>
@@ -21,6 +24,9 @@
      <width>256</width>
      <height>421</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:white;</string>
    </property>
   </widget>
   <widget class="QComboBox" name="comboBox">
@@ -41,6 +47,9 @@
      <width>561</width>
      <height>491</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
    </property>
    <property name="text">
     <string/>
@@ -70,6 +79,33 @@
     <enum>Qt::PlainText</enum>
    </property>
   </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>-1</x>
+     <y>-1</y>
+     <width>1201</width>
+     <height>701</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:lightgreen;</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <property name="lineWidth">
+    <number>10</number>
+   </property>
+  </widget>
+  <zorder>frame</zorder>
+  <zorder>conferenceTable</zorder>
+  <zorder>comboBox</zorder>
+  <zorder>label_pic</zorder>
+  <zorder>label</zorder>
  </widget>
  <resources/>
  <connections/>

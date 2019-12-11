@@ -97,6 +97,34 @@
     <string/>
    </property>
   </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>-11</x>
+     <y>-1</y>
+     <width>1211</width>
+     <height>641</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:tan;</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <property name="lineWidth">
+    <number>10</number>
+   </property>
+  </widget>
+  <zorder>frame</zorder>
+  <zorder>uTeamsTable</zorder>
+  <zorder>sortBox</zorder>
+  <zorder>label</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label_pic</zorder>
  </widget>
  <resources/>
  <connections/>

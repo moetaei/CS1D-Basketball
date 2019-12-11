@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:pink;</string>
+  </property>
   <widget class="QTextBrowser" name="path">
    <property name="enabled">
     <bool>true</bool>
@@ -24,6 +27,9 @@
      <width>341</width>
      <height>551</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:white;</string>
    </property>
   </widget>
   <widget class="QPushButton" name="exit">

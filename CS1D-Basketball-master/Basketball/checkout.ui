@@ -13,6 +13,12 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:gray;</string>
+  </property>
   <widget class="QLabel" name="titleLabel">
    <property name="geometry">
     <rect>
@@ -258,6 +264,12 @@
       <height>271</height>
      </rect>
     </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:white;</string>
+    </property>
     <attribute name="verticalHeaderVisible">
      <bool>false</bool>
     </attribute>
@@ -311,6 +323,9 @@
      <font>
       <pointsize>9</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:white;</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -373,6 +388,9 @@
      <width>221</width>
      <height>321</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:white;</string>
    </property>
   </widget>
  </widget>
