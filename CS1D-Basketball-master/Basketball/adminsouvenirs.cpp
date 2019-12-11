@@ -51,21 +51,30 @@ void adminSouvenirs::defaultReset()
 void adminSouvenirs::on_confirmAddSouvenir_clicked()
 {
     QString name;
-    double price;
+    float price;
 
-    if(ui->addPrice->value() < -1)
+    if(ui->addPrice->value() < -1) // checks if only correct price is added, no checks for name
     {
         QMessageBox::warning(this, "Invalid Input", "Please enter a positive number");
     }
     else
     {
-        price = ui->addPrice->value();
-        name = ui->confirmAddSouvenir->text();
+        price = ui->addPrice->value();      // is this alright?
+        name = ui->addNameLineEdit->text();
         QSqlQuery* qry = new QSqlQuery(myDB);
+        qry->prepare("insert into souvenirs (item,cost) "
+                    "values('"+name+"', '"+price+"') ");
+        qry->exec();
 
+        if(qry->exec())
+        {
+            QMessageBox::information(this, "Success", "New Souvenir Added");
+        }
+        else
+        {
+            QMessageBox::critical(this, "Error", "Souvenir unable to be added");
+            qDebug() << "Failed to add Souvenir";
+        }
     }
-
-
-
 
 }
