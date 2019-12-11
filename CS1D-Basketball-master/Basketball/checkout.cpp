@@ -21,6 +21,17 @@ checkout::checkout(QWidget *parent) :
     ui(new Ui::checkout)
 {
     ui->setupUi(this);
+    // Initialize starting variables
+    index         = 0;
+    totalCost     = 0;
+    totalDistance = 0;
+    currCost      = 0;
+
+    ui->totalCostLine->setText(QString::number(totalCost));
+    ui->totalDistLine->setText(QString::number(totalDistance));
+    ui->currDestCostLine->setText(QString::number(currCost));
+
+    ui->endVacationButton->setEnabled(false);
 }
 
 /*!
@@ -57,7 +68,27 @@ checkout::checkout(QString* cList, double* dList, int t,
     checkout::loadTables();
     ui->endVacationButton->setEnabled(false);
 }
+void checkout::setTables(QVector<int> route, QVector<double> distances)
+{
+    total = route.size();
+    for(int i = 0; i < route.size(); i++)
+    {
+        qDebug() << route[i] << ' ' << distances[i];
+        qDebug() << "Total: " << route.size();
+        QString * newString = new QString;
+        *newString = datah.findCityName(route[i]);
+        ui->destinationWidget->addItem(*newString);
+    }
 
+    // Set colors
+
+    font.setBold(true);
+    ui->destinationWidget->item(index)->setFont(font);
+    ui->destinationWidget->item(index)->setForeground(Qt::yellow);
+    ui->destinationWidget->item(index)->setBackground(Qt::black);
+
+    updateTable();
+}
  /*!
  ****************************************************************************
  * METHOD - tTravelSimulation

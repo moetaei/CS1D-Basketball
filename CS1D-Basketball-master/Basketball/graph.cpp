@@ -159,6 +159,212 @@ void  Graph::reset()
         visited[i]= false;
     }
 }
+void Graph::efficientPath(QVector<int>& route, QVector<double> &total, QVector<int>& cities, QVector<bool>& checker,  int startCity)
+{
+    initalize();
+    QVector<double> *shortest = new QVector<double>;
+    QVector<int> *city =  new QVector<int>;
+    checker[findIndex(cities,startCity)] = true;
+    int dest = -1;
+    if(!customCheck(checker))
+    {
+        for(int i = 0; i < cities.size(); i++)
+        {
+            if(!checker[i])
+            {
+                qDebug() << QString:: number(shortestPath2(startCity,cities[i]));
+                double distance = shortestPath2(startCity,cities[i]);
+                qDebug() << "Start2";
+                shortest->push_back(distance);
+                city->push_back(cities[i]);
+            }
+        }
+
+        smallest(*shortest,*city,dest);
+        initalize();
+        qDebug() << QString::number(dest);
+        qDebug() << "Start3";
+        shortestPath3(startCity,dest,route,total);
+        qDebug() << "Start4";
+        checkPath(checker,cities,route);
+        initalize();
+        efficientPath(route, total, cities, checker, dest);
+    }
+
+}
+int Graph::findIndex(QVector<int> city, int start)
+{
+    for(int i = 0; i < city.size(); i++)
+    {
+        if(city[i] == start)
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+void Graph::checkPath(QVector<bool>& checker,QVector<int>& cities, QVector<int>& route)
+{
+    for(int i = 0; i < route.size(); i++)
+    {
+        for(int j = 0; j < cities.size(); j++)
+        {
+            if(route[i] == cities[j])
+            {
+                checker[j] = true;
+            }
+        }
+    }
+}
+void Graph::smallest(QVector<double> s, QVector<int> city, int& dest)
+{
+    if(city.size() == 1)
+    {
+        dest = city[0];
+    }
+    else
+    {
+        double temp = s[0];
+        dest = city[0];
+        for(int i = 1; i < s.size(); i++)
+        {
+            if(s[i] < temp)
+            {
+                temp = s[i];
+                dest = city[i];
+            }
+        }
+    }
+
+}
+bool Graph::customCheck(QVector<bool> checker)
+{
+    for(int i = 0; i < checker.size(); i++)
+    {
+        if(checker[i] == false)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+void Graph::initalize()
+{
+    new Graph();
+}
+void Graph::shortestPath3(int src, int dest, QVector<int>& route, QVector<double> &total)
+{
+    priority_queue< iPair, vector <iPair> , greater<iPair> > pq;
+
+    QVector<double> dist(V, INF);
+
+    pq.push(make_pair(0, src));
+    dist[src] = 0;
+
+    while (!pq.empty())
+    {
+        int u = pq.top().second;
+        pq.pop();
+
+        QList< pair<int, int> >::iterator i;
+        for (i = adj[u].begin(); i != adj[u].end(); ++i)
+        {
+            int v = (*i).first;
+            double weight = (*i).second;
+
+            if (dist[v] > dist[u] + weight)
+            {
+                if(adjLists.size() != 0)
+                {
+                    if(datah.findCityName(v) == adjLists.back().getCity2())
+                    {
+                        adjLists.pop_back();
+                    }
+                }
+
+                node newNode(datah.findCityName(u),datah.findCityName(v),weight);
+                adjLists.push_back(newNode);
+                dist[v] = dist[u] + weight;
+                pq.push(make_pair(dist[v], v));
+
+            }
+        }
+    }
+    if(dest <= datah.getSizeC())
+    {
+        QVector<int> path;
+        path.push_front(dest);
+        getPath(src,dest,path);
+        for(int i = 0; i < path.size(); i++)
+        {
+            if(i + 1 < path.size())
+            {
+                route.push_back(path[i]);
+                total.push_back(datah.findDistance(path[i], path[i+1]));
+            }
+        }
+    }
+}
+double Graph::shortestPath2(int src, int dest)
+{
+
+    priority_queue< iPair, vector <iPair> , greater<iPair> > pq;
+
+    QVector<double> dist(V, INF);
+
+    double total = 0;
+
+
+    pq.push(make_pair(0, src));
+    dist[src] = 0;
+
+
+    while (!pq.empty())
+    {
+        int u = pq.top().second;
+        pq.pop();
+
+        QList< pair<int, int> >::iterator i;
+        for (i = adj[u].begin(); i != adj[u].end(); ++i)
+        {
+            int v = (*i).first;
+            double weight = (*i).second;
+
+            if (dist[v] > dist[u] + weight)
+            {
+                if(adjLists.size() != 0)
+                {
+                    if(datah.findCityName(v) == adjLists.back().getCity2())
+                    {
+                        adjLists.pop_back();
+                    }
+                }
+
+                node newNode(datah.findCityName(u),datah.findCityName(v),weight);
+                adjLists.push_back(newNode);
+                dist[v] = dist[u] + weight;
+                pq.push(make_pair(dist[v], v));
+
+            }
+        }
+    }
+
+    if(dest <= datah.getSizeC())
+    {
+        QVector<int> path;
+        path.push_front(dest);
+        getPath(src,dest,path);
+        for(int i = 0; i < path.size(); i++)
+        {
+            if(i + 1 < path.size())
+            {
+                 total += datah.findDistance(path[i], path[i+1]);
+            }
+        }
+    }
+    return total;
+
+}
 void Graph::shortestPath1(int src, QString &output, int &d)
 {
     priority_queue< iPair, vector <iPair> , greater<iPair> > pq;
