@@ -8,7 +8,6 @@ editarena::editarena(QWidget *parent) :
     ui(new Ui::editarena)
 {
     ui->setupUi(this);
-//    myDB = QSqlDatabase::database();
 
     myDB = QSqlDatabase::database();
     list = new QSqlQueryModel();
@@ -27,48 +26,80 @@ editarena::~editarena()
 void editarena::editLocation()
 {
     QString Location, team;
-    Location=ui->txt_Location->text();
+    Location = ui->txt_Location->text();
     team = ui->List->currentText();
     qDebug() << Location << team;
 
-
-//    QSqlQueryModel* model = new QSqlQueryModel;
-//    model->prepare("UPDATE info SET Location ='"+Location+"' WHERE TeamName ='"+ui->List->currentText()+"'");
-
     QSqlQuery* qry = new QSqlQuery(myDB);
-    qry->prepare("UPDATE info "
-                "SET Location = 'asjkd' "
-                "WHERE TeamName = 'Boston Celtics' ");
-    qry->numRowsAffected();
+    qry->prepare("UPDATE info SET Location = :location WHERE TeamName = :teamName");
+    qry->bindValue(":location", Location);
+    qry->bindValue(":teamName", team);
+    qry->exec();
+
     if(qry->exec())
     {
-        QMessageBox::information(this,"Success","Price for " + Location + " updated.");
+        QMessageBox::information(this,"Success","Location updated.");
+        qry->next();
+        qDebug() << qry->numRowsAffected() << qry->lastError();
+    }
+    else
+    {
+        QMessageBox::critical(this,"Error","Location unable to be updated.");
+        qDebug() << "Failed to Update Location";
+    }
+
+}
+
+void editarena::editCapacity()
+{
+    QString capacity, team;
+    capacity=ui->txt_Capacity->text();
+    team = ui->List->currentText();
+    qDebug() << capacity << team;
+
+    QSqlQuery* qry = new QSqlQuery(myDB);
+    qry->prepare("UPDATE info SET StadiumCapacity = :stadiumCapacity WHERE TeamName = :teamName");
+    qry->bindValue(":stadiumCapacity", capacity);
+    qry->bindValue(":teamName", team);
+    qry->exec();
+
+    if(qry->exec())
+    {
+        QMessageBox::information(this,"Success","Stadium Capacity updated.");
+        qry->next();
+        qDebug() << qry->numRowsAffected() << qry->lastError();
+    }
+    else
+    {
+        QMessageBox::critical(this,"Error","Location unable to be updated.");
+        qDebug() << "Failed to Update Stadium Capacity";
+    }
+}
+
+void editarena::editArenaName()
+{
+    QString arenaN, team;
+    arenaN=ui->txt_ArenaName->text();
+    team = ui->List->currentText();
+    qDebug() << arenaN << team;
+
+    QSqlQuery* qry = new QSqlQuery(myDB);
+    qry->prepare("UPDATE info SET ArenaName = :arenaName WHERE TeamName = :teamName");
+    qry->bindValue(":arenaName", arenaN);
+    qry->bindValue(":teamName", team);
+    qry->exec();
+
+    if(qry->exec())
+    {
+        QMessageBox::information(this,"Success","Arena name updated.");
         qry->next();
         qDebug() << qry->numRowsAffected() << qry->lastError(); //<< qry->value(3).toString();
     }
     else
     {
-        QMessageBox::critical(this,"Error","Price for " + Location + " unable to be updated.");
-        qDebug() << "Failed to Update Food Price";
+        QMessageBox::critical(this,"Error","Arena name unable to be updated.");
+        qDebug() << "Failed to Update Arena Name";
     }
-    QString location;
-    location=ui->txt_Location->text();
-
-   // QSqlQuery * qry = new QSqlQuery(myDB);
-    qry->prepare("update info set Location='"+location+"' where Location='"+ui->List->currentText()+"'");
-}
-
-void editarena::editCapacity()
-{
-    QString Capacity;
-    Capacity=ui->txt_Capacity->text();
-
-    QSqlQuery * qry = new QSqlQuery(myDB);
-    qry->prepare("INSERT INTO info (StadiumCapacity) "
-                 "VALUES (:StadiumCapacity)");
-
-    qry->bindValue(":StadiumCapacity", Capacity);
-    qry->exec();
 }
 
 void editarena::on_confirmLocation_clicked()
@@ -79,4 +110,9 @@ void editarena::on_confirmLocation_clicked()
 void editarena::on_confirmCapacity_clicked()
 {
     editCapacity();
+}
+
+void editarena::on_confirmArenaName_clicked()
+{
+    editArenaName();
 }

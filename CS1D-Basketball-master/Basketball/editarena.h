@@ -21,6 +21,8 @@ public:
 
     void editCapacity();
 
+    void editArenaName();
+
     //! destructor
     ~editarena();
 
@@ -28,6 +30,8 @@ private slots:
     void on_confirmLocation_clicked();
 
     void on_confirmCapacity_clicked();
+
+    void on_confirmArenaName_clicked();
 
 private:
     Ui::editarena *ui;
