@@ -14,7 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color:brown;</string>
+   <string notr="true">background-color:gray;</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
@@ -150,6 +150,9 @@
        <width>255</width>
        <height>271</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:white;</string>
      </property>
     </widget>
     <widget class="QLabel" name="startCityLabel">

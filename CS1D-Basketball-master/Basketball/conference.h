@@ -12,6 +12,7 @@ namespace Ui {
 class conference;
 }
 
+/*! Class conference is used to display them in the user ui under conference tab */
 class conference : public QWidget
 {
     Q_OBJECT

@@ -12,6 +12,7 @@ namespace Ui {
 class divisions;
 }
 
+/*! Class divisions is used to display them in the user ui under the divisions tab */
 class divisions : public QWidget
 {
     Q_OBJECT

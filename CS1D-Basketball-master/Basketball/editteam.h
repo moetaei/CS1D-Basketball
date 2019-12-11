@@ -8,6 +8,7 @@ namespace Ui {
 class editTeam;
 }
 
+/*! Class editTeam is used to edit the team by loading it from a file */
 class editTeam : public QWidget
 {
     Q_OBJECT
