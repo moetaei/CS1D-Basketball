@@ -68,17 +68,27 @@ checkout::checkout(QString* cList, double* dList, int t,
     checkout::loadTables();
     ui->endVacationButton->setEnabled(false);
 }
-void checkout::setTables(QVector<int> route, QVector<double> distances)
+void checkout::setTables(QVector<int> route, QVector<double> distance)
 {
     total = route.size();
     for(int i = 0; i < route.size(); i++)
     {
-        qDebug() << route[i] << ' ' << distances[i];
-        qDebug() << "Total: " << route.size();
+        qDebug() << route[i];
+
         QString * newString = new QString;
         *newString = datah.findCityName(route[i]);
         ui->destinationWidget->addItem(*newString);
     }
+    qDebug() << "Total: " << route.size();
+    qDebug() << "Distance: " << distance.size() + 1;
+
+    distances = new double[distance.size()+1];
+
+    for(int i = 0; i < distance.size(); i++)
+    {
+        distances[i] = distance[i];
+    }
+    distances[distance.size()] = 0;
 
     // Set colors
 

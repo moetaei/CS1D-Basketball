@@ -164,8 +164,12 @@ void Graph::efficientPath(QVector<int>& route, QVector<double> &total, QVector<i
     initalize();
     QVector<double> *shortest = new QVector<double>;
     QVector<int> *city =  new QVector<int>;
+    qDebug() << startCity;
     checker[findIndex(cities,startCity)] = true;
+    qDebug() << findIndex(cities,startCity);
+    qDebug() << checker[findIndex(cities,startCity)];
     int dest = -1;
+
     if(!customCheck(checker))
     {
         for(int i = 0; i < cities.size(); i++)
@@ -176,19 +180,24 @@ void Graph::efficientPath(QVector<int>& route, QVector<double> &total, QVector<i
                 double distance = shortestPath2(startCity,cities[i]);
                 qDebug() << "Start2";
                 shortest->push_back(distance);
+                qDebug() << "Start3";
                 city->push_back(cities[i]);
+                qDebug() << "Start4";
+
             }
         }
 
+        qDebug() << "Start5";
         smallest(*shortest,*city,dest);
+        qDebug() << "Start6";
         initalize();
         qDebug() << QString::number(dest);
-        qDebug() << "Start3";
+        qDebug() << "Start7";
         shortestPath3(startCity,dest,route,total);
-        qDebug() << "Start4";
+        qDebug() << "Start8";
         checkPath(checker,cities,route);
-        initalize();
         efficientPath(route, total, cities, checker, dest);
+
     }
 
 }
@@ -224,12 +233,14 @@ void Graph::smallest(QVector<double> s, QVector<int> city, int& dest)
     }
     else
     {
+        qDebug() << "hello";
         double temp = s[0];
         dest = city[0];
         for(int i = 1; i < s.size(); i++)
         {
             if(s[i] < temp)
             {
+                qDebug() << "hello1";
                 temp = s[i];
                 dest = city[i];
             }
@@ -299,9 +310,18 @@ void Graph::shortestPath3(int src, int dest, QVector<int>& route, QVector<double
         {
             if(i + 1 < path.size())
             {
-                route.push_back(path[i]);
                 total.push_back(datah.findDistance(path[i], path[i+1]));
             }
+            if(route.size() >=2)
+            {
+                if(route[route.size() - 2] == route.back())
+                {
+                    route.pop_back();
+                }
+            }
+            route.push_back(path[i]);
+
+
         }
     }
 }

@@ -51,8 +51,8 @@
   <widget class="QPushButton" name="cancel">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>500</y>
+     <x>40</x>
+     <y>460</y>
      <width>80</width>
      <height>30</height>
     </rect>
@@ -184,22 +184,6 @@
      </item>
     </widget>
    </widget>
-  </widget>
-  <widget class="QPushButton" name="reset">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>460</y>
-     <width>80</width>
-     <height>30</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-   <property name="text">
-    <string>Reset</string>
-   </property>
   </widget>
   <widget class="QPushButton" name="select">
    <property name="geometry">

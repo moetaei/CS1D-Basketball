@@ -63,32 +63,22 @@ void confirmCustom2::sortCities()
      *          Index n (max index for array) is last element, which does
      *              not require sorting.  It is the end.
      ***********************************************************************/
+
+    cityChoice.push_back(datah.findCityIndex(startCity));
+    checker.push_back(false);
     for(int i = 0; i < cityList.size(); i++)
     {
-        cityChoice.push_back(datah.findCityIndex(cityList.at(i)->text()));
-        checker.push_back(false);
+        if(startCity != cityList.at(i)->text())
+        {
+            cityChoice.push_back(datah.findCityIndex(cityList.at(i)->text()));
+            checker.push_back(false);
+        }
+
     }
     graf.efficientPath(route,total,cityChoice,checker,cityChoice[0]);
 
     checkoutWindow->setTables(route,total);
 }
-
-/*! Changes the values to default values */
-void confirmCustom2::on_reset_clicked()
-{
-    ui->customList->reset();
-    ui->stackedWidget->setCurrentIndex(0);
-
-    ui->confirmListWidget->clear();
-    ui->select->setEnabled(true);
-    ui->customList->setEnabled(true);
-    ui->confirmListWidget->setEnabled(false);
-    ui->startCityComboBox->clear();
-    cityList.clear();
-
-    ui->confirm->setEnabled(false);
-}
-
 /*! close window */
 void confirmCustom2::on_cancel_clicked()
 {

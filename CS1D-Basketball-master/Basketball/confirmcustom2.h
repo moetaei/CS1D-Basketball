@@ -35,10 +35,6 @@ public:
     //!< Creates a sorted list of destinations and distances from selected.
 
 private slots:
-
-    //! reset values
-    void on_reset_clicked();
-
     //! on click close window
     void on_cancel_clicked();
 
