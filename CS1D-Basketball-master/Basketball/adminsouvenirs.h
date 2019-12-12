@@ -33,6 +33,10 @@ private slots:
 
     void on_refreshTable_clicked();
 
+    void on_deleteSouvenir_currentIndexChanged(int index);
+
+    void on_deleteSouvenir_currentIndexChanged(const QString &arg1);
+
 private:
     Ui::adminSouvenirs *ui;
     QSqlDatabase myDB;

@@ -51,7 +51,7 @@ void adminSouvenirs::defaultReset()
 void adminSouvenirs::on_confirmAddSouvenir_clicked()
 {
     QString name;
-    double price;
+    QString price;
 
     if(ui->addPrice->value() < -1) // checks if only correct price is added, no checks for name
     {
@@ -59,11 +59,12 @@ void adminSouvenirs::on_confirmAddSouvenir_clicked()
     }
     else
     {
-        price = ui->addPrice->value();      // is this alright?
+        price = QString:: number(ui->addPrice->value());      // is this alright?
         name = ui->addNameLineEdit->text();
         QSqlQuery* qry = new QSqlQuery(myDB);
         qry->prepare("insert into souvenirs (item,cost) "
                     "values('"+name+"', '"+price+"') ");
+        qDebug() << price;
 
         if(qry->exec())
         {
@@ -112,15 +113,32 @@ void adminSouvenirs::on_confirmEdit_clicked()
 
 }
 
-void adminSouvenirs::on_refreshTable_clicked()
+
+
+
+
+void adminSouvenirs::on_deleteSouvenir_currentIndexChanged(const QString &arg1)
 {
-    QSqlQueryModel * model = new QSqlQueryModel;
-    model->setQuery("SELECT item FROM souvenir");
 
-    model->setHeaderData(2, Qt::Horizontal, QObject::tr("Name"));
-    model->setHeaderData(7, Qt::Horizontal, QObject::tr("Price"));
+    QMessageBox::StandardButton reply = QMessageBox::question(this, "WARNING", "You are about to delete a souvenir, are you sure?", QMessageBox::Yes | QMessageBox::No);
 
-    ui->souvenirTable->verticalHeader()->setVisible(false);
-    ui->souvenirTable->setModel(model);
+    if(reply == QMessageBox::Yes)
+    {
+        QSqlQuery * qry = new QSqlQuery(myDB);
+
+        qry->prepare("DELETE FROM souvenirs WHERE (item)=('"+arg1+"')");
+        if(qry->exec())
+        {
+            QMessageBox::information(this, "Success", "Successful deleted");
+        }
+        else
+        {
+            QMessageBox::critical(this, "Error", "Something went wrong");
+        }
+    }
+    else
+    {
+       return;
+    }
 
 }
