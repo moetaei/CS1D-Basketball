@@ -119,7 +119,6 @@ void adminSouvenirs::on_confirmEdit_clicked()
 
 void adminSouvenirs::on_deleteSouvenir_currentIndexChanged(const QString &arg1)
 {
-
     QMessageBox::StandardButton reply = QMessageBox::question(this, "WARNING", "You are about to delete a souvenir, are you sure?", QMessageBox::Yes | QMessageBox::No);
 
     if(reply == QMessageBox::Yes)
