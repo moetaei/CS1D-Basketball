@@ -43,15 +43,12 @@ void login::on_pushButton_login_clicked()
 
         if("admin"== username && "admin" == password)
         {
-            QMessageBox::information(this,QObject::tr("System Message"),tr("Login successful!"),QMessageBox::Ok);
             myDB.openDB();
             adminWindow = new admin();
             adminWindow->show();
         }
         else if("user"== username && "password" == password)
         {
-
-            //QMessageBox::information(this,QObject::tr("System Message"),tr("Login successful!"),QMessageBox::Ok);
             myDB.openDB();
             userWindow = new user();
             userWindow->show();
