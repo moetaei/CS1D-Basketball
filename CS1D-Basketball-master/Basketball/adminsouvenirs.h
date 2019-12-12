@@ -29,6 +29,10 @@ public:
 private slots:
     void on_confirmAddSouvenir_clicked();
 
+    void on_confirmEdit_clicked();
+
+    void on_refreshTable_clicked();
+
 private:
     Ui::adminSouvenirs *ui;
     QSqlDatabase myDB;

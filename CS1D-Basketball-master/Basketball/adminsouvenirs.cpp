@@ -51,7 +51,7 @@ void adminSouvenirs::defaultReset()
 void adminSouvenirs::on_confirmAddSouvenir_clicked()
 {
     QString name;
-    float price;
+    double price;
 
     if(ui->addPrice->value() < -1) // checks if only correct price is added, no checks for name
     {
@@ -64,11 +64,11 @@ void adminSouvenirs::on_confirmAddSouvenir_clicked()
         QSqlQuery* qry = new QSqlQuery(myDB);
         qry->prepare("insert into souvenirs (item,cost) "
                     "values('"+name+"', '"+price+"') ");
-        qry->exec();
 
         if(qry->exec())
         {
             QMessageBox::information(this, "Success", "New Souvenir Added");
+            qry->next(); // not sure what this does
         }
         else
         {
@@ -76,5 +76,51 @@ void adminSouvenirs::on_confirmAddSouvenir_clicked()
             qDebug() << "Failed to add Souvenir";
         }
     }
+
+}
+
+void adminSouvenirs::on_confirmEdit_clicked()
+{
+    QString name;
+    double price;
+
+    if(ui->changePriceSpinBox->value() < -1)
+    {
+        QMessageBox::warning(this, "Invalid Input", "Please enter a positive number");
+    }
+    else
+    {
+      price = ui->changePriceSpinBox->value();
+      name = ui->nameLineEdit->text();
+      QSqlQuery * qry = new QSqlQuery(myDB);
+      qry->prepare("UPDATE souvenir SET item = :item WHERE cost = :cost");
+      qry->bindValue(":item", name);
+      qry->bindValue(":cost", price);
+
+      if(qry->exec())
+      {
+          QMessageBox::information(this, "Success", "Souvenir Updated");
+          qry->next(); // not sure what this does
+      }
+      else
+      {
+          QMessageBox::critical(this, "Error", "Souvenir unable to be updated");
+          qDebug() << "Failed to update Souvenir";
+      }
+    }
+
+
+}
+
+void adminSouvenirs::on_refreshTable_clicked()
+{
+    QSqlQueryModel * model = new QSqlQueryModel;
+    model->setQuery("SELECT item FROM souvenir");
+
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("Name"));
+    model->setHeaderData(7, Qt::Horizontal, QObject::tr("Price"));
+
+    ui->souvenirTable->verticalHeader()->setVisible(false);
+    ui->souvenirTable->setModel(model);
 
 }
